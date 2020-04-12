@@ -65,7 +65,7 @@ We don't need to write any CSS for this component, but let's at least create a S
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-## Compiling the code
+### Compiling the code
 
 Now that the Heading component is done, let's compile the code so we can see it in Pattern Lab.
 
