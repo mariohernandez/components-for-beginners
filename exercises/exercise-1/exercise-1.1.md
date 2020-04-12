@@ -26,7 +26,7 @@ We just created an object for the heading with key/value **heading\_level, modif
 * the **title** key is the title's string of text that will become the title of a page or a component.
 * ... and finally, the **url** key, if present, will allow us to wrap the title in an `<a>` tag, to make it a link.
 
-## Update the heading's markup and logic
+### Update the heading's markup and logic
 
 * Update the `heading.twig` file to look like this:
 
