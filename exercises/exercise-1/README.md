@@ -2,16 +2,14 @@
 
 ## Heading Component
 
-Following the [Atomic Design ](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern. The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.
+Following the [Atomic Design ](https://atomicdesign.bradfrost.com/table-of-contents/)methodology we are going to build a simple component or pattern. The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.
 
 ### Component's stock content
 
 Let's start by first identifying the content for the component. Since this is a title field, we only need a string of text. We'll dive into more complex components in future exercises.
 
 {% hint style="info" %}
-**NOTE:** All components will be created inside `src/patterns/components`
-
-On a typical Drupal project the full path may look something like this: `<drupal-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
+**NOTE:** All components will be created inside `source/_patterns/`
 {% endhint %}
 
 1. Inside _components_ create a new directory called **heading**
