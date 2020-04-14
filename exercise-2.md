@@ -206,13 +206,9 @@ Most fields above are pretty straight foorward.  For the title we created an obj
 
 #### Compiling the code
 
-Now that the card component is done, let's compile the code so we can see it in Pattern Lab.  If the watch task is running you should be able to see the card component in Pattern Lab, otherwise follow these steps:
+After saving the changes above Pattern Lab should had reloaded.  If this is not the case you can run:
 
-While in your theme's root directory, run the following commands in your command line and press **Return**
-
-`npm run build`
-
-`npm run watch`
-
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
+```text
+npm start
+```
 
