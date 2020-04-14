@@ -20,7 +20,7 @@ Now that we have identified the fields our card component needs, let's start bui
 
 #### Component's stock content
 
-1. Inside _components_ create a new directory called **card**
+1. Inside _source/\_patterns/01-molecules_ create a new directory called **card**
 2. Inside the _card_ directory create a new file called **card.json**
 3. Inside _card.json_ add the following code:
 
@@ -49,14 +49,13 @@ Now that we have identified the fields our card component needs, let's start bui
       "text": "Outdoors",
       "url": "#"
     }
-  ],
-  "modifier": ""
+  ]
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-By now we should be well familiar with the fields structure above.  The one field type we probably have not used much is an array.  In the code above we are declaring the tags as an array.  Each tag item inside the array has a text and URL keys so they can basically become links to tag-driven pages on our site.
+Most fields above are pretty straight foorward.  For the title we created an object so we can group all title-related properties together.  For tags, we are using an array.  An array is a list of items all with the same  or similar properties.  Each tag item inside the array has a text and URL keys.
 
 #### Component's markup
 
@@ -66,19 +65,17 @@ By now we should be well familiar with the fields structure above.  The one fiel
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
-
 <article class="card">
   {%  if image %}
     <div class="card__media">
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or body or tags %}
+  {% if title or date or body_text or tags %}
   <div class="card__content">
     {% if title %}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@atoms/heading/heading.twig' with {
           title: title.title,
           heading_level: title.heading_level,
           url: title.url
@@ -125,33 +122,33 @@ By now we should be well familiar with the fields structure above.  The one fiel
 {% tabs %}
 {% tab title="card.scss" %}
 ```css
-// Import site utilities
-@import '../../global/utils/init';
-
 .card {
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 420px;
-  margin: 50px auto 20px;
   border-radius: 4px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
-  img {
-    display: block;
+.card.card__wide {
+  flex-direction: column;
+}
+
+/* Changes card layout on larger screens. */
+@media screen and (min-width: 640px) {
+  .card.card__wide {
+    flex-direction: row;
   }
 
-  &.card__wide {
-
-    @include breakpoint($bp-sm) {
-      flex-direction: row;
-
-      .card__media,
-      .card__content {
-        flex: 0 0 50%;
-      }
-    }
+  .card__wide.card__media,
+  .card__media.card__content {
+    flex: 0 0 50%;
   }
+}
+
+.card img {
+  display: block;
 }
 
 .card__content {
@@ -184,7 +181,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
   padding: 0;
 }
 
-.card__tag--item {
+.tag__item {
   background-color: #edf2f7;
   border-radius: 99999px;
   color: #4a5568;
@@ -193,14 +190,14 @@ By now we should be well familiar with the fields structure above.  The one fiel
   margin-right: 10px;
 }
 
-.card__tag--link {
+.tag__link {
   text-decoration: none;
   color: #1a202c;
+}
 
-  &:hover,
-  &:focus {
-    color: lighten(#1a202c, 25%);
-  }
+.tag__link:hover,
+.tag__link:focus {
+  color: lighten(#1a202c, 25%);
 }
 
 ```
