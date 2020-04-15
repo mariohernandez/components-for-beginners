@@ -75,3 +75,34 @@ This is the current structure of the Card component
 |  |-- card~wide.json
 ```
 
+If we look at the Card component in Pattern Lab you will notice that now we have two instances of the Card.  They are identical since they are both using the exact same data, but this tells us we are headed in the right direction.  Let's keep  going.
+
+### Displaying the right fields for the card variant
+
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". So how do we remove those fields without affecting the original Card component?
+
+```yaml
+{
+  "title": {
+    "heading_level": "3",
+    "title": "Marie The Producer",
+    "url": ""
+  },
+  "date": "",
+  "job_title": "Executive Producer",
+  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+  "tags": "",
+  "cta": {
+    "text": "Read the full bio",
+    "url": "#"
+  },
+  "modifier": "card__wide"
+}
+```
+
+* Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields
+* Next, for those fields we don't need, we are declaring them with no values.
+* Finally, for the fields we need to change, we can change their values as we've done with the **title**, **url**, and **modifier** keys.
+
+The card wide variant now excludes tags and date fields. When we built the card component  we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page.  If your changes were compiled, you should see the new updates on the card variant.  Otherwise you can run `npm start` to see the latest changes.
+
