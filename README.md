@@ -1,2 +1,26 @@
 # Welcome
 
+In this live, online training workshop, you will learn the process of identifying, building, and styling components using Pattern Lab. We will cover the process from design to development typically used by our team to build robust, scalable, and flexible components that promote re-usability and code efficiency. This training is perfect for designers and front end developers just getting started with components.
+
+### The beginner training covers the following topics:
+
+* Principles of Atomic Design for designing and building flexible and scalable components
+* Building a custom Drupal 8 theme
+* Using Pattern Lab and Twig to build flexible and re-usable components
+* Nesting and reusing components
+* Styling components using Sass and [BEM](https://css-tricks.com/bem-101/) techniques
+* Building component variants without repeating yourself
+* Building components-based prototypes in Pattern Lab
+* Documenting your components for better team collaboration with annotations
+* Basics of integrating components with Drupal 8
+
+### Who is the beginner training for?
+
+This training is primarily for front end developers or designers who wish to learn about the principles and best practices for planning and building components from design to development, for a Drupal website using Pattern Lab and Twig.
+
+The principles covered in this training are essential for working in more advanced practices around component building and integration with Drupal.
+
+Site builders, project managers, and IT managers have found this training extremely useful to understand the basics of components in a Drupal website to better communicate with their technical team, and are welcome to this training.
+
+**NOTE:** _Although many principles discussed in this training are geared towards Drupal, the vast majority of content may apply to any technology you currently work with for building websites._
+
