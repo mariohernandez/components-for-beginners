@@ -13,3 +13,7 @@
   * [Variants](exercise-2/variants.md)
   * [Exercise 2.1](exercise-2/exercise-2.1.md)
 
+## Resources
+
+* [Training resources](resources/training-resources.md)
+
