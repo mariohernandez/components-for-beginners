@@ -2,6 +2,8 @@
 
 * [Welcome](README.md)
 * [Local setup](local-setup.md)
+* [JSON Basics](json-basics.md)
+* [Twig Basics](twig-basics.md)
 
 ## Exercises
 
