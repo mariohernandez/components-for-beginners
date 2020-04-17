@@ -1,216 +1,188 @@
 # Exercise 2
 
-## Card
+## Hero
 
-The next component we will build as part of Exercise 2, is the **Card** component.
+The Hero component is a more complex component because it contains more fields, logic and it also makes use of previously built components. With the Hero we will reuse other components by using twig's [include](https://twig.symfony.com/doc/2.x/tags/include.html) statements. More on this later.
 
-![Card component](../../.gitbook/assets/card.png)
+Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles. Let's do this with the Hero component.
 
-A Card component is a pretty common component on most website because they are perfect for displaying specific type of content.  Typically you will see cards in a group to show things like Latest News, Latest Events, etc.
+First let's identify the data fields we need.
 
-### Building the Card
+![Hero component  \(picture from https://unsplash.com by Aniket Deole\)](../.gitbook/assets/components-for-beginners-hero.png)
 
-One of the first things we need to do is define the data fields that makeup the component.  If you look at the image above, a single Card has the following data fields:
+Based on the design above, we need the following fields:
 
-* image
-* title \(link to full article\)
-* date
-* body
-* & tags
+* **title or heading**: "Leveling Up"
+* **image**: Yosemite
+* **call to action \(cta\)**: "Get started"
 
-Now that we have identified the fields our card component needs, let's start building it.
+### Building the component
+
+{% hint style="info" %}
+**Atomic Design**
+
+We will build the Hero by combining previously built components.  This makes the Hero a Molecule, as it will combine several Atoms \(each of the fields above is an Atom\).
+{% endhint %}
 
 #### Component's stock content
 
-1. Inside _source/\_patterns/01-molecules_ create a new directory called **card**
-2. Inside the _card_ directory create a new file called **card.json**
-3. Inside _card.json_ add the following code:
+1. Inside `source/_patterns/01-molecules/` create a new directory called **hero**
+2. Inside the _hero_ directory create a new file called **hero.json**
+3. Inside `hero.json` add the following code:
 
 {% tabs %}
-{% tab title="card.json" %}
+{% tab title="hero.json" %}
 ```yaml
 {
-  "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
-  "title": {
-    "heading_level": "3",
-    "title": "The beauty of nature",
-    "url": "#"
+  "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1600x700' alt='A wonderful image' />",
+  "heading": {
+    "heading_level": "1",
+    "modifier": "hero__title",
+    "title": "Leveling Up",
+    "url": ""
   },
-  "date": "March 16 2020",
-  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-  "tags": [
-    {
-      "text": "Phtography",
-      "url": "#"
-    },
-    {
-      "text": "Nature",
-      "url": "#"
-    },
-    {
-      "text": "Outdoors",
-      "url": "#"
-    }
-  ]
+  "cta": {
+    "text": "Get started",
+    "url": "#",
+    "modifier": "hero__cta"
+  },
+  "modifier": ""
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-Most fields above are pretty straight foorward.  For the title we created an object so we can group all title-related properties together.  For tags, we are using an array.  An array is a list of items all with the same  or similar properties.  Each tag item inside the array has a text and URL keys.
+Just as we did with the Heading component, we are using JSON to define the component's fields, and add stock/dummy content to the component.
 
-#### Component's markup
+#### Some things to notice: <a id="some-things-to-notice"></a>
 
-1. Inside the _card_ directory create a new file called **card.twig**
-2. Inside _card.twig_ add the following code:
+* The`heading` and `cta` fields were declared as JSON objects with `key|value`pair properties within them. Typically these object's data structure matches the original components. For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero. When component's data structures match it makes it easier to nest components into other components. More on this later.
+* All the fields provide a `modifier` key \(i.e. `hero__*`\). This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components.
+
+#### Component's Markup
+
+Now let's write some HTML for the component.
+
+1. Inside the _hero_ directory create a new file called **hero.twig**
+2. Inside `hero.twig` add the following code:
 
 {% tabs %}
-{% tab title="card.twig" %}
+{% tab title="hero.twig" %}
 ```php
-<article class="card">
-  {%  if image %}
-    <div class="card__media">
+<section class="hero{{ modifier ? ' ' ~ modifier }}">
+  {% if image %}
+    <div class="hero__media">
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or body_text or tags %}
-  <div class="card__content">
-    {% if title %}
+
+  <div class="hero__content">
+
+    {% if heading %}
       {%
         include '@atoms/heading/heading.twig' with {
-          title: title.title,
-          heading_level: title.heading_level,
-          url: title.url
+          "heading_level": heading.heading_level,
+          "title": heading.title,
+          "url": "",
+          "modifier": heading.modifier
         } only
       %}
     {% endif %}
-    {% if date %}
-      <div class="card__date">
-        {{ date }}
-      </div>
-    {% endif %}
-    {% if body_text %}
-      <p class="card__body">
-        {{ body_text }}
-      </p>
-    {% endif %}
-    {% if tags %}
-      <ul class="card__tags--items">
-        {% for item in tags %}
-          <li class="card__tag--item">
-            <a href="{{ item.url }}" class="card__tag--link">
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+
+    {% if cta %}
+      <a href="{{ cta.url }}" class="{{ cta.modifier }}">
+        {{ cta.text }}
+      </a>
     {% endif %}
   </div>
-  {% endif %}
-</article>
+</section>
 ```
 {% endtab %}
 {% endtabs %}
 
-* Most things look pretty straight forward in the code above.  With the tags we loop through the `tags` array and then add each  tag item as a list item in the unordered list.
+#### Some things to notice: <a id="some-things-to-notice-1"></a>
 
-#### Create the card library.
+* We're starting off with a `<section>` HTML5 tag. Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag. This is the parent selector of the component and therefore it should be named **hero**. We do this by using the CSS class of `hero`.  This also establishes the namespace for the component.
+* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML.
+* Notice how every field uses a CSS class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously-built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.  Learn more about **Twig includes** in the next page.
 
-#### Component styles
+#### Component's styles
 
-1. Inside the _card_ directory create a new file called **card.scss**
-2. Inside _card.scss_ add the following code:
+1. Inside the _hero_ directory create a new file called **hero.css**
+2. Inside `hero.css` add this code:
 
 {% tabs %}
-{% tab title="card.scss" %}
+{% tab title="hero.css" %}
 ```css
-.card {
-  display: flex;
-  flex-direction: column;
+.hero {
   position: relative;
-  max-width: 420px;
-  border-radius: 4px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.card.card__wide {
-  flex-direction: column;
+.hero::before {
+  background: linear-gradient(to top,#222222 0 5%,transparent 40% 100%);
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-/* Changes card layout on larger screens. */
-@media screen and (min-width: 640px) {
-  .card.card__wide {
-    flex-direction: row;
-  }
-
-  .card__wide.card__media,
-  .card__media.card__content {
-    flex: 0 0 50%;
-  }
-}
-
-.card img {
+.hero img {
   display: block;
 }
 
-.card__content {
-  padding: 20px;
+.hero__content {
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: 100%;
+
 }
 
-.card__title {
-  margin-bottom: 8px;
-  margin-top: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.eyebrow__text {
-  margin: 0;
-}
-
-.card__date {
+.hero__content h1 {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110px;
+  font-weight: 900;
+  margin-bottom: 40px;
   text-transform: uppercase;
-  display: block;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
-  letter-spacing: 2px;
 }
 
-.card__tags--items {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tag__item {
-  background-color: #edf2f7;
-  border-radius: 99999px;
-  color: #4a5568;
+.hero__cta {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   display: inline-block;
-  padding: 4px 10px;
-  margin-right: 10px;
-}
-
-.tag__link {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.3;
+  padding: 12px 40px;
   text-decoration: none;
-  color: #1a202c;
+  text-transform: uppercase;
 }
 
-.tag__link:hover,
-.tag__link:focus {
-  color: lighten(#1a202c, 25%);
+.hero__cta:hover {
+  color: #ffffff;
 }
 
 ```
 {% endtab %}
 {% endtabs %}
 
-#### Compiling the code
+The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-After saving the changes above Pattern Lab should had reloaded.  If this is not the case you can run:
+#### Add the new CSS file to Pattern Lab
 
-```text
-npm start
-```
+1. In your text editor, open `source/_meta/00-head.twig`
+2. Copy one of the lines of code that start with `<link...>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
+3. Change the path in the newly copied file to be `../../css/scss/components/hero.css`
+4. Save the file.
 
+### Compiling the code <a id="compiling-the-code"></a>
+
+Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab.  If you already have Pattern Lab running you should see the new Hero component.  Otherwise, run the following command in your command line and press **Return**
+
+`npm start`
