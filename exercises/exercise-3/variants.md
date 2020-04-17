@@ -21,5 +21,4 @@ Looking at the two cards above, we see that they are practically the same card c
 
 These are questions you should ask yourself before deciding to create component variants. If not properly planned, you could paint yourself in a corner when your components have been over engineered in an effort to accommodate for variants.
 
-Let's build the variation next
-
+### Let's build the variation next
