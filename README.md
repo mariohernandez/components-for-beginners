@@ -1,5 +1,7 @@
 # Welcome
 
+![Banner image](.gitbook/assets/eventbrite-training-cover-image-final.png)
+
 In this live, online training workshop, you will learn the process of identifying, building, and styling components using Pattern Lab. We will cover the process from design to development typically used by our team to build robust, scalable, and flexible components that promote re-usability and code efficiency. This training is perfect for designers and front end developers just getting started with components.
 
 ### The training covers the following topics:
