@@ -1,6 +1,6 @@
 # Variants
 
-### Component variants <a id="component-variants"></a>
+### Component variants
 
 The next exercise consists of creating component variants or variations. Variants are useful when you have one component that has **multiple different possible implementations**. These could be implemented as separate components but often it's easier and more semantic to create them as variants of an existing component.
 
@@ -10,7 +10,7 @@ Let's take a look at the Card component for example. Here are two different ways
 
 ![Card wide variant](../../.gitbook/assets/card-wide.png)
 
-### Planning for component variants <a id="planning-for-component-variants"></a>
+### Planning for component variants
 
 Looking at the two cards above, we see that they are practically the same card component but with some differences. There are many factors that determine if a component could be used as the base for variants.
 
@@ -21,4 +21,5 @@ Looking at the two cards above, we see that they are practically the same card c
 
 These are questions you should ask yourself before deciding to create component variants. If not properly planned, you could paint yourself in a corner when your components have been over engineered in an effort to accommodate for variants.
 
-### Let's build the variation next
+#### Let's build the variation next
+
