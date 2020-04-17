@@ -4,7 +4,7 @@ Probably the first thing you should look at to determine if a component is a can
 
 Visually we know the two different variants look similar, however, if we pay close attention we will notice that the data fields between the variants are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variants that we should have no problem going the variant route vs. new components. Let's start! The new variant will be called **Card wide**.
 
-![Card wide variant](https://github.com/mariohernandez/components-for-beginners/tree/16c0efee02fb6737024ac66466968ac9118f450b/exercises/.gitbook/assets/card-wide.png)
+![Card wide variant](../../.gitbook/assets/card-wide.png)
 
 We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(button\).
 

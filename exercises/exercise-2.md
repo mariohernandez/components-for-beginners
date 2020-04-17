@@ -8,7 +8,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's identify the data fields we need.
 
-![Hero component \(picture from https://unsplash.com by Aniket Deole\)](https://github.com/mariohernandez/components-for-beginners/tree/16c0efee02fb6737024ac66466968ac9118f450b/exercises/.gitbook/assets/components-for-beginners-hero.png)
+![Hero component](../.gitbook/assets/components-for-beginners-hero.png)
 
 Based on the design above, we need the following fields:
 
