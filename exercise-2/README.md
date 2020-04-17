@@ -1,6 +1,6 @@
 # Exercise 2
 
-### Card
+## Card
 
 The next component we will build as part of Exercise 2, is the **Card** component.
 
