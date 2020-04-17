@@ -12,6 +12,7 @@ The heading component looks good and it will work great, ...as long as we always
 ```bash
 {
   "heading_level": "",
+  "modifier": "",
   "title": "This is my website's title",
   "url": ""
 }
@@ -21,11 +22,12 @@ The heading component looks good and it will work great, ...as long as we always
 
 By creating a `heading.json` file in the same directory as `heading.twig`, we are opting to create our own data file for the heading component and by doing so we can change what properties the heading component can contain.
 
-* **heading\_level** will allow us to change the headings from say, h1 to h2 if we need to.
+* **heading\_level** will allow us to change the headings from say, h1 to h2 if we need to
+* **modifier** will allow us to add custom CSS classes to titles which will be useful to style some titles different than others
 * **title** is the key for the title text when using the heading component
 * ... and **url**, if present, will allow us to wrap the title in an `<a>` tag, to make it a link.
 
-We may add other properties to the heading later on, but for now let's go with these 3.
+**NOTE:**  The order of the properties above has no effect on how components work or get rendered in Pattern Lab.  I have opted to organize each property alphabetically.
 
 ### Update the heading's markup and logic
 
@@ -34,7 +36,7 @@ We may add other properties to the heading later on, but for now let's go with t
 {% tabs %}
 {% tab title="heading.twig" %}
 ```php
-<h{{ heading_level|default('2') }} class="heading">
+<h{{ heading_level|default('2') }} class="heading{{ modifier ? ' ' ~ modifier }}">
   {% if url %}
     <a href="{{ url }}" class="heading__link">
       {{ title }}
@@ -52,11 +54,12 @@ Wow! What's all this? 😮
 Let's break things down to explain what's happening here since the twig code has changed significantly:
 
 * Line 1, makes use of `heading_level` to complete the number part of the heading.  If a value is not provided for `heading_level` in the JSON file, we are setting a default of `2`.  This will ensue that by default we will have a `<h2>` as the title, much better than `<h1>` as we had before.  This value can be changed per use case if needed.  Line 9 closes the heading tag the same way.
-* In line 2, we check whether a URL was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in a `<a>` tag to turn the title into a link.  The **href** value for the link is `{{ url }}`.  If no URL is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
+* Also in line 1, we have added a placeholder for `modifier` so if we choose to add a value it will be added as a CSS class along with `heading`.  More on this later.
+* In line 2, we check whether a URL was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in an `<a>` tag to turn the title into a link.  The **href** value for the link is `{{ url }}`.  If no URL is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
 
 ### Compiling the code
 
-After saving the changes above Pattern Lab should had reloaded.  If this is not the case you can run:
+After saving the changes above Pattern Lab should had autoo reloaded.  If this is not the case you can run:
 
 ```text
 npm start

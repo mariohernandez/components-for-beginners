@@ -52,7 +52,7 @@ We will build the Hero by combining previously built components.  This makes the
 {% endtab %}
 {% endtabs %}
 
-Just as we did with the Heading component, we are using JSON to define the component's fields and add stock/dummy content to the component. 
+Just as we did with the Heading component, we are using JSON to define the component's fields, and add stock/dummy content to the component. 
 
 #### Some things to notice: <a id="some-things-to-notice"></a>
 
@@ -104,7 +104,7 @@ Now let's write some HTML for the component.
 
 * We're starting off with a `<section>` HTML5 tag. Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag. This is the parent selector of the component and therefore it should be named **hero**. We do this by using the CSS class of `hero`.  This also establishes the namespace for the component.
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML.
-* Notice how every field uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* Notice how every field uses a CSS class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
 
 #### Component's styles
@@ -173,6 +173,13 @@ Now let's write some HTML for the component.
 {% endtabs %}
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
+
+#### Add the new CSS file to Pattern Lab
+
+1. In your text editor, open `source/_meta/00-head.twig`
+2. Copy one of the lines of code that start with `<link...>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
+3. Change the path in the newly copied file to be `../../css/scss/components/hero.css`
+4. Save the file.
 
 ### Compiling the code <a id="compiling-the-code"></a>
 
