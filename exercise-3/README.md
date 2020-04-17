@@ -8,7 +8,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's identify the data fields we need.
 
-![Hero component  \(picture from https://unsplash.com by Aniket Deole\)](.gitbook/assets/components-for-beginners-hero.png)
+![Hero component  \(picture from https://unsplash.com by Aniket Deole\)](../.gitbook/assets/components-for-beginners-hero.png)
 
 Based on the design above, we need the following fields:
 
@@ -105,7 +105,7 @@ Now let's write some HTML for the component.
 * We're starting off with a `<section>` HTML5 tag. Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag. This is the parent selector of the component and therefore it should be named **hero**. We do this by using the CSS class of `hero`.  This also establishes the namespace for the component.
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML.
 * Notice how every field uses a CSS class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
-* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously-built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.  Learn more about **Twig includes** in the next page.
 
 #### Component's styles
 

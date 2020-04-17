@@ -12,7 +12,8 @@
 * [Exercise 2](exercise-2/README.md)
   * [Variants](exercise-2/variants.md)
   * [Exercise 2.1](exercise-2/exercise-2.1.md)
-* [Exercise 3](exercise-3.md)
+* [Exercise 3](exercise-3/README.md)
+  * [Twig includes](exercise-3/twig-includes.md)
 
 ## Resources
 
