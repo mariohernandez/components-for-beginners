@@ -8,7 +8,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's identify the data fields we need.
 
-![Hero component  \(picture from https://unsplash.com by Aniket Deole\)](../.gitbook/assets/components-for-beginners-hero.png)
+![Hero component \(picture from https://unsplash.com by Aniket Deole\)](https://github.com/mariohernandez/components-for-beginners/tree/16c0efee02fb6737024ac66466968ac9118f450b/exercises/.gitbook/assets/components-for-beginners-hero.png)
 
 Based on the design above, we need the following fields:
 
@@ -21,7 +21,7 @@ Based on the design above, we need the following fields:
 {% hint style="info" %}
 **Atomic Design**
 
-We will build the Hero by combining previously built components.  This makes the Hero a Molecule, as it will combine several Atoms \(each of the fields above is an Atom\).
+We will build the Hero by combining previously built components. This makes the Hero a Molecule, as it will combine several Atoms \(each of the fields above is an Atom\).
 {% endhint %}
 
 #### Component's stock content
@@ -167,7 +167,6 @@ Now let's write some HTML for the component.
 .hero__cta:hover {
   color: #ffffff;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -183,6 +182,7 @@ The code above simply imports global utilities from our theme which will be need
 
 ### Compiling the code <a id="compiling-the-code"></a>
 
-Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab.  If you already have Pattern Lab running you should see the new Hero component.  Otherwise, run the following command in your command line and press **Return**
+Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component. Otherwise, run the following command in your command line and press **Return**
 
 `npm start`
+

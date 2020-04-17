@@ -4,15 +4,15 @@ Probably the first thing you should look at to determine if a component is a can
 
 Visually we know the two different variants look similar, however, if we pay close attention we will notice that the data fields between the variants are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variants that we should have no problem going the variant route vs. new components. Let's start! The new variant will be called **Card wide**.
 
-![Card wide variant](../.gitbook/assets/card-wide.png)
+![Card wide variant](https://github.com/mariohernandez/components-for-beginners/tree/16c0efee02fb6737024ac66466968ac9118f450b/exercises/.gitbook/assets/card-wide.png)
 
 We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(button\).
 
 Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variants.
 
-#### Modifier class
+### Modifier class
 
-A CSS modifier class is a pretty common way to make  changes to any element.  For example, let's say we use two types of buttons in our website; one red and one blue.  Using a CSS class like say, `button--blue`, and `button--red` will allow us to change their colors without altering the original button.  We will use a similar approach to achieve some of the changes in the Card wide variant.
+A CSS modifier class is a pretty common way to make changes to any element. For example, let's say we use two types of buttons in our website; one red and one blue. Using a CSS class like say, `button--blue`, and `button--red` will allow us to change their colors without altering the original button. We will use a similar approach to achieve some of the changes in the Card wide variant.
 
 * Update **card.json** and **card.twig** to be able to pass a value for a modifier class.
 
@@ -41,7 +41,7 @@ A CSS modifier class is a pretty common way to make  changes to any element.  Fo
 {% endtab %}
 {% endtabs %}
 
-The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON?" if so, print it here along with the class of `card`, but first add an empty space in between the two classes. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in Pattern  Lab, the `article` wrapper will now look like this:
+The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON?" if so, print it here along with the class of `card`, but first add an empty space in between the two classes. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in Pattern Lab, the `article` wrapper will now look like this:
 
 {% tabs %}
 {% tab title="Pattern Lab" %}
@@ -51,15 +51,15 @@ The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional state
 {% endtab %}
 {% endtabs %}
 
-Now  that  we have the modifier key available, you can test it by adding any value to the `modifier` key and running `npm start` to view the card component in Pattern Lab.  The Card component should now have, in addition to `card`, the value you added as an extra CSS class.
+Now that we have the modifier key available, you can test it by adding any value to the `modifier` key and running `npm start` to view the card component in Pattern Lab. The Card component should now have, in addition to `card`, the value you added as an extra CSS class.
 
-#### CSS updates
+### CSS updates
 
-In the interest of time, our CSS styles for the card already include styles for when we have a `card__wide` class in addition to `card`.  So if you did use **card\_\_wide** as the example value above, you should actually see the card looking different than the original card.
+In the interest of time, our CSS styles for the card already include styles for when we have a `card__wide` class in addition to `card`. So if you did use **card\_\_wide** as the example value above, you should actually see the card looking different than the original card.
 
-Our test above proves that using a CSS modifier class can help achieve some of the changes in the card variant, however, the goal is to not alter the original Card component when creating the variant.  To accomplish this we need to work with Pattern Lab's Pseudo Patterns.
+Our test above proves that using a CSS modifier class can help achieve some of the changes in the card variant, however, the goal is to not alter the original Card component when creating the variant. To accomplish this we need to work with Pattern Lab's Pseudo Patterns.
 
-### Pseudo Patterns in Pattern Lab
+## Pseudo Patterns in Pattern Lab
 
 Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The basic syntax for pseudo patterns is:
 
@@ -71,14 +71,14 @@ The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to 
 
 From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
 
-### Creating a new variant
+## Creating a new variant
 
 * Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original card.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
 * Copy all the code from `card.json` into `card~wide.jsoon`
 
-### Displaying the right fields for the card variant
+## Displaying the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer".  And finally, the card variant uses a button but the originally card does not.  So how do we manage those fields without affecting the original Card component?  Let's take a look:
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". And finally, the card variant uses a button but the originally card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
 * Update `card~wide.json` as shown below:
 
@@ -108,13 +108,13 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 * Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields.  If you are wondering why not use the date field for the job\_title since they look exactly the same, technically a date and text string fields wold typically be different field types on most content management systems like Drupal.  That's why we are using different fields here.
 * Next, for those fields we don't need, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` and by leaving their values empty, they will not be rendered on a page because when we built the `card.twig` template we wrapped each field in an `if` statement.  This basically means that if a field does not exist or has no values, it will never be printed on the page.  Slick huh?
 
-### Updating card.twig
+## Updating card.twig
 
-Our variant JSON is ready with only the fields we want.  However, we still need to update card.twig as it currently does not use a button field.  There are several ways to add the button to only the variant.  We'll take a look at the two easiest ways:
+Our variant JSON is ready with only the fields we want. However, we still need to update card.twig as it currently does not use a button field. There are several ways to add the button to only the variant. We'll take a look at the two easiest ways:
 
-#### Twig conditional statements
+### Twig conditional statements
 
-The same way we did the the other fields, we can wrap the button field in a twig `if` statement so it would only print if the field exists or has values in the .JSON file.  Since the original .JSON file does not have a button or **cta** field, the button will not be available in the original card component.  And since we did add a button to `card~wide.json`, then the button will be available in the card wide variant.  Let's take a look at how this will look in twig.
+The same way we did the the other fields, we can wrap the button field in a twig `if` statement so it would only print if the field exists or has values in the .JSON file. Since the original .JSON file does not have a button or **cta** field, the button will not be available in the original card component. And since we did add a button to `card~wide.json`, then the button will be available in the card wide variant. Let's take a look at how this will look in twig.
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -190,3 +190,4 @@ The same way we did the the other fields, we can wrap the button field in a twig
 * Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button.  In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
 
 If you don't have Pattern Lab running, run this command: `npm start`.
+

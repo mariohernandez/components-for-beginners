@@ -4,13 +4,13 @@
 
 The next component we will build as part of Exercise 2, is the **Card** component.
 
-![Card component](../.gitbook/assets/card.png)
+![Card component](https://github.com/mariohernandez/components-for-beginners/tree/16c0efee02fb6737024ac66466968ac9118f450b/exercises/.gitbook/assets/card.png)
 
-A Card component is a pretty common component on most website because they are perfect for displaying specific type of content.  Typically you will see cards in a group to show things like Latest News, Latest Events, etc.
+A Card component is a pretty common component on most website because they are perfect for displaying specific type of content. Typically you will see cards in a group to show things like Latest News, Latest Events, etc.
 
 ### Building the Card
 
-One of the first things we need to do is define the data fields that makeup the component.  If you look at the image above, a single Card has the following data fields:
+One of the first things we need to do is define the data fields that makeup the component. If you look at the image above, a single Card has the following data fields:
 
 * image
 * title \(link to full article\)
@@ -57,7 +57,7 @@ Now that we have identified the fields our card component needs, let's start bui
 {% endtab %}
 {% endtabs %}
 
-Most fields above are pretty straight foorward.  For the title we created an object so we can group all title-related properties together.  For tags, we are using an array.  An array is a list of items all with the same  or similar properties.  Each tag item inside the array has a text and URL keys.
+Most fields above are pretty straight foorward. For the title we created an object so we can group all title-related properties together. For tags, we are using an array. An array is a list of items all with the same or similar properties. Each tag item inside the array has a text and URL keys.
 
 #### Component's markup
 
@@ -201,15 +201,15 @@ Most fields above are pretty straight foorward.  For the title we created an obj
 .tag__link:focus {
   color: lighten(#1a202c, 25%);
 }
-
 ```
 {% endtab %}
 {% endtabs %}
 
 #### Compiling the code
 
-After saving the changes above Pattern Lab should had reloaded.  If this is not the case you can run:
+After saving the changes above Pattern Lab should had reloaded. If this is not the case you can run:
 
 ```text
 npm start
 ```
+
