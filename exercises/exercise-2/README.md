@@ -4,7 +4,7 @@
 
 The next component we will build as part of Exercise 2, is the **Card** component.
 
-![Card component](../.gitbook/assets/card.png)
+![Card component](../../.gitbook/assets/card.png)
 
 A Card component is a pretty common component on most website because they are perfect for displaying specific type of content.  Typically you will see cards in a group to show things like Latest News, Latest Events, etc.
 
