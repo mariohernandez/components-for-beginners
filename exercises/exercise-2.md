@@ -77,20 +77,17 @@ Now let's write some HTML for the component.
   {% endif %}
 
   <div class="hero__content">
-
     {% if heading %}
       {%
         include '@atoms/heading/heading.twig' with {
           "heading_level": heading.heading_level,
           "title": heading.title,
-          "url": "",
-          "modifier": heading.modifier
+          "url": ""
         } only
       %}
     {% endif %}
-
     {% if cta %}
-      <a href="{{ cta.url }}" class="{{ cta.modifier }}">
+      <a href="{{ cta.url }}" class="button">
         {{ cta.text }}
       </a>
     {% endif %}
@@ -184,5 +181,7 @@ The code above simply imports global utilities from our theme which will be need
 
 Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component. Otherwise, run the following command in your command line and press **Return**
 
-`npm start`
+```bash
+npm start
+```
 
