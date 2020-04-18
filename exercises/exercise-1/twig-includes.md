@@ -10,7 +10,7 @@ An example of an typical `include` statement looks like this:
 
 Include statements accept a path parameter to the file you want to include.
 
-## Includes in context of components <a id="includes-in-context-of-drupal-8-components"></a>
+### Includes in context of components
 
 In Pattern Lab includes are mainly used to include or nest components into other component's templates. This is powerful because by including a component we avoid duplicating code. As we saw in the Hero component, we were able to include previously-built components and leverage all the work we did with those components without repeating ourselves. Because the Heading component was built in such a way, they still provide a mechanism for us to change them while being included so they meet our needs per use case.
 
