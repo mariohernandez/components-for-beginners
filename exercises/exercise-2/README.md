@@ -81,6 +81,7 @@ Now let's write some HTML for the component.
       {%
         include '@atoms/heading/heading.twig' with {
           "heading_level": heading.heading_level,
+          "modifier": heading.modifier,
           "title": heading.title,
           "url": ""
         } only
