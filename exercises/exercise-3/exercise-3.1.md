@@ -73,12 +73,12 @@ The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to 
 
 From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
 
-## Creating a new variant
+### Creating a new variant
 
 * Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original card.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
 * Copy all the code from `card.json` into `card~wide.jsoon`
 
-## Displaying the right fields for the card variant
+### Displaying the right fields for the card variant
 
 As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". And finally, the card variant uses a button but the originally card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
@@ -88,18 +88,21 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% tab title="card~wide.json" %}
 ```yaml
 {
+  "image": "<img src='https://placeimg.com/480/480/places' alt='Card image' />",
   "title": {
     "heading_level": "3",
-    "title": "Marie The Producer",
+    "modifier": "",
+    "title": "Level up your game",
     "url": ""
   },
   "date": "",
-  "job_title": "Executive Producer",
+  "category": "Sports",
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
   "tags": "",
   "cta": {
-    "text": "Read the full bio",
-    "url": "#"
+    "text": "Read the full article",
+    "url": "#",
+    "modifier": "card__cta"
   },
   "modifier": "card__wide"
 }
@@ -110,7 +113,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 * Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields.  If you are wondering why not use the date field for the job\_title since they look exactly the same, technically a date and text string fields wold typically be different field types on most content management systems like Drupal.  That's why we are using different fields here.
 * Next, for those fields we don't need, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` and by leaving their values empty, they will not be rendered on a page because when we built the `card.twig` template we wrapped each field in an `if` statement.  This basically means that if a field does not exist or has no values, it will never be printed on the page.  Slick huh?
 
-## Updating card.twig
+### Updating card.twig
 
 Our variant JSON is ready with only the fields we want. However, we still need to update card.twig as it currently does not use a button field. There are several ways to add the button to only the variant. We'll take a look at the two easiest ways:
 

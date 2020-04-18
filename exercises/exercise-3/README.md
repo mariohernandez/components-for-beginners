@@ -30,9 +30,10 @@ Now that we have identified the fields our card component needs, let's start bui
 {% tab title="card.json" %}
 ```yaml
 {
-  "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
+  "image": "<img src='https://placeimg.com/480/480/places' alt='Card image' />",
   "title": {
     "heading_level": "3",
+    "modifier": "card__title",
     "title": "The beauty of nature",
     "url": "#"
   },
@@ -51,7 +52,8 @@ Now that we have identified the fields our card component needs, let's start bui
       "text": "Outdoors",
       "url": "#"
     }
-  ]
+  ],
+  "modifier": ""
 }
 ```
 {% endtab %}
@@ -73,39 +75,35 @@ Most fields above are pretty straight foorward. For the title we created an obje
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or body_text or tags %}
-  <div class="card__content">
-    {% if title %}
-      {%
-        include '@atoms/heading/heading.twig' with {
-          title: title.title,
-          heading_level: title.heading_level,
-          url: title.url
-        } only
-      %}
-    {% endif %}
-    {% if date %}
-      <div class="card__date">
+  {% if title or date or job_title or body or tags or cta %}
+    <div class="card__content">
+      {% if title %}
+        {%
+          include '@atoms/heading/heading.twig' with {
+            heading: title
+          } only
+        %}
+      {% endif %}
+      {% if date %}
         {{ date }}
-      </div>
-    {% endif %}
-    {% if body_text %}
-      <p class="card__body">
-        {{ body_text }}
-      </p>
-    {% endif %}
-    {% if tags %}
-      <ul class="card__tags--items">
-        {% for item in tags %}
-          <li class="card__tag--item">
-            <a href="{{ item.url }}" class="card__tag--link">
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
+      {% endif %}
+      {% if body_text %}
+        <p class="card__body-text">
+          {{ body_text }}
+        </p>
+      {% endif %}
+      {% if tags %}
+        <ul class="card__tags--items">
+          {% for item in tags %}
+            <li class="card__tag--item">
+              <a href="{{ item.url }}" class="card__tag--link">
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   {% endif %}
 </article>
 ```
@@ -118,8 +116,8 @@ Most fields above are pretty straight foorward. For the title we created an obje
 
 #### Component styles
 
-1. Inside the _card_ directory create a new file called **card.scss**
-2. Inside _card.scss_ add the following code:
+1. Inside the _card_ directory create a new file called **card.css**
+2. Inside _card.css_ add the following code:
 
 {% tabs %}
 {% tab title="card.scss" %}
