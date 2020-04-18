@@ -19,16 +19,14 @@ In Pattern Lab includes are mainly used to include or nest components into other
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-{% if heading %}
-  {%
-    include '@atoms/heading/heading.twig' with {
-      "heading_level": heading.heading_level,
-      "title": heading.title,
-      "url": "",
-      "modifier": heading.modifier
-      } only
-  %}
-{% endif %}
+{%
+  include '@atoms/heading/heading.twig' with {
+  "heading_level": heading.heading_level,
+  "title": heading.title,
+  "url": "",
+  "modifier": heading.modifier
+  } only
+%}
 ```
 {% endtab %}
 {% endtabs %}
