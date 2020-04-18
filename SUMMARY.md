@@ -19,6 +19,7 @@
 * [Exercise 3](exercises/exercise-3/README.md)
   * [Variants](exercises/exercise-3/variants.md)
   * [Exercise 3.1](exercises/exercise-3/exercise-3.1.md)
+  * [Exercise 3.2](exercises/exercise-3/exercise-3.2.md)
 * [Exercise 4](exercises/exercise-4.md)
 
 ## Resources
