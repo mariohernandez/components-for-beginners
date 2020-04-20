@@ -34,17 +34,17 @@ We will build the Hero by combining previously built components. This makes the 
 {% tab title="hero.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1600x700' alt='A wonderful image' />",
+  "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1900x700' alt='Yosemite' />",
   "heading": {
     "heading_level": "1",
-    "modifier": "hero__title",
+    "modifier": "hero__heading heading--large",
     "title": "Leveling Up",
     "url": ""
   },
   "cta": {
     "text": "Get started",
     "url": "#",
-    "modifier": "hero__cta"
+    "modifier": ""
   },
   "modifier": ""
 }
@@ -56,8 +56,8 @@ Just as we did with the Heading component, we are using JSON to define the compo
 
 #### Some things to notice: <a id="some-things-to-notice"></a>
 
-* The`heading` and `cta` fields were declared as JSON objects with `key|value`pair properties within them. Typically these object's data structure matches the original components. For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero. When component's data structures match it makes it easier to nest components into other components. More on this later.
-* All the fields provide a `modifier` key \(i.e. `hero__*`\). This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components.
+* The`heading` and `cta` fields were declared as JSON objects with `key|value`pair properties within them. This can be helpful when nesting components.  More on this later.
+* All the fields as well as the entire hero component provide a `modifier` key, this is handy because we can use the `modifier` key to pass a CSS class if we need to do some special styling for any of the items in the hero.
 
 #### Component's Markup
 
@@ -75,7 +75,7 @@ Now let's write some HTML for the component.
       {{ image }}
     </div>
   {% endif %}
-
+  
   <div class="hero__content">
     {% if heading %}
       {%
@@ -87,8 +87,9 @@ Now let's write some HTML for the component.
         } only
       %}
     {% endif %}
+    
     {% if cta %}
-      <a href="{{ cta.url }}" class="button">
+      <a href="{{ cta.url }}" class="button hero__cta">
         {{ cta.text }}
       </a>
     {% endif %}
@@ -101,13 +102,13 @@ Now let's write some HTML for the component.
 #### Some things to notice: <a id="some-things-to-notice-1"></a>
 
 * We're starting off with a `<section>` HTML5 tag. Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag. This is the parent selector of the component and therefore it should be named **hero**. We do this by using the CSS class of `hero`.  This also establishes the namespace for the component.
-* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML.
+* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML elements.
 * Notice how every field uses a CSS class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously-built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.  Learn more about **Twig includes** in the next page.
 
 #### Component's styles
 
-1. Inside the _hero_ directory create a new file called **hero.css**
+1. Inside the `source/css` directory create a new file called **hero.css**
 2. Inside `hero.css` add this code:
 
 {% tabs %}
@@ -115,17 +116,6 @@ Now let's write some HTML for the component.
 ```css
 .hero {
   position: relative;
-}
-
-.hero::before {
-  background: linear-gradient(to top,#222222 0 5%,transparent 40% 100%);
-  bottom: 0;
-  content: '';
-  display: block;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .hero img {
@@ -142,40 +132,21 @@ Now let's write some HTML for the component.
 
 .hero__content h1 {
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 110px;
-  font-weight: 900;
   margin-bottom: 40px;
-  text-transform: uppercase;
-}
-
-.hero__cta {
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.3;
-  padding: 12px 40px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.hero__cta:hover {
-  color: #ffffff;
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
+The advantage of using custom CSS class on our elements is that our CSS becomes extremely simple and flas as a result.  This is a good thing as it makes it easier to maintain and override.  The CSS classes we have assigned to the elements use the [BEM methodology](https://css-tricks.com/bem-101/).
 
 #### Add the new CSS file to Pattern Lab
 
-1. In your text editor, open `source/_meta/00-head.twig`
+Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created.  This is a manual process which is not complicated at all.  However, on a typical project this should be an automatic process.  We will implement a basic system to automate this process later on.  For now follow these steps too make Pattern Lab aware of the new hero.CSS stylesheet.
+
+1. In your text editor, open `source/_meta/_00-head.twig`
 2. Copy one of the lines of code that start with `<link...>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
-3. Change the path in the newly copied file to be `../../css/scss/components/hero.css`
+3. Change the path in the newly copied file to be `../../css/hero.css`
 4. Save the file.
 
 ### Compiling the code <a id="compiling-the-code"></a>
