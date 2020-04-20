@@ -28,7 +28,7 @@ We created a **h1** heading in which we pass the value of `{{ title }}`, but you
 
 #### Pattern Lab's Data
 
-Out of the box Pattern Lab provides sample or stock content for patterns or components.  This is a great way to add content to your components by simply declaring the variable name for the content you need.  In the example of the **heading** component above, we created a H1 and as its value we declared a twig variable of `{{ title }}`.  If we look inside `source/_data` you will see `data.json`.  If you open this file in your text editor you will the very first item in the long list of items, is `title: "Pattern Lab"`.Pattern Lab has been built so by default it looks in the **data.json** file to see if what we are asking to print on the page exists in this file.  If it finds a matching variable name, it will use it.  Later we will learn how to create own own data files so we can be more specific as to what content we want to use in our components.
+Out of the box Pattern Lab provides sample or stock content for patterns or components.  This is a great way to add content to your components by simply declaring the variable name for the content you need.  In the example of the **heading** component above, we created a H1 and as its value we used a twig variable of `{{ title }}`.  If we look inside `source/_data` you will see `data.json`.  If you open this file in your text editor you will the very first item in the long list of items, is `title: "Pattern Lab"`.Pattern Lab has been built in such way that by default it looks in **data.json** to see if what we are asking to print on the page exists in this file.  If it finds a matching variable name in data.json, it will use it.  Next we will learn how to create our own data files so we can be more specific as to what content we want to use in our components.
 
 {% hint style="info" %}
 Learn more about [Pattern Lab's Data](https://patternlab.io/docs/data-overview.html)
@@ -36,16 +36,22 @@ Learn more about [Pattern Lab's Data](https://patternlab.io/docs/data-overview.h
 
 ### Compiling the code
 
-Now that the Heading component is done, let's compile the code so we can see it in Pattern Lab.  If you had the `npm start` command running you don't need to do anything else as this commands watches for any changes you make to your css, twig or json, and it autoomatically compiles the changes for you.  In addition, it even reloads the web browser so you can see your changes.
+Now that the Heading component is done, let's compile the code so we can see it in Pattern Lab.  If you had the `npm start` command running you don't need to do anything else as this commands watches for any changes you make to your css, twig or json, and it automatically compiles the changes for you.  In addition, it even reloads the web browser so you can see your changes in Pattern Lab.
 
 If Pattern Lab was not running, go into the directory of your project \(example: `components_project`\), and run this command, and press **Return:**
 
-`npm start`
+```text
+npm start
+```
 
-Pattern Lab will open and if you look in the **Atoms** dropdown in the main navigation, you should see the **Heading** component at the bottom of the list. The test for the Heading should read "**Pattern Lab".**
+Pattern Lab will open and if you look in the **Atoms** dropdown in the main navigation, you should see the **Heading** component at the bottom of the list. The text for the Heading should read "**Pattern Lab".**
 
 ### **BONUS:**
 
-* Open `source/_data/data.json` and edit the value of `title` to read "_My website titl_e"
-* Save the file and Pattern Lab should reload your browser.  Now your Heading component's text shoudl read "_My website title_".
+* Open `source/_data/data.json` and edit the value of `title` to read "_My website's titl_e"
+* Save the file and Pattern Lab should reload your browser.  Now your Heading component's text should read "_My website's title_".
+
+{% hint style="info" %}
+After running `npm start` Pattern Lab compiles all code and reloads the browser to reflect the latest changes.  If errors are encountered during compilation, you will need to resolve the errors, save the changes and run `npm start` again.
+{% endhint %}
 
