@@ -89,7 +89,7 @@ Now let's write some HTML for the component.
     {% endif %}
     
     {% if cta %}
-      <a href="{{ cta.url }}" class="button hero__cta">
+      <a href="{{ cta.url }}" class="button{{ cta.modifier ? ' ' ~ cta.modifier }}">
         {{ cta.text }}
       </a>
     {% endif %}
