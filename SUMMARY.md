@@ -28,3 +28,7 @@
 
 * [Training resources](resources/training-resources.md)
 
+## Exercise 40
+
+* [Content lists](exercise-40/content-lists.md)
+
