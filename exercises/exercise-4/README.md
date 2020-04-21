@@ -2,14 +2,13 @@
 
 ## Featured Content list
 
-So far we've been building individual components and built them in a way we can re-use them.  Well, the time has come to build a list of content where we will re-use most components we've built.  This is where component-based shines.  By looking at the design comp below, we can see that we will be showing a collection of cards.  In addition, the section has a title or heading  of "Our Featured Content" and a Call To Action button to see more content.
+So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title or heading of "Our Featured Content" and a Call To Action button to see more content.
 
-![Featured content](../.gitbook/assets/featured.png)
-
+![Featured content](../../.gitbook/assets/featured.png)
 
 ### Let's start
 
-First, we will switch back to using global content for this and next components by using `data.json`.  Doing this will allow us to have a centralized place for all content which will save us time and effort.  The recommendation for individual components is to have the data, markup and styles in the same directory as we've done thus far with most components.  For prototypes like this or the page we will build later, it makes more sense to have the data we need in a single place.
+First, we will switch back to using global content for this and next components by using `data.json`. Doing this will allow us to have a centralized place for all content which will save us time and effort. The recommendation for individual components is to have the data, markup and styles in the same directory as we've done thus far with most components. For prototypes like this or the page we will build later, it makes more sense to have the data we need in a single place.
 
 #### Building the global data
 
@@ -146,7 +145,7 @@ First, we will switch back to using global content for this and next components 
 
 ### Creating the list of content in Twig
 
-Now that the Featured Content data is ready, its time to write the code that will make it possible to display the list in Pattern Lab.  With all that data above you would think the twig code will be just as involved.  Think again.
+Now that the Featured Content data is ready, its time to write the code that will make it possible to display the list in Pattern Lab. With all that data above you would think the twig code will be just as involved. Think again.
 
 1. Inside `source/_patterns/02-organisms` create a new directory called **featured-content**
 2. Inside _featured-content_ create a new file called `featured-content.twig`
@@ -189,7 +188,7 @@ Now that the Featured Content data is ready, its time to write the code that wil
 
 #### Writing CSS styles for the list
 
-Now the final step is to style the list.  You can only imagine how much CSS we would need to write to make things look like the design above.
+Now the final step is to style the list. You can only imagine how much CSS we would need to write to make things look like the design above.
 
 1. In `source/css` create a new file called `featured-content.css`
 2. In featured-content.css add the following code:
@@ -210,15 +209,16 @@ Now the final step is to style the list.  You can only imagine how much CSS we w
 {% endtab %}
 {% endtabs %}
 
-How cool is it that we only need this little CSS?  Since the cards have already been individually styled, the CSS above simple addresses the layout and alignment of the cards.
+How cool is it that we only need this little CSS? Since the cards have already been individually styled, the CSS above simple addresses the layout and alignment of the cards.
 
 #### Final step
 
 * Now in your editor open `source/_meta/_00-head.twig` and copy one of the lines at the top of the page that starts  with `<link .../>`
 * Place the newly copy line after the last `<link .../>` item and update its path to be `../../css/featured-content.css`
 
-If Pattern Lab is running you can look in **Organisms** from Pattern Lab's main navigation and see the Featured Content section.  Otherwise run:
+If Pattern Lab is running you can look in **Organisms** from Pattern Lab's main navigation and see the Featured Content section. Otherwise run:
 
 ```text
 npm start
 ```
+
