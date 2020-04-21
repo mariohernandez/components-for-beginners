@@ -14,7 +14,7 @@ Before we can create a new variant, we need to make some updates to the original
 
 ### Modifier class
 
-A CSS modifier class is a pretty common way to make changes to any element. For example, let's say we use two types of buttons in our website; one red and one blue. Using a CSS class like say, `button--blue`, and `button--red` will allow us to change their colors without altering the original button. We will use a similar approach to achieve some of the changes in the Card wide variant.
+A CSS modifier class is a pretty common way to make changes to any element. For example, let's say we use two types of buttons in our website; one red and one blue. Using CSS classes like say, `button--blue`, and `button--red` will allow us to change their colors without altering the original button. We will use a similar approach to achieve some of the changes in the Card wide variant.
 
 * Update **card.json** and **card.twig** to be able to pass a value for a modifier class.
 
@@ -23,8 +23,6 @@ A CSS modifier class is a pretty common way to make changes to any element. For 
 ```yaml
 {
   "modifier": "",
-  "image": "...",
-  "title": {
   ...
 }
 ```
@@ -32,7 +30,7 @@ A CSS modifier class is a pretty common way to make changes to any element. For 
 {% endtabs %}
 
 * We updated **card.json** by adding a new key of `modifier` at around line 2 above \(I've excluded most fields to keep the file short and easier to read.  **You should not remove any fields**\).
-* This will allow us to pass a value to Twig which we can use as a CSS modifier class.  Before we can make use of this new key, we need to update the Card's  twig template so we can determine where in the card this new value will be added.
+* This will allow us to pass a value to Twig which we can use as a CSS modifier class.  Before we can make use of this new key however, we need to update the Card's  twig template so we can determine where in the card this new value will be added.
 * Let's update **card.twig** as follows:
 
 {% tabs %}
@@ -43,7 +41,7 @@ A CSS modifier class is a pretty common way to make changes to any element. For 
 {% endtab %}
 {% endtabs %}
 
-The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON?" if so, print it here along with the class of `card`, but first add an empty space in between the two classes. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in Pattern Lab, the `article` wrapper will now look like this:
+The part `{{ modifier ? ' ' ~ modifier }}` is a Twig conditional statement asking "_Is there a value for modifier in JSON?_" if so, print it here along with the class of `card`, but first add an empty space in between the two classes ``(` ` ~)``. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in Pattern Lab, the `article` wrapper will now look like this:
 
 {% tabs %}
 {% tab title="Pattern Lab" %}
@@ -69,18 +67,18 @@ Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-pa
 patternName~pseudo-pattern-name.json
 ```
 
-The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudooPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . It has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s pattern-specific JSON file. This is not always a good thing and we will need to address this in our exercise.
+The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
 
 From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
 
 ### Creating a new variant
 
-* Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original card.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
+* Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
 * Copy all the code from `card.json` into `card~wide.jsoon`
 
 ### Displaying the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". And finally, the card variant uses a button but the originally card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text will change based on the content's category. And finally, the card variant uses a button but the originally card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
 * Update `card~wide.json` as shown below:
 
@@ -88,9 +86,9 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% tab title="card~wide.json" %}
 ```yaml
 {
-  "image": "<img src='https://placeimg.com/480/480/places' alt='Card image' />",
+  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x640' alt='Women running' />",
   "title": {
-    "heading_level": "3",
+    "heading_level": "2",
     "modifier": "",
     "title": "Level up your game",
     "url": ""
@@ -110,16 +108,45 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% endtab %}
 {% endtabs %}
 
-* Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields.  If you are wondering why not use the date field for the job\_title since they look exactly the same, technically a date and text string fields wold typically be different field types on most content management systems like Drupal.  That's why we are using different fields here.
-* Next, for those fields we don't need, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` and by leaving their values empty, they will not be rendered on a page because when we built the `card.twig` template we wrapped each field in an `if` statement.  This basically means that if a field does not exist or has no values, it will never be printed on the page.  Slick huh?
+* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category field since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in the form.  In a date-type filed, the editor entering the content will be able to select the date from a calendar of some form.  This is why we are using different fields here.
+* Next, for those fields we don't need, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `ard.twig` we first check if the field exists or it has value by using an `if` statement.
+* Finally, noticed we moved the `modifier` to the bottom of the list.  This does not affect anything at all.
 
 ### Updating card.twig
 
-Our variant JSON is ready with only the fields we want. However, we still need to update card.twig as it currently does not use a button field. There are several ways to add the button to only the variant. We'll take a look at the two easiest ways:
+Now that the variant's JSON is ready with only the fields we want, it's time to update **card.twig** to ensure the right card variant is rendered. Here is what we are going to do:
 
-### Twig conditional statements
+* Open `card.twig` and at around line 7, we need to update the `if` statement by including the new fields used in the card wide variant \(category and CTA\).  Update the conditional statement as follows:
 
-The same way we did the the other fields, we can wrap the button field in a twig `if` statement so it would only print if the field exists or has values in the .JSON file. Since the original .JSON file does not have a button or **cta** field, the button will not be available in the original card component. And since we did add a button to `card~wide.json`, then the button will be available in the card wide variant. Let's take a look at how this will look in twig.
+```php
+{% if title or date or category or body or tags or cta %}
+```
+
+If you are wondering, Why are we doing this?  It's considered best practice to ensure we check for whether there is content to render before we start writing HTML.  If we don't check for this, we may end up with an empty `<div class="card__content">...</div>` wrapper in Pattern Lab and that's not cool 😃
+
+* Next, at around line 26 \(directly after the `{% endif %}` statement for date\), add the following code:
+
+```php
+{% if category %}
+  <div class="card__eyebrow">{{ category }}</div>
+{% endif %}
+```
+
+The above is one of the new fields found in the card wide variant.
+
+* Finally, at around line 45 \(directly after the `{% endif %}` statement for tags\), add the following code:
+
+```php
+{% if cta %}
+  {%
+    include '@atoms/button/button.twig' with {
+      button: cta
+    } only
+  %}
+{% endif %}
+```
+
+The full `card.twig` template should now look like this:
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -130,7 +157,7 @@ The same way we did the the other fields, we can wrap the button field in a twig
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or job_title or body or tags or cta %}
+  {% if title or date or category or body or tags or cta %}
   <div class="card__content">
     {% if title %}
       {%
@@ -140,24 +167,10 @@ The same way we did the the other fields, we can wrap the button field in a twig
       %}
     {% endif %}
     {% if date %}
-      {%
-        include '@atoms/eyebrow/eyebrow.twig' with {
-          eyebrow: {
-            text: date,
-            modifier: 'card__date'
-          }
-        } only
-      %}
+      <div class="card__eyebrow">{{ date }}</div>
     {% endif %}
-    {% if job_title %}
-      {%
-        include '@atoms/eyebrow/eyebrow.twig' with {
-          eyebrow: {
-            text: job_title,
-            modifier: 'card__eyebrow'
-          }
-        } only
-      %}
+    {% if category %}
+      <div class="card__eyebrow">{{ category }}</div>
     {% endif %}
     {% if body_text %}
       <p class="card__body-text">
@@ -189,10 +202,7 @@ The same way we did the the other fields, we can wrap the button field in a twig
 {% endtab %}
 {% endtabs %}
 
-* On line 7, we updated the `if` statement to include job\_title and cta.  This may seem extreme but using conditional statements is a good practice to ensure you are not printing or rendering HTML elements, like a `<div>`, when there is no content inside of it.
-* In line 28, we are adding the `job_title` field, also inside an `if` statement.
-* Finally in line 52, we added the `cta` field to show the button.
-* Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button.  In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
+Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field.  In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
 
 If you don't have Pattern Lab running, run this command: `npm start`.
 

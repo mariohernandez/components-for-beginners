@@ -4,7 +4,7 @@
 
 The next exercise consists of creating component variants or variations. Variants are useful when you have one component that has **multiple different possible implementations**. These could be implemented as separate components but often it's easier and more semantic to create them as variants of an existing component.
 
-Let's take a look at the Card component for example. Here are two different ways in which this component will be displayed:Default Card variantExample of Card Wide variant.
+Let's take a look at the Card component for example. Here are two different ways in which this component will be displayed: 
 
 ![Default Card variant](../../.gitbook/assets/card.png)
 

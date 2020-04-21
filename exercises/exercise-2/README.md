@@ -37,16 +37,15 @@ We will build the Hero by combining previously built components. This makes the 
   "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1900x700' alt='Yosemite' />",
   "heading": {
     "heading_level": "1",
-    "modifier": "hero__heading heading--large",
+    "modifier": "hero__title heading--large",
     "title": "Leveling Up",
     "url": ""
   },
   "cta": {
     "text": "Get started",
     "url": "#",
-    "modifier": ""
-  },
-  "modifier": ""
+    "modifier": "hero__cta"
+  }
 }
 ```
 {% endtab %}
@@ -69,7 +68,7 @@ Now let's write some HTML for the component.
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-<section class="hero{{ modifier ? ' ' ~ modifier }}">
+<section class="hero">
   {% if image %}
     <div class="hero__media">
       {{ image }}
