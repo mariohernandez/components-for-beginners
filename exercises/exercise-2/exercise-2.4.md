@@ -21,27 +21,27 @@ This will be as basic of a workflow as it gets but will make it possible to us t
 2. Scroll to the bottom of the file until you get to the `dependencies` section (at around line 21)
 3. Add the following code directly after the last item (`"@pattern-lab/uikit-workshop": "^5.7.2"`).
 
-    {% hint style="warning" %}
-    Add a comma on the last item under dependencies before adding the code below.  In addition, ensure the indentation of the new dependencies below match the rest of the file's indentation.
-    {% endhint %}
+{% hint style="warning" %}
+Add a comma on the last item under dependencies before adding the code below.  In addition, ensure the indentation of the new dependencies below match the rest of the file's indentation.
+{% endhint %}
 
-    {% tabs %}
-    {% tab title="package.json" %}
-    ```json
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-changed": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^6.0.0",
-    "gulp-order": "^1.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-stylelint": "^11.0.0",
-    "stylelint": "^12.0.1",
-    "stylelint-scss": "^3.13.0"
-    ```
-    {% endtab %}
-    {% endtabs %}
+{% tabs %}
+{% tab title="package.json" %}
+```json
+"browser-sync": "^2.26.7",
+"gulp": "^4.0.2",
+"gulp-autoprefixer": "^7.0.1",
+"gulp-changed": "^4.0.2",
+"gulp-concat": "^2.6.1",
+"gulp-eslint": "^6.0.0",
+"gulp-order": "^1.2.0",
+"gulp-rename": "^1.4.0",
+"gulp-sass": "^4.0.2",
+"gulp-stylelint": "^11.0.0",
+"stylelint": "^12.0.1",
+"stylelint-scss": "^3.13.0"
+```
+{% endtab %}
+{% endtabs %}
 
 4. Save your changes.
