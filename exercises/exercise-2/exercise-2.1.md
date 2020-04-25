@@ -1,6 +1,6 @@
 # Exercise 2.1
 
-### Button component
+## Button component
 
 Buttons are some of those things that are used over and over on a website. For this reason it makes sense to create a new atom for the button.
 
@@ -22,9 +22,9 @@ Buttons are some of those things that are used over and over on a website. For t
 {% endtab %}
 {% endtabs %}
 
-We created an object called `button` and added several properties or attributes such as `text`, `url`, and `modifier`.  By now we've seen this kind of data structure on other components.
+We created an object called `button` and added several properties or attributes such as `text`, `url`, and `modifier`. By now we've seen this kind of data structure on other components.
 
-### Writing the button's logic
+## Writing the button's logic
 
 1. Inside the _button_ directory create a new file called **button.twig**
 2. Inside `button.twig` add the following code:
@@ -41,11 +41,11 @@ We created an object called `button` and added several properties or attributes 
     {{ button.text }}
   </button>
 {% endif %}
-
 ```
 {% endtab %}
 {% endtabs %}
 
 * We've added some logic to the button to ensure we render the right HTML element based on the data we receive. For example, if a URL is passed, we use an `<a>` tag with the class of **button**, otherwise we use a `<button>` tag. We always want to make sure we use proper semantic markup for accessibility and for the task at hand. An `<a>` tag will allow us to be directed to another page or a section within the same page, whereas a `<button>` element will allow us to perform an action such as submit content.
 
-#### Next:  Update the Hero to make use of the new button atom
+### Next:  Update the Hero to make use of the new button atom
+

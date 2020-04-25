@@ -32,3 +32,5 @@
 ## Resources
 
 * [Training resources](resources/training-resources.md)
+* [Gulpfile](resources/gulpfile.md)
+

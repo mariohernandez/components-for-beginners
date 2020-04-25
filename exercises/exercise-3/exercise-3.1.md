@@ -122,7 +122,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 {% if title or date or category or body or tags or cta %}
 ```
 
-If you are wondering, Why are we doing this?  It's considered best practice to ensure we check for whether there is content to render before we start writing HTML.  If we don't check for this, we may end up with an empty `<div class="card__content">...</div>` wrapper in Pattern Lab and that's not cool 😃
+If you are wondering, Why are we doing this? It's considered best practice to ensure we check for whether there is content to render before we start writing HTML. If we don't check for this, we may end up with an empty `<div class="card__content">...</div>` wrapper in Pattern Lab and that's not cool 😃
 
 * Next, at around line 26 \(directly after the `{% endif %}` statement for date\), add the following code:
 
@@ -202,6 +202,7 @@ The full `card.twig` template should now look like this:
 {% endtab %}
 {% endtabs %}
 
-Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field.  In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
+Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field. In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
 
 If you don't have Pattern Lab running, run this command: `npm start`.
+

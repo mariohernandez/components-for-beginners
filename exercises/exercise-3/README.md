@@ -210,7 +210,6 @@ Most fields above are pretty straight forward. For the title we created an objec
     padding: 40px 20px 20px 40px;
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -231,3 +230,4 @@ After saving the changes above Pattern Lab should had reloaded. If not run:
 ```text
 npm start
 ```
+
