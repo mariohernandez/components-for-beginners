@@ -264,8 +264,8 @@ If you look at the `concat.js` task above, one of the things we've done is we've
 {% tabs %}
 {% tab title="\_00-head.twig" %}
 ```php
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
-    <link rel="stylesheet" href="../../css/all.css?{{ cacheBuster }}" media="all" />
+<link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+<link rel="stylesheet" href="../../css/all.css?{{ cacheBuster }}" media="all" />
 ```
 {% endtab %}
 {% endtabs %}
