@@ -19,6 +19,7 @@
   * [Exercise 2.1](exercises/exercise-2/exercise-2.1.md)
   * [Exercise 2.2](exercises/exercise-2/exercise-2.2.md)
   * [Exercise 2.3](exercises/exercise-2/exercise-2.3.md)
+  * [Exercise 2.4](exercises/exercise-2/exercise-2.4.md)
 * [Exercise 3](exercises/exercise-3/README.md)
   * [Variants](exercises/exercise-3/variants.md)
   * [Exercise 3.1](exercises/exercise-3/exercise-3.1.md)
@@ -31,4 +32,3 @@
 ## Resources
 
 * [Training resources](resources/training-resources.md)
-
