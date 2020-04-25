@@ -2,7 +2,7 @@
 
 ### Homepage prototype
 
-![Click to zoom](../.gitbook/assets/components-for-beginners.png)
+![](../.gitbook/assets/components-for-beginners-home.png)
 
 Is now time to put all the pieces together to build the homepage shown above.  Building prototype pages in Pattern Lab is a great way to demo to stakeholders and team members the end product of a project.  This is particularly useful for testing.
 
