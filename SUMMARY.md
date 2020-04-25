@@ -31,6 +31,10 @@
 
 ## Resources
 
-* [Training resources](resources/training-resources.md)
-* [Gulpfile](resources/gulpfile.md)
+* [Training resources](resources/training-resources/README.md)
+  * [Gulpfile](resources/training-resources/gulpfile.md)
+
+## Bonus
+
+* [Building the Navigation](bonus/building-the-navigation.md)
 
