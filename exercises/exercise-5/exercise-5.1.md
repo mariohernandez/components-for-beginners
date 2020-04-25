@@ -14,7 +14,7 @@ There are several ways to address the layout and styling of the homepage.  One m
 {% tabs %}
 {% tab title="\_mixin.scss" %}
 ```css
-@mixin component-spacing($margin: 100px) {
+@mixin component-spacing($margin: 125px) {
 	margin-bottom: $margin;
 }
 ```
@@ -23,7 +23,7 @@ There are several ways to address the layout and styling of the homepage.  One m
 
 * **@mixin** is a keyword used in Sass to group CSS code that will be reused.  This mixin can used pretty much anywhere in our project.  Our plan is to use in components so we can keep consistent spacing around them.
 * **component-spacing** is the name of the mixin.  It is a good idea to name mixins with names that make it easy to determine their function.
-* **\($margin: 100px\)** are parameters the mixin accepts.  In this example we are using a variable of `$margin` which will allow us to pass a value.  If no value, is provided when use the mixin we are setting a default of 100px.
+* **\($margin: 125px\)** are parameters the mixin accepts.  In this example we are using a variable of `$margin` which will allow us to pass a value.  If no value, is provided when use the mixin we are setting a default of 125px.
 * **margin-bottoom** is the CSS property where we want to add the value of `$margin`. 
 
 #### Using the component-spacing mxin
