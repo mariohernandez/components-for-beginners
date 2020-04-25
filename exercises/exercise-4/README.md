@@ -8,7 +8,7 @@ So far we've been building individual components and built them in a way we can 
 
 ### Let's start
 
-First, we will switch back to using global content for this and next components by using `data.json`. Doing this will allow us to have a centralized place for all content which will save us time and effort. The recommendation for individual components is to have the data, markup and styles in the same directory as we've done thus far with most components. For prototypes like this or the page we will build later, it makes more sense to have the data we need in a single place.
+First, we will switch back to using global content for this and next components by using `data.json`. Doing this will allow us to have a centralized place for all content which will save us time and effort. The recommendation for individual components is to have the data, markup and styles in the same directory as we've done thus far with most components. For prototypes like this or the page we will build later, it makes more sense to have the data we need in a single place.  This will save us time and reduce duplication of data.
 
 #### Building the global data
 
