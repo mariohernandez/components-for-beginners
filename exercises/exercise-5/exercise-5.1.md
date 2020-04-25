@@ -53,3 +53,9 @@ As best practice, mixins should always be added before any other CSS properties 
 {% endhint %}
 
 If your Sass watch task is running you should see the hero now has 100px of space at the bottom.  If Sass watch was not running type `gulp watch` and reload Pattern Lab.
+
+### Add the mixin to other Homepage components
+Now go ahead and update the other two components used in the homepage, Featured Content and Blog Content.
+
+* Repeat steps 2 & 3 above
+* Ensure the mixin is added the the top most wrapper of each component (`.featured-content` and `.blog-content`).  If those selectors don't exist, create them to add the mixin.

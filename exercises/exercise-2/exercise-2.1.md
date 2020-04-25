@@ -46,7 +46,6 @@ We created an object called `button` and added several properties or attributes 
 {% endtab %}
 {% endtabs %}
 
-* We've added some logic to the button to ensure we render the right HTML element based on the data we receive. For example, if a URL is passed, we use an `<a>` tag with the class of **button**, otherwise we use a `<button>` tag. We always want to make sure we use proper semantic markup for accessibility and for the task at hand. An `<a>` tag will allow us to be directed to another page or a section within the same page, whereas a `<button>` element will allow us to perform an action such as submit content.  
+* We've added some logic to the button to ensure we render the right HTML element based on the data we receive. For example, if a URL is passed, we use an `<a>` tag with the class of **button**, otherwise we use a `<button>` tag. We always want to make sure we use proper semantic markup for accessibility and for the task at hand. An `<a>` tag will allow us to be directed to another page or a section within the same page, whereas a `<button>` element will allow us to perform an action such as submit content.
 
-#### Next:  Updated the Hero to make use of the new button atom
-
+#### Next:  Update the Hero to make use of the new button atom

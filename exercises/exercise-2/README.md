@@ -148,7 +148,7 @@ Out of the box Pattern Lab does not have a system to become aware of new CSS sty
 3. Change the path in the newly copied file to be `../../css/hero.css`
 4. Save the file.
 
-### Compiling the code <a id="compiling-the-code"></a>
+### Compiling the code
 
 Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component. Otherwise, run the following command in your command line and press **Return**
 
