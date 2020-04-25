@@ -97,3 +97,13 @@ Go ahead and add the last component on your own. This will be similar to the Fea
 
 ### Adding the Footer component
 
+We'll keep the footer simple.  Just add Pattern Lab's default footer shown below:
+
+{% tabs %}
+{% tab title="homepage.twig" %}
+```php
+{% include "@organisms/00-global/01-footer.twig" %}
+```
+{% endtab %}
+{% endtabs %}
+
