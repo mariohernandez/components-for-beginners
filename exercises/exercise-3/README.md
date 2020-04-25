@@ -49,7 +49,7 @@ Now that we have identified the fields our card component needs, let's start bui
       "url": "#"
     },
     {
-      "text": "Outdoors",
+      "text": "Outdors",
       "url": "#"
     }
   ]
@@ -112,7 +112,7 @@ Most fields above are pretty straight forward. For the title we created an objec
 * Just like we did with previous components, we are first checking if there is content to render before declaring the fields and their wrappers
 * We are re-using the **heading** component by using an `@include` statatement and mapping each key to the respective key from the card's JSON.  We may need to update this later to streamline the nesting process.
 * With the tags we loop through the `tags` array and then add each tag item as a list item in the unordered list.  Using `<ul>...</ul>` for listing of content like this is best practice
-* Just as we did with the Hero and other components, we are using BEM to name the CSS classes.  We are also setting a namespace for this coomponent by naming each class with `card__*`
+* Just as we did with the Hero and other components, we are using BEM to name the CSS classes.  We are also setting a namespace for this component by naming each class with `card__*`
 
 #### Component styles
 
@@ -231,4 +231,3 @@ After saving the changes above Pattern Lab should had reloaded. If not run:
 ```text
 npm start
 ```
-

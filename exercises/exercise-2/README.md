@@ -74,7 +74,7 @@ Now let's write some HTML for the component.
       {{ image }}
     </div>
   {% endif %}
-  
+
   <div class="hero__content">
     {% if heading %}
       {%
@@ -86,7 +86,7 @@ Now let's write some HTML for the component.
         } only
       %}
     {% endif %}
-    
+
     {% if cta %}
       <a href="{{ cta.url }}" class="button{{ cta.modifier ? ' ' ~ cta.modifier }}">
         {{ cta.text }}
@@ -141,7 +141,7 @@ The advantage of using custom CSS class on our elements is that our CSS becomes 
 
 #### Add the new CSS file to Pattern Lab
 
-Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created.  This is a manual process which is not complicated at all.  However, on a typical project this should be an automatic process.  We will implement a basic system to automate this process later on.  For now follow these steps too make Pattern Lab aware of the new hero.CSS stylesheet.
+Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created.  This is a manual process which is not complicated at all.  However, on a typical project this should be an automatic process.  We will implement a basic system to automate this process later on.  For now follow these steps to make Pattern Lab aware of the new hero.CSS stylesheet.
 
 1. In your text editor, open `source/_meta/_00-head.twig`
 2. Copy one of the lines of code that start with `<link...>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
@@ -155,4 +155,3 @@ Now that the Hero component is done, let's compile the code so we can see it in 
 ```bash
 npm start
 ```
-

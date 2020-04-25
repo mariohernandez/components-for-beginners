@@ -19,7 +19,7 @@ A CSS modifier class is a pretty common way to make changes to any element. For 
 * Update **card.json** and **card.twig** to be able to pass a value for a modifier class.
 
 {% tabs %}
-{% tab title="card.jsoon" %}
+{% tab title="card.json" %}
 ```yaml
 {
   "modifier": "",
@@ -74,7 +74,7 @@ From a navigation and naming perspective **patternName** and **pseudoPatternName
 ### Creating a new variant
 
 * Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
-* Copy all the code from `card.json` into `card~wide.jsoon`
+* Copy all the code from `card.json` into `card~wide.json`
 
 ### Displaying the right fields for the card variant
 
@@ -205,4 +205,3 @@ The full `card.twig` template should now look like this:
 Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field.  In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
 
 If you don't have Pattern Lab running, run this command: `npm start`.
-

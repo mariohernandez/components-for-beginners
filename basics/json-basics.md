@@ -16,7 +16,7 @@ JSON uses a `key` \| `value` pair format that makes writing and reading JSON rel
     },
     {
       "name": "twitter",
-      "url": "http://twitter.coom"
+      "url": "http://twitter.com"
     }
   ]
 }
@@ -25,6 +25,3 @@ JSON uses a `key` \| `value` pair format that makes writing and reading JSON rel
 {% hint style="info" %}
 Read [more about JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) to become more familiar with it.
 {% endhint %}
-
-
-

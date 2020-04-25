@@ -24,7 +24,7 @@ There are several ways to address the layout and styling of the homepage.  One m
 * **@mixin** is a keyword used in Sass to group CSS code that will be reused.  This mixin can used pretty much anywhere in our project.  Our plan is to use in components so we can keep consistent spacing around them.
 * **component-spacing** is the name of the mixin.  It is a good idea to name mixins with names that make it easy to determine their function.
 * **\($margin: 125px\)** are parameters the mixin accepts.  In this example we are using a variable of `$margin` which will allow us to pass a value.  If no value, is provided when use the mixin we are setting a default of 125px.
-* **margin-bottoom** is the CSS property where we want to add the value of `$margin`. 
+* **margin-bottom** is the CSS property where we want to add the value of `$margin`.
 
 #### Using the component-spacing mxin
 
@@ -53,4 +53,3 @@ As best practice, mixins should always be added before any other CSS properties 
 {% endhint %}
 
 If your Sass watch task is running you should see the hero now has 100px of space at the bottom.  If Sass watch was not running type `gulp watch` and reload Pattern Lab.
-

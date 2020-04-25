@@ -46,7 +46,7 @@ First, we will switch back to using global content for this and next components 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
@@ -72,7 +72,7 @@ First, we will switch back to using global content for this and next components 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
@@ -98,7 +98,7 @@ First, we will switch back to using global content for this and next components 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
@@ -124,7 +124,7 @@ First, we will switch back to using global content for this and next components 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
@@ -152,7 +152,7 @@ Now that the Featured Content data is ready, its time to write the code that wil
 3. In _featured-content.twig_ add the following code:
 
 {% tabs %}
-{% tab title="featured-coontent.twig" %}
+{% tab title="featured-content.twig" %}
 ```php
 <section class="featured-content">
   {% include '@atoms/heading/heading.twig' with {
@@ -221,4 +221,3 @@ If Pattern Lab is running you can look in **Organisms** from Pattern Lab's main 
 ```text
 npm start
 ```
-
