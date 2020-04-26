@@ -63,7 +63,7 @@ Let's break things down to explain what's happening here since the twig code has
 
 Let's create a CSS file to write basic CSS styles for the heading.
 
-1. Inside `source/css` create a new file called **heading.css**
+1. Inside the `source/css` directory create a new file called  **heading.css**
 2. Inside `heading.css` add the following code:
 
 {% tabs %}
