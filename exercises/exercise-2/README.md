@@ -137,7 +137,7 @@ Now let's write some HTML for the component.
 {% endtab %}
 {% endtabs %}
 
-The advantage of using custom CSS class on our elements is that our CSS becomes extremely simple and flas as a result. This is a good thing as it makes it easier to maintain and override. The CSS classes we have assigned to the elements use the [BEM methodology](https://css-tricks.com/bem-101/).
+The advantage of using custom CSS classes on our elements is that our CSS becomes extremely simple and flat as a result. This is a good thing as it makes it easier to maintain and override. The CSS classes we have assigned to the elements use the [BEM methodology](https://css-tricks.com/bem-101/).
 
 #### Add the new CSS file to Pattern Lab
 
