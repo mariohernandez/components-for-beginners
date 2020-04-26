@@ -8,8 +8,8 @@ The heading component looks good and it will work great ...as long as we always 
 
 We will start by creating our own data file for this and future components. We will resume using global data when we build the homepage prototype at the end of this training.  Follow these steps:
 
-* Inside `source/_patterns/00-atoms/heading/` create a new file called **heading.json**
-* Inside `heading.json` add the following code: \(mind indentation\)
+1. Inside `source/_patterns/00-atoms/heading/` create a new file called **heading.json**
+2. Inside `heading.json` add the following code: \(mind indentation\)
 
 {% tabs %}
 {% tab title="heading.json" %}
@@ -59,13 +59,32 @@ Let's break things down to explain what's happening here since the twig code has
 * Also in line 1, we have added a placeholder for `modifier` so if we choose to pass a value it will be added as a CSS class along with `heading`.  More on this later.
 * In line 2, we check whether a URL was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in an `<a>` tag to turn the title into a link.  The `href` value for the link is `{{ url }}`.  If no URL is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
 
+### CSS Styles
+
+Let's create a CSS file to write basic CSS styles for the heading.
+
+1. Inside `source/css` create a new file called **heading.css**
+2. Inside `heading.css` add the following code:
+
+{% tabs %}
+{% tab title="heading.css" %}
+```css
+.heading {
+  color: #000000;
+}
+
+.heading a {
+  text-decoration: none;
+}
+```
+{% endtab %}
+{% endtabs %}
+
+* These are just temporary styles.  We will come back to them later on in the process.
+
 ### Compiling the code
 
-After saving the changes above Pattern Lab should had auto reloaded.  If not, run this command and press **Return**:
-
-```bash
-npm start
-```
+After saving the changes above Pattern Lab should had auto reloaded.  If not, run this command and press **Return**:npm start
 
 **Just for fun 💥**
 
