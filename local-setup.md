@@ -56,5 +56,11 @@ Respond to the on-screen prompts as follows:
    npm start
   ```
 
+If everything ran successfully Pattern Lab should had open on your browser.  Otherwise see our Troubleshooting guide below.
+
+{% hint style="danger" %}
+**DID YOU GET ERRORS?**  See our [troubleshooting guide](https://docs.google.com/document/d/1BU5C4jFcUKo2r-YCwT0UH-s4Rfb95KvEnHxCzfnMVF8/edit#).
+{% endhint %}
+
 This completes the local computer setup. If you received errors indicating your project did not complete successfully, you can google the error message you are getting for possible solutions, or, you can contact us for assistance.
 
