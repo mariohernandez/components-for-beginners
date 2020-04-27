@@ -27,7 +27,7 @@ Pattern Lab helps you and your team build thoughtful, pattern-driven user interf
 
 To install and setup Pattern Lab you will need to use a Command Line Interface \(CLI\) tool. A CLI helps you run or execute commands to perform an action.
 
-* Mac users: Use **Terminal**. \(Find it in **Applications &gt; Utilities &gt; Terminal.app**\)
+* Mac users: Use **Terminal**. \(On your Finder's sidebar click **Applications &gt; Utilities &gt; Terminal.app**\)
 * Windows users: It is recommended you use **PowerShell**. \(Find it in **Start Menu &gt; All apps,&gt; Windows PowerShell** and tap **Windows PowerShell**\)
 
 ### Follow these steps to setup a Pattern Lab project
