@@ -1,6 +1,6 @@
 # What you will build
 
-![](.gitbook/assets/components-for-beginners-home.png)
+![Homepage design comp](.gitbook/assets/components-for-beginners-home.png)
 
 
 
