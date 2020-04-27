@@ -62,5 +62,5 @@ If everything ran successfully Pattern Lab should had open on your browser.  Oth
 **DID YOU GET ERRORS?**  See our [troubleshooting guide](https://docs.google.com/document/d/1BU5C4jFcUKo2r-YCwT0UH-s4Rfb95KvEnHxCzfnMVF8/edit#).
 {% endhint %}
 
-This completes the local computer setup. If you received errors indicating your project did not complete successfully, you can google the error message you are getting for possible solutions, or, you can contact us for assistance.
+This completes the local computer setup. If you received errors and they don't appear in our troubleshooting guide [please fill out this quick form](https://forms.gle/Xt4aYbCWCrK1zH65A) to submit your error**\(s\)** so we can provide you with possible steps to correct.  You could also try searching for the error message on Google or your preferred search engine by copying the error from the command line and pasting into the search engine.
 
