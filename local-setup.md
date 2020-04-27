@@ -9,7 +9,7 @@ The local computer setup for this training will allow you to follow along with t
 
 ## 1. NodeJS & NPM
 
-Node is a JavaScript runtime. Node.js is designed to build scalable network applications and it is required by Pattern Lab Node Edition.
+NodeJS is a modern application-building tool that uses JavaScript to build and run application on a server.  JavaScript used to only run on a web brwoser \(client side\), but with NodeJS you can build JavaScript apps that can run on a server.  Pattern Lab Node Edition uses NodeJS.
 
 #### Installing Node & NPM
 
