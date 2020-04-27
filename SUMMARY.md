@@ -32,6 +32,7 @@
 ## Resources
 
 * [Training resources](resources/training-resources/README.md)
+  * [Tooling and setup](resources/training-resources/tooling-and-setup.md)
   * [Gulpfile](resources/training-resources/gulpfile.md)
 
 ## Bonus
