@@ -43,8 +43,7 @@ We will build the Hero by combining previously built components. This makes the 
   },
   "cta": {
     "text": "Get started",
-    "url": "#",
-    "modifier": "hero__cta"
+    "url": "#"
   }
 }
 ```
@@ -88,7 +87,7 @@ Now let's write some HTML for the component.
     {% endif %}
 
     {% if cta %}
-      <a href="{{ cta.url }}" class="button{{ cta.modifier ? ' ' ~ cta.modifier }}">
+      <a href="{{ cta.url }}" class="button hero__cta">
         {{ cta.text }}
       </a>
     {% endif %}

@@ -2,7 +2,7 @@
 
 ## Update Hero
 
-Now that we have a reusable button pattern let's put it to use in the Hero component. This will help us address any button-releated task from a single component vs. hard-coded links.
+Now that we have a reusable button pattern let's put it to use in the Hero component. This will help us manage any button from a single component vs. hard-coded links.
 
 * Update the `cta` object in `hero.json` by adding a modifier class as follows:
 
@@ -18,17 +18,23 @@ Now that we have a reusable button pattern let's put it to use in the Hero compo
 {% endtab %}
 {% endtabs %}
 
-* Inside `hero.twig` change the top portion code to look like the bottom portion of code:
+* Inside `hero.twig` change this code:
 
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-// Change this code:
 <a href="{{ cta.url }}" class="button hero__cta">
   {{ cta.text }}
 </a>
+```
+{% endtab %}
+{% endtabs %}
 
-// to this:
+* To look like this:
+
+{% tabs %}
+{% tab title="hero.twig" %}
+```php
 {%
   include '@atoms/button/button.twig' with {
     button: cta
@@ -38,7 +44,7 @@ Now that we have a reusable button pattern let's put it to use in the Hero compo
 {% endtab %}
 {% endtabs %}
 
-* In `hero.twig` we are now using a Twig include to use the new button component.  Notice that because we created objects for button and cta, we only need to match the top level object.  Since all properties inside both objects are identical, this property matching happens automatically.
+* In `hero.twig` we are now using a Twig include to use the new button component.  Notice that because we created an object for button, we only need to match the top level object to the **cta** object.  Since all properties inside both objects are identical we don't need to individual map or match each property between the button.json and the hero.json.
 
 After saving your changes and Pattern Lab reloads, you should not see any difference except now the Hero component is using a button atom.
 
