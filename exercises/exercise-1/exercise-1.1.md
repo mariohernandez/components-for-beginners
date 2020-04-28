@@ -2,11 +2,11 @@
 
 ### Improving the Heading component
 
-The heading component looks good and it will work great ...as long as we always want to use a `<h1>`for all titles. Since our goal for creating any component is to re-use them, the current state of the Heading component does not offer much flexibility. What if we wanted to use a h2 or h3? or what if the title field is a link to another page? Then the heading component would probably not work because we have no way of changing the heading level from h1 to any other level or add a URL. Let's re-work the heading component to make it more dynamic.
+The heading component looks good and it will work great ...as long as we always want to use a `<h1>`for all titles. Since our goal for creating any component is to make them reuseable, the current state of the Heading component does not offer much flexibility. What if we wanted to use a h2 or h3? or what if the title field is a link to another page? Then the heading component would probably not work because we have no way of changing the heading level from h1 to any other level or add a URL. Let's re-work the heading component to make it more dynamic.
 
-#### Update Heading's data structure
+#### Create a data file for the Heading's
 
-We will start by creating our own data file for this and future components. We will resume using global data when we build the homepage prototype at the end of this training.  Follow these steps:
+We will start by creating our own data file for this and future components. We will resume using global data from data.json when we build the content lists and homepage prototype at the end of this training.  Follow these steps:
 
 1. Inside `source/_patterns/00-atoms/heading/` create a new file called **heading.json**
 2. Inside `heading.json` add the following code: \(mind indentation\)
@@ -24,16 +24,18 @@ We will start by creating our own data file for this and future components. We w
 {% endtab %}
 {% endtabs %}
 
-By creating a `heading.json` file in the same directory as `heading.twig`, Pattern Lab will use its data vs. the data in data.json.  This is the approach we will take for most component going forward.
+By creating a `heading.json` file in the same directory as `heading.twig`, Pattern Lab will use its data vs. the data in data.json.  It is important that the JSON and Twig file names match.  This is the approach we will take for most component going forward.
 
 * **heading\_level** will allow us to change the headings from say, h1 to h2 if we need to
 * **modifier** will allow us to add custom CSS classes to titles which will be useful to style some titles different than others
 * **title** is the text that will be printed on a page as a page or component title
 * ... and **url**, if present, will allow us to turn the title into a link
 
-**NOTE:**  The order of the properties above has no effect on how components work or get rendered in Pattern Lab.  I have opted to organize each property alphabetically.
+**NOTE:**  The order of the properties above has no effect on how components work or get rendered in Pattern Lab.  I have opted to organize each property alphabetically.  Sometimes it also makes sense to organize the keys in the order they visually appear on the component.
 
 #### Update the heading's markup and logic
+
+Since we created a new data file for Heading and we have added more keys, we need to update `heading.twig` so it can make use of everything we just did in heading.json.
 
 * Update the `heading.twig` file to look like this: 
 
@@ -55,7 +57,7 @@ Wow! What's all this? 😮
 
 Let's break things down to explain what's happening here since the twig code has changed significantly:
 
-* Line 1, makes use of `heading_level` to complete the number part of the heading.  If a value is not provided for `heading_level` in the JSON file, we are setting a default of `2`.  This will ensue that by default we will have a `<h2>`.  This value can be changed per use case if needed.  Line 7 closes the heading tag the same way.
+* Line 1, makes use of `heading_level` to complete the number part of the heading tag \(i.e. `<h3>`\).  If a value is not provided for `heading_level` in the JSON file, we are setting a default of `2`.  This will ensue that by default we will have a `<h2>`.  This value can be changed per use case if needed.  Line 7 closes the heading tag the same way. By not providing a default/backup value we could potentially end up with a broken heading tag if a value is not passed somewhere.
 * Also in line 1, we have added a placeholder for `modifier` so if we choose to pass a value it will be added as a CSS class along with `heading`.  More on this later.
 * In line 2, we check whether a URL was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in an `<a>` tag to turn the title into a link.  The `href` value for the link is `{{ url }}`.  If no URL is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
 
@@ -63,7 +65,7 @@ Let's break things down to explain what's happening here since the twig code has
 
 Let's create a CSS file to write basic CSS styles for the heading.
 
-1. Inside the `source/css` directory create a new file called  **heading.css**
+1. Inside the `source/css` folder create a new file called  **heading.css**
 2. Inside `heading.css` add the following code:
 
 {% tabs %}
@@ -82,9 +84,9 @@ Let's create a CSS file to write basic CSS styles for the heading.
 
 * These are just temporary styles.  We will come back to them later on in the process.
 
-### Compiling the code
+#### Compiling the code
 
-After saving the changes above Pattern Lab should had auto reloaded.  If not, run this command and press **Return**:npm start
+After saving the changes above Pattern Lab should had auto reloaded.  If not, run this command and press **Return**:`npm start`
 
 **Just for fun 💥**
 
