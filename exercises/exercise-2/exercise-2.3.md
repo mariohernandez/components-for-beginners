@@ -45,9 +45,9 @@ So if objects work so great, why don't we do the same for the Heading?  Sure!  L
 
 ### Update the Hero component
 
-Now that the data structure for Heading has changed, the code we have in the Hero will not work.  So let's update the Hero so it matches the data structure from heading.json.
+Now that the data structure for Heading has changed, the code we have in the Hero will not work.  So let's update the Hero so it matches the data structure from `heading.json`.
 
-Notice that in `hero.json` we are already using an object for the **heading** field.  So we don't need to do anything there.
+Notice that in `hero.json` we are already using an object for the **heading** field.  So we don't need to do anything there. Yay!! 🙌 However, we still need to update `hero.twig`.
 
 1. In your text editor open `hero.twig`
 2. Update the code so the `heading` include looks like this:
@@ -67,5 +67,5 @@ Notice that in `hero.json` we are already using an object for the **heading** fi
 {% endtabs %}
 
 * That's so much better.  Since both **heading** objects in `heading.json` and `hero.json` use the same properties, all we need to do is associate the top objects.  
-* **VERY IMPORTANT**:  The object names don't need to match for this to work.  However, their properties do.  If you recall, in the **Button** exercise, the objects did not match \(button & cta\), but because their properties matched, we were still able to just associate the object's names in `hero.twig` \(i.e. `"button": cta`\).
+* **VERY IMPORTANT**:  The object names don't need to match for this to work.  However, their properties do.  If you recall, in the **Button** exercise, the objects name in `button.json` is **button**, while in `hero.json` is **cta.** But because their properties match, we were still able to associate the object's names in \(i.e. `"button": cta`\).
 
