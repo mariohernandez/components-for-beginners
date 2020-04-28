@@ -12,9 +12,9 @@ First let's identify the data fields we need.
 
 Based on the design above, we need the following fields:
 
-* **title or heading**: "Leveling Up"
-* **image**: Yosemite
-* **call to action \(cta\)**: "Get started"
+* **title or heading \(**Leveling Up\)
+* **image**
+* **call to action \(CTA\)**
 
 ### Building the component
 
@@ -34,7 +34,7 @@ We will build the Hero by combining previously built components. This makes the 
 {% tab title="hero.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1900x700' alt='Yosemite' />",
+  "image": "<img src='https://source.unsplash.com/DOoYFgTQWfs/1900x700' alt='Books on computer' />",
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title heading--large",
@@ -51,7 +51,7 @@ We will build the Hero by combining previously built components. This makes the 
 {% endtab %}
 {% endtabs %}
 
-Just as we did with the Heading component, we are using JSON to define the component's fields, and add stock/dummy content to the component.
+Just as we did with the Heading component, we are using JSON to define the component's fields, and add stock/dummy content for the component.
 
 #### Some things to notice: <a id="some-things-to-notice"></a>
 
@@ -103,7 +103,7 @@ Now let's write some HTML for the component.
 * We're starting off with a `<section>` HTML5 tag. Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag. This is the parent selector of the component and therefore it should be named **hero**. We do this by using the CSS class of `hero`.  This also establishes the namespace for the component.
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\). This is a good practice so we don't print empty HTML elements.
 * Notice how every field uses a CSS class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
-* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously-built components into the Hero. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.  Learn more about **Twig includes** in the next page.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the Heading component. This is extremely powerful and we will be talking more about it later. Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.  Learn more about **Twig includes** in the next page.
 
 #### Component's styles
 
@@ -124,7 +124,7 @@ Now let's write some HTML for the component.
 .hero__content {
   position: absolute;
   text-align: center;
-  top: 35%;
+  top: 45%;
   width: 100%;
 
 }
@@ -141,16 +141,16 @@ The advantage of using custom CSS classes on our elements is that our CSS become
 
 #### Add the new CSS file to Pattern Lab
 
-Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created. This is a manual process which is not complicated at all. However, on a typical project this should be an automatic process. We will implement a basic system to automate this process later on. For now follow these steps to make Pattern Lab aware of the new hero.CSS stylesheet.
+Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created. This is a manual process which is not complicated at all. However, on a typical project this should be an automated process. We will implement a basic system to automate this process later on. For now follow these steps to make Pattern Lab aware of the new `hero.css` stylesheet.
 
 1. In your text editor, open `source/_meta/_00-head.twig`
-2. Copy one of the lines of code that start with `<link...>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
+2. Copy one of the lines of code that starts with `<link.../>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
 3. Change the path in the newly copied file to be `../../css/hero.css`
 4. Save the file.
 
 ### Compiling the code
 
-Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component. Otherwise, run the following command in your command line and press **Return**
+Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component under the Molecules dropdown. Otherwise, run the following command in your command line and press **Return**
 
 ```bash
 npm start
