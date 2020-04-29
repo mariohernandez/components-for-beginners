@@ -27,7 +27,7 @@ Now every time you start VS Code you can simply click **File &gt; Open Workspace
 
 1. While in your text editor, inside `source/_patterns/00-atoms/` create a new folder called **heading** \(right-click 00-atoms and select **new folder**\)
 2. Inside the _heading_ folder create a new file called **heading.twig**
-3. Inside `heading.twig` add the following code:
+3. Inside `heading.twig` type the following code:
 
 {% tabs %}
 {% tab title="heading.twig" %}

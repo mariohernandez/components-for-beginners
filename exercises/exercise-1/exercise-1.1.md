@@ -72,17 +72,41 @@ Let's create a CSS file to write basic CSS styles for the heading.
 {% tab title="heading.css" %}
 ```css
 .heading {
-  color: #000000;
+  color: #ff9900;
 }
 
 .heading a {
   text-decoration: none;
 }
+
+.heading.heading--large {
+  font-size: 125px;
+  text-transform: uppercase;
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-* These are just temporary styles.  We will come back to them later on in the process.
+* These are just temporary styles.  We will come back to them later on.
+
+### Oh no! It didn't work 🙀
+
+Out of the box Pattern Lab does not have a an automated system to become aware of new CSS stylesheets that are created. This is a manual process which is not complicated at all. However, on a typical project this should be an automated process. We will implement a basic system to automate this process later on. For now follow these steps to make Pattern Lab aware of`heading.css` .
+
+#### Add the new CSS file to Pattern Lab
+
+1. In your text editor, open `source/_meta/_00-head.twig`
+2. Add the following line at the top of the file \(around line 10, directly after other similar lines\), and Save the file.
+
+{% tabs %}
+{% tab title="\_00-head.twig" %}
+```markup
+<link rel="stylesheet" href="../../css/heading.css?{{ cacheBuster }}" media="all" />
+```
+{% endtab %}
+{% endtabs %}
+
+_We are added a link to the new CSS file we created for the Heading component.  This will ensure any styles we write for the heading will be available in Pattern Lab._
 
 #### Compiling the code
 
