@@ -231,7 +231,7 @@ After saving the changes above Pattern Lab should had reloaded. If not run:
 npm start
 ```
 
-Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to be sure both tasks are running.  Pattern Lab's task watching for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files.
+Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to be sure both tasks are running.  Pattern Lab's task watching for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files and compiles them to CSS.  This means we need to have both tasks running simultaneously \(`npm start` and `gulp watch` \).  Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
 
 #### Running Gulp from VS Code
 
@@ -255,5 +255,5 @@ If you have opted to use a command line tool that it's not in VS Code \(Terminal
 gulp watch
 ```
 
-
+You will find an styled Card component under the **Molecules** dropdown in Pattern Lab's main nav.
 
