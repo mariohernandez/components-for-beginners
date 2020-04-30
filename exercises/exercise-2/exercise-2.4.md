@@ -53,6 +53,23 @@ Learn more about [Gulp](https://gulpjs.com/).
 
 * The above are node dependencies we need in order for Gulp to run our tasks.  If you want to learn more about what each dependency is for you can look them up.
 
+#### Adding new commands for compiling and watching Sass file
+
+1. While still ins `package.json` scroll to the top and add the following code into the `scripts` section:
+
+{% tabs %}
+{% tab title="package.json" %}
+```yaml
+"gulp": "gulp",
+"watch": "gulp watch",
+"lint": "gulp lint"
+```
+{% endtab %}
+{% endtabs %}
+
+* The 3 lines of code above should be added directly after the last item in the scripts section \(`"version": "patternlab --version"`\).
+* Be sure to add a comma on that last item prior to adding the lines above.
+
 #### Installing the dependencies
 
 The way most modern web development projects work nowadays is by having a file that keeps tracks of plugins and dependencies to perform the various tasks in our project.  This is not unique to Pattern Lab.  In our case that file is `package.json`.  This file ensures everyone working on this project uses the same tools and versions so there is a consistent experience among team members working on the same project.  The next step is to actually install all the dependencies in our project.
