@@ -297,7 +297,12 @@ If you look at the `concat.js` task above, one of the things we've done is we've
 
 #### Final step:  Adding linting configuration rules
 
-A code linter, whether is CSS or JavaScript is a great tool to use to ensure the code we write complies with today's standards and best practices.  One of the dependencies we installed above is **Stylelint**, which checks all CSS code we write for compliance.  
+A code linter, whether is CSS or JavaScript, is a great tool to use to ensure the code we write complies with coding standards and best practices.  One of the dependencies we installed above is **Stylelint**, which checks all CSS code we write for compliance.  This is pretty long file so we have made it available as a Github Gist to avoid taking up too much space in this page.  Follow these steps to copy this file's content into your project.
 
-1. Download the [.stylelintrc.yml](https://gist.github.com/mariohernandez/be2066f35bc3f66b371ec732fa3e73ab) ****file and save it inside **components\_project**.  Be sure to keep the file name as is \(`.stylelintrc.yml`\).  Notice the dot at the begining of the file name.
+1. [Visit Github's Gist page](https://gist.githubusercontent.com/mariohernandez/be2066f35bc3f66b371ec732fa3e73ab/raw/07ccfafc7e66324d38321e110f13c212be289022/.stylelintrc.yml) to access `.stylelintrc.yml`
+2. From the browser's toolbar select **Edit &gt; Select All** 
+3. With all content selected, click **Edit &gt; Copy** from the toolbar again
+4. In your text editor, create a new file \(File &gt; New \), in the root of **components\_project** and name it `.stylelintrc.yml` \(notice the dot in front of the file name\)
+5. Once in the new file, select **Edit &gt; Paste**  from your code editor's toolbar
+6. Save the file.
 
