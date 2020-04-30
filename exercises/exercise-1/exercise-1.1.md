@@ -106,7 +106,7 @@ Out of the box Pattern Lab does not have a an automated system to become aware o
 {% endtab %}
 {% endtabs %}
 
-_We are added a link to the new CSS file we created for the Heading component.  This will ensure any styles we write for the heading will be available in Pattern Lab._
+_We added a link to the new CSS file we created for the Heading component.  This will ensure any styles we write for the heading will be available in Pattern Lab._
 
 #### Compiling the code
 

@@ -55,13 +55,11 @@ Notice that in `hero.json` we are already using an object for the **heading** fi
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-{% if heading %}
-  {%
-    include '@atoms/heading/heading.twig' with {
-      "heading": heading
-    } only
-  %}
-{% endif %}
+{%
+  include '@atoms/heading/heading.twig' with {
+    "heading": heading
+  } only
+%}
 ```
 {% endtab %}
 {% endtabs %}

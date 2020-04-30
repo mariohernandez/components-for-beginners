@@ -140,12 +140,18 @@ The advantage of using custom CSS classes on our elements is that our CSS become
 
 #### Add the new CSS file to Pattern Lab
 
-Out of the box Pattern Lab does not have a system to become aware of new CSS stylesheets that are created. This is a manual process which is not complicated at all. However, on a typical project this should be an automated process. We will implement a basic system to automate this process later on. For now follow these steps to make Pattern Lab aware of the new `hero.css` stylesheet.
-
 1. In your text editor, open `source/_meta/_00-head.twig`
-2. Copy one of the lines of code that starts with `<link.../>` which are typically located at the top of the page, and paste it directly after the last item that starts with `<link ...>`
-3. Change the path in the newly copied file to be `../../css/hero.css`
-4. Save the file.
+2. Add the following line at the top of the file \(around line 11, directly after other similar lines\), and Save the file.
+
+{% tabs %}
+{% tab title="\_00-head.twig" %}
+```markup
+<link rel="stylesheet" href="../../css/hero.css?{{ cacheBuster }}" media="all" />
+```
+{% endtab %}
+{% endtabs %}
+
+_We added a link to the new CSS file we created for the Hero component.  This will ensure any styles we write for the heading will be available in Pattern Lab._
 
 ### Compiling the code
 
