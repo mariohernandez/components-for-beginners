@@ -40,7 +40,6 @@ Learn more about [Gulp](https://gulpjs.com/).
 "gulp-autoprefixer": "^7.0.1",
 "gulp-changed": "^4.0.2",
 "gulp-concat": "^2.6.1",
-"gulp-eslint": "^6.0.0",
 "gulp-order": "^1.2.0",
 "gulp-rename": "^1.4.0",
 "gulp-sass": "^4.0.2",
@@ -295,4 +294,10 @@ If you look at the `concat.js` task above, one of the things we've done is we've
 * So we're keeping Pattern Lab's `pattern-scaffolding.css` stylesheet untouched.  That's a tiny file so no need to combine it with all the other code
 * Then, we added our new `all.css` which contains all the code \(default Pattern Lab code from style.css, and current and future CSS code we write\).
 * So from now on, we can create Sass files inside each of the component's directories and Gulp will do the rest for us.
+
+#### Final step:  Adding linting configuration rules
+
+A code linter, whether is CSS or JavaScript is a great tool to use to ensure the code we write complies with today's standards and best practices.  One of the dependencies we installed above is **Stylelint**, which checks all CSS code we write for compliance.  
+
+1. Download the [.stylelintrc.yml](https://gist.github.com/mariohernandez/be2066f35bc3f66b371ec732fa3e73ab) ****file and save it inside **components\_project**.  Be sure to keep the file name as is \(`.stylelintrc.yml`\).  Notice the dot at the begining of the file name.
 
