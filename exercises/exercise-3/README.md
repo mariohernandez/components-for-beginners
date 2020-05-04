@@ -218,7 +218,6 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
     padding: 40px 20px 20px 40px;
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -231,7 +230,7 @@ After saving the changes above Pattern Lab should had reloaded. If not run:
 npm start
 ```
 
-Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to run both tasks  simultaneously \(`npm start` and `gulp watch` \).  Pattern Lab's task watches for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files and compiles them to CSS.  Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
+Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to run both tasks simultaneously \(`npm start` and `gulp watch` \). Pattern Lab's task watches for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files and compiles them to CSS. Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
 
 #### Running Gulp and Pattern Lab together from VS Code
 

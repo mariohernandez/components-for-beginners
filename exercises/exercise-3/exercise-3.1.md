@@ -55,13 +55,13 @@ Now that we have the modifier key available, you can test it by adding any value
 
 ### CSS updates
 
-In the interest of time, our CSS styles for the card already include styles for when we have a `card--wide` class in addition to `card`. So if you did use **card\_\_wide** as the example value above, you should actually see the card looking different than the original card.
+In the interest of time, our CSS styles for the card already include styles for when we have a `card--wide` class in addition to `card`. So if you did use **card--wide** as the example value above, you should actually see the card looking different than the original card.
 
 Our test above proves that using a CSS modifier class can help achieve some of the changes in the card variant, however, the goal is to not alter the original Card component when creating the variant. To accomplish this we need to work with Pattern Lab's Pseudo Patterns.
 
 ## Pseudo Patterns in Pattern Lab
 
-Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The idea of Pseudo Patterns is that Pattern Lab will create new instances of the source component, but it will not alter the source component.  This is perfect because in the example of the card, we don't want to modify or change the way the original card component looks or behaves, when we create the **Card Wide** variant.  The basic syntax for pseudo patterns is:
+Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The idea of Pseudo Patterns is that Pattern Lab will create new instances of the source component, but it will not alter the source component. This is perfect because in the example of the card, we don't want to modify or change the way the original card component looks or behaves, when we create the **Card Wide** variant. The basic syntax for pseudo patterns is:
 
 ```text
 patternName~pseudoPatternName.json
@@ -69,7 +69,7 @@ patternName~pseudoPatternName.json
 
 The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
 
-From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.  Meaning you will find all variants of a component groupped together in Pattern Lab's navigation.
+From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined. Meaning you will find all variants of a component groupped together in Pattern Lab's navigation.
 
 ### Creating a new variant
 
