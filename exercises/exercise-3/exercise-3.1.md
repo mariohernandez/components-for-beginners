@@ -4,7 +4,7 @@
 
 Probably the first thing you should look at to determine if a component is a candidate for variants, is the data fields, and second, the component's markup.
 
-Visually we know the two different variants look similar, however, if we pay close attention we will notice that the data fields between the variants are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variants that we should have no problem going the variant route vs. new components. Let's start! The new variant will be called **Card wide**.
+Visually we know the two variants look similar, however, if we pay close attention we will notice that the data fields between the variants are different. In this particular case although some of the fields are different, I feel we have enough of shared attributes between the variants that we should have no problem going the variant route vs. new components. Let's start! The new variant will be called **Card wide**.
 
 ![Card wide variant](../../.gitbook/assets/card-wide.png)
 
@@ -61,24 +61,24 @@ Our test above proves that using a CSS modifier class can help achieve some of t
 
 ## Pseudo Patterns in Pattern Lab
 
-Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The basic syntax for pseudo patterns is:
+Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The idea of Pseudo Patterns is that Pattern Lab will create new instances of the source component, but it will not alter the source component.  This is perfect because in the example of the card, we don't want to modify or change the way the original card component looks or behaves, when we create the **Card Wide** variant.  The basic syntax for pseudo patterns is:
 
 ```text
-patternName~pseudo-pattern-name.json
+patternName~pseudoPatternName.json
 ```
 
 The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
 
-From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
+From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.  Meaning you will find all variants of a component groupped together in Pattern Lab's navigation.
 
 ### Creating a new variant
 
-* Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
-* Copy all the code from `card.json` into `card~wide.json`
+1. Inside the _card_ directory, create a new JSON file with the following name: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
+2. Copy all the code from `card.json` into `card~wide.json`
 
 ### Displaying the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text will change based on the content's category. And finally, the card variant uses a button but the originally card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link and its text will change based on the content's category. And finally, the card variant uses a button but the original card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
 * Update `card~wide.json` as shown below:
 
@@ -108,8 +108,8 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% endtab %}
 {% endtabs %}
 
-* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category field since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in the form.  In a date-type filed, the editor entering the content will be able to select the date from a calendar of some form.  This is why we are using different fields here.
-* Next, for those fields we don't need, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `ard.twig` we first check if the field exists or it has value by using an `if` statement.
+* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in the form.  In a date-type filed, the editor entering the content will be able to select the date from a calendar or date picker.  This is why we are using different fields here.
+* Next, for those fields we don't need in the card wide variant, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
 * Finally, noticed we moved the `modifier` to the bottom of the list.  This does not affect anything at all.
 
 ### Updating card.twig
@@ -124,7 +124,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 
 If you are wondering, Why are we doing this? It's considered best practice to ensure we check for whether there is content to render before we start writing HTML. If we don't check for this, we may end up with an empty `<div class="card__content">...</div>` wrapper in Pattern Lab and that's not cool 😃
 
-* Next, at around line 26 \(directly after the `{% endif %}` statement for date\), add the following code:
+* Next, at around line 19 \(directly after the `{% endif %}` statement for date\), add the following code:
 
 ```php
 {% if category %}
@@ -134,7 +134,7 @@ If you are wondering, Why are we doing this? It's considered best practice to en
 
 The above is one of the new fields found in the card wide variant.
 
-* Finally, at around line 45 \(directly after the `{% endif %}` statement for tags\), add the following code:
+* Finally, at around line 38 \(directly after the `{% endif %}` statement for tags\), add the following code:
 
 ```php
 {% if cta %}

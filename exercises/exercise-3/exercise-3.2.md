@@ -1,8 +1,8 @@
-# Exercise 3.2
+# Exercise 3.2 \(Optional\)
 
 ### Eyebrow component
 
-Did you notice the following code in the Card?
+Did you notice the following code in the card.twig?
 
 {% tabs %}
 {% tab title="card.twig" %}

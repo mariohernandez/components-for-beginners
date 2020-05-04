@@ -24,7 +24,7 @@
 * [Exercise 3](exercises/exercise-3/README.md)
   * [Variants](exercises/exercise-3/variants.md)
   * [Exercise 3.1](exercises/exercise-3/exercise-3.1.md)
-  * [Exercise 3.2](exercises/exercise-3/exercise-3.2.md)
+  * [Exercise 3.2 \(Optional\)](exercises/exercise-3/exercise-3.2.md)
 * [Exercise 4](exercises/exercise-4/README.md)
   * [Exercise 4.1](exercises/exercise-4/exercise-4.1.md)
 * [Exercise 5](exercises/exercise-5/README.md)
