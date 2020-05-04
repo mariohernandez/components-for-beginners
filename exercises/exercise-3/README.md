@@ -114,14 +114,14 @@ Most fields above are pretty straight forward.
 
 * Just as we did with previous components, we are first checking if there is content to render before declaring the fields and their wrappers
 * We are re-using the **heading** component by using an `@include` as we did in the Hero component.
-* With the tags we loop through the `tags` array and then add each tag item as a list item \(`<li>`\), in the unordered list.  Using `<ul>...</ul>` for listing of content like this is best practice.  Inside each list item we add a `<a>` tag where we pass the `url` and the text properties.
+* With the tags we loop through the `tags` array and then add each tag item as a list item \(`<li>`\), in the unordered list.  Using `<ul>...</ul>` for listing of content like this is best practice.  Inside each list item we add a `<a>` tag where we pass the `url` and the text properties of each tag.
 * Just as we did with the Hero and other components, we are using BEM to name the CSS classes.  We are also setting a namespace for this component by naming each class with `card__*`
 
 #### Component styles
 
 Alright, now it's time to put our new Gulp-driven workflow to work.
 
-1. Inside the _card_ directory create a new file called **card.scss**
+1. Inside the _card_ directory create a new file called **card.scss \(note it is SCSS, not CSS\)**
 2. Inside `card.scss` add the following code:
 
 {% tabs %}
@@ -231,29 +231,29 @@ After saving the changes above Pattern Lab should had reloaded. If not run:
 npm start
 ```
 
-Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to be sure both tasks are running.  Pattern Lab's task watching for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files and compiles them to CSS.  This means we need to have both tasks running simultaneously \(`npm start` and `gulp watch` \).  Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
+Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to run both tasks  simultaneously \(`npm start` and `gulp watch` \).  Pattern Lab's task watches for any Twig or JSON changes, while our new Gulp task watches any changes we make to Sass files and compiles them to CSS.  Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
 
-#### Running Gulp from VS Code
+#### Running Gulp and Pattern Lab together from VS Code
 
-* In VS Code, open the command line tool.  You will most likely have Pattern Lab running, otherwise type `npm start` and press **Return**
-* With Pattern Lab running in your command line, press **Cmd + \** or clicking **Terminal &gt; Split Terminal** \(from VS Code's toolbar\).  You should now have two terminal tabs in which you can run different commands
+* In VS Code, open the command line tool \(**View &gt; Terminal**\).  You will most likely have Pattern Lab running, otherwise type `npm start` and press **Return**
+* With Pattern Lab running in your command line, press **Cmd + \** or click **Terminal &gt; Split Terminal** \(from VS Code's toolbar\).  You should now have two terminal tabs in which you can run different commands.
 * In the second tab, type the following command and press **Return**
 
 ```text
-gulp watch
+npm run watch
 ```
 
-#### Running Gulp from Outside VS Code
+#### Running Gulp and Pattern Lab together from Outside VS Code
 
 If you have opted to use a command line tool that it's not in VS Code \(Terminal or PowerShell\), or, if you are not using VS Code as your editor, follow these steps:
 
-* Open your command line tool.  You will most likely have Pattern Lab running,, otherwise type `npm start` and press **Return**
-* Press **Cmd + T** \(**Ctrl + T** in Windows\), or Look in the Toolbar of your tool and find the option to open a new tab.
+* Open your command line tool.  You will most likely have Pattern Lab running, otherwise type `npm start` from within the **components\_project** directory, and press **Return**
+* Press **Cmd + T** \(**Ctrl + T** in Windows\), or Look in the toolbar of your command line tool and find the option to open a new tab.
 * In the second tab, type the following command and press **Return**
 
 ```text
-gulp watch
+npm run watch
 ```
 
-You will find an styled Card component under the **Molecules** dropdown in Pattern Lab's main nav.
+If you look in Pattern Lab, you will find an styled Card component under the **Molecules** dropdown in Pattern Lab's main navigation.
 
