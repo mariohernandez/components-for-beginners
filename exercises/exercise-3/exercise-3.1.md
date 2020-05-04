@@ -41,12 +41,12 @@ A CSS modifier class is a pretty common way to make changes to any element. For 
 {% endtab %}
 {% endtabs %}
 
-The part `{{ modifier ? ' ' ~ modifier }}` is a Twig conditional statement asking "_Is there a value for modifier in JSON?_" if so, print it here along with the class of `card`, but first add an empty space in between the two classes ``(` ` ~)``. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in Pattern Lab, the `article` wrapper will now look like this:
+The part `{{ modifier ? ' ' ~ modifier }}` is a Twig conditional statement asking "_Is there a value for modifier in JSON?_" if so, print it here along with the class of `card`, but first add an empty space in between the two classes ``(` ` ~)``. For example, if the value for modifier in JSON is, `card--wide`, when the card is rendered in Pattern Lab, the `article` wrapper will now look like this:
 
 {% tabs %}
 {% tab title="Pattern Lab" %}
 ```php
-<article class="card card__wide">
+<article class="card card--wide">
 ```
 {% endtab %}
 {% endtabs %}
@@ -55,7 +55,7 @@ Now that we have the modifier key available, you can test it by adding any value
 
 ### CSS updates
 
-In the interest of time, our CSS styles for the card already include styles for when we have a `card__wide` class in addition to `card`. So if you did use **card\_\_wide** as the example value above, you should actually see the card looking different than the original card.
+In the interest of time, our CSS styles for the card already include styles for when we have a `card--wide` class in addition to `card`. So if you did use **card\_\_wide** as the example value above, you should actually see the card looking different than the original card.
 
 Our test above proves that using a CSS modifier class can help achieve some of the changes in the card variant, however, the goal is to not alter the original Card component when creating the variant. To accomplish this we need to work with Pattern Lab's Pseudo Patterns.
 
@@ -102,7 +102,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
     "url": "#",
     "modifier": "card__cta"
   },
-  "modifier": "card__wide"
+  "modifier": "card--wide"
 }
 ```
 {% endtab %}

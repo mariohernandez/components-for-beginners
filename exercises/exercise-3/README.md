@@ -56,7 +56,7 @@ Let's start building the Card.
 {% endtab %}
 {% endtabs %}
 
-Most fields above are pretty straight forward. 
+Most fields above are pretty straight forward.
 
 * For the `title` we created an object so we can group all title-related properties together
 * For `tags`, we are using an array. An array is a list of items all with the same or similar properties. Each tag item inside the array has a text and URL keys
@@ -191,30 +191,30 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 }
 
 /* ========== Card wide styles========= */
-.card.card__wide {
+.card.card--wide {
   box-shadow: none;
   border: 1px solid #ddd;
   flex-direction: column;
 }
 
-.card__wide .card__body-text {
+.card--wide .card__body-text {
   margin-bottom: 40px;
 }
 
 /* Changes card layout on larger screens. */
 @media screen and (min-width: 640px) {
 
-  .card.card__wide {
+  .card.card--wide {
     flex-direction: row;
     max-width: 720px;
   }
 
-  .card__wide .card__media,
-  .card__wide .card__content {
+  .card--wide .card__media,
+  .card--wide .card__content {
     flex: 0 0 50%;
   }
 
-  .card__wide .card__content {
+  .card--wide .card__content {
     padding: 40px 20px 20px 40px;
   }
 }
