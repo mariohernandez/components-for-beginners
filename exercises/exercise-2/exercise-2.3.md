@@ -22,10 +22,10 @@ So if objects work so great, why don't we do the same for the Heading?  Sure!  L
 {% endtab %}
 {% endtabs %}
 
-* We are u sing the same JSON keys as before except now we are nesting them into the `heading` object.
+* We are using the same JSON keys as before except now we are nesting them into the `heading` object.
 
 1. In your text editor open `heading.twig`
-2. Update the file's code to look like this:
+2. Update the code to look like this:
 
 {% tabs %}
 {% tab title="heading.twig" %}
@@ -41,7 +41,7 @@ So if objects work so great, why don't we do the same for the Heading?  Sure!  L
 {% endtab %}
 {% endtabs %}
 
-* Pretty much the only thing we are doing is appending `heading.` before each of the properties in the code.  Since each property is now nested in the `heading` object, instead of writing `{{ heading_level }}` we need to write `{{ heading.heading_level }}`.  And we are doing the same for each property.
+* Pretty much the only thing we are doing is appending `heading.` before each of the properties in the code.  Since each property is now nested in the `heading` object, instead of writing `{{ title }}` we need to write `{{ heading.title }}`.  And we are doing the same for each property.
 
 ### Update the Hero component
 
