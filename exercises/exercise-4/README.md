@@ -13,7 +13,8 @@ First, we will switch back to using global content for this and next components 
 #### Building the global data
 
 1. In your text editor open `source/_data/data.json`
-2. Add the code below just before the closing curly bracket \( `}` \) at the bottom of the file.  Ensure the indentation matches the current indentation in the file.  For example, the block of code below should be indented 2 or 4 spaces depending on your current indentation settings.
+2. Scroll to the end of the file and before the last curley bracket \( } \), add a comma and press Return
+3. Add the code below in the empty space you just created.  Ensure the indentation matches the current indentation in the file.  For example, the block of code below should be indented 2 or 4 spaces depending on your current indentation settings.
 
 {% tabs %}
 {% tab title="data.json" %}
