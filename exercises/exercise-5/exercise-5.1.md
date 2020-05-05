@@ -61,3 +61,5 @@ Now go ahead and update the other two components used in the homepage, Featured 
 * Repeat steps 2 & 3 above
 * Ensure the mixin is added the the top most wrapper of each component \(`.featured-content` and `.blog-content`\).  If those selectors don't exist, create them to add the mixin.
 
+### YOU DID IT!! 🏆 🎉 🙌
+
