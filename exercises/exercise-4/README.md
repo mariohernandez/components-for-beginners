@@ -13,8 +13,8 @@ First, we will switch back to using global content for this and next components 
 #### Building the global data
 
 1. In your text editor open `source/_data/data.json`
-2. Scroll to the end of the file and before the last curley bracket \( } \), add a comma and press Return
-3. Add the code below in the empty space you just created.  Ensure the indentation matches the current indentation in the file.  For example, the block of code below should be indented 2 or 4 spaces depending on your current indentation settings.
+2. Scroll to the end of the file and before the last curly bracket \( } \), add a comma and press **Return**
+3. Copy the code below and paste it in the empty space you just created in the previous step.  Ensure the indentation of the newly added code matches the current indentation in the file. 
 
 {% tabs %}
 {% tab title="data.json" %}
@@ -139,7 +139,7 @@ First, we will switch back to using global content for this and next components 
 
 * The code above is simulating all the content needed to create the **Featured Content** list.  This list is an Organism in the context of Atomic Design because it combines multiple molecules \(cards\).
 * Just like we did with other components, we have created a data object for the list, this is called **featured**.  Doing this will make it possible to retrieve content more easily for the list.
-* Within the "featured" object, we first declare the **heading** object to print the section's heading "Our Featured Content" \(starting on line 2\).
+* Within the "featured" object, we first declare the **heading** object to print the section's heading "Our Featured Content".
 * Next we create an array of content called **items**
 * Inside the `items: [ ]` array, we will add the number of cards we need in our Featured Content list.  From the design above we need 4 cards.  Each item in the array is enclosed in curly brackets\( `{...}` \).
 * Inside the curly brackets we declare the same fields found in `card.json` and we repeat this 4 times.
@@ -181,21 +181,21 @@ Now that the Featured Content data is ready, its time to write the code that wil
 {% endtabs %}
 
 * We start with a `<section>...</section>` tag with the class of `featured-content`
-* First we do an `@include` for the heading atom and then we match the `heading` object from the heading component with `featured.heading` in data.json.  Since our data structure in data.json uses an object of `featured: { }`, any item we want to reference from the object will need to be filtered down by using `featured` then a dot \( `.` \), delimiter and the name of the item \(i.e. heading\)
+* First we do an `@include` for the heading atom and then we match the `heading` object from the heading component with `featured.heading` in data.json.  Since our data structure in data.json uses an object of `featured: { }`, any item we want to reference from the object will need to be filtered down by using `featured` then a dot \( `.` \), delimiter and the name of the item \(i.e. `featured.heading`\)
 * Next we open up a new wrapper to hold the cards \(`<div class="featured-content__items">...</div>` \)
 * Inside the new wrapper, we use Twig's loop statement to loop through the `items` array
 * For each item in the array \(i.e. `for item in featured.items`\), we include a card component.  A `for` loop will repeat itself as many times as the number of items in the array and will add a card each time.  As a result, we will end up with 4 cards.
-* Notice how little Twig code we had to write to build an entire section of content.  Twig is great for this kind of things. We could even reduce the code even more but don't want to get too greety 😃.  This is what we mean when we say "reduce code duplication".  Notice how we are not writing any html for the heading or the cards.  All the code comes from the components and here we are only referencing them.  Gold, Jerry, Gold! 📺 🎭
+* Notice how little Twig code we had to write to build an entire section of content.  Twig is great for this kind of things. We could even reduce the code even more but don't want to get too greedy 😃.  This is what we mean when we say "reduce code duplication".  Notice how we are not writing any html for the heading or the cards.  All the code comes from the components and here we are only referencing them.  Gold, Jerry, Gold! 📺 🎭
 
 #### Writing CSS styles for the list
 
 Now the final step is to style the list. You can only imagine how much CSS we would need to write to make things look like the design above.
 
-1. In `source/css` create a new file called `featured-content.css`
-2. In featured-content.css add the following code:
+1. In `source/_patterns/02-organismss` create a new file called `featured-content.scss`
+2. In featured-content.scss add the following code:
 
 {% tabs %}
-{% tab title="featured-content.css" %}
+{% tab title="featured-content.scss" %}
 ```css
 .featured-content__items {
   display: flex;
@@ -210,12 +210,9 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% endtab %}
 {% endtabs %}
 
-How cool is it that we only need this little CSS? Since the cards have already been individually styled, the CSS above simple addresses the layout and alignment of the cards.
+How cool is it that we only need this little CSS? Since the cards have already been individually styled, the CSS above simple addresses the layout and alignment of the list of cards.
 
-#### Final step
-
-* Now in your editor open `source/_meta/_00-head.twig` and copy one of the lines at the top of the page that starts  with `<link .../>`
-* Place the newly copy line after the last `<link .../>` item and update its path to be `../../css/featured-content.css`
+#### Pattern Lab time
 
 If Pattern Lab is running you can look in **Organisms** from Pattern Lab's main navigation and see the Featured Content section. Otherwise run:
 
