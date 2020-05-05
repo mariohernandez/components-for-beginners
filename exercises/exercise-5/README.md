@@ -4,16 +4,15 @@
 
 ![Homepage Design](../../.gitbook/assets/components-for-beginners-home.png)
 
-Is now time to put all the pieces together to build the homepage shown above. Building prototype pages in Pattern Lab is a great way to demo to stakeholders and team members the end product of a project. This is particularly useful for testing.
+It is now time to put all the pieces together to build the homepage shown above. Building prototype pages in Pattern Lab is a great way to demo to stakeholders and team members the end product of a project. This is particularly useful for testing.
 
-Building the page will be relatively easy because all we need to do is include all the components we already built. In addition, a lot of the data/content the components need has already been written with the exception of some components. Let's start.
+Building the page will be relatively easy because all we need to do is include all the components we already built. Since we already created sample data in `data.json` for the Featured Content and Blog Content sections in the previous two exercises, we can reuse it for the homepage. We just need to add data for the Hero component in `data.json`. Let's do that now.
 
-## Demo content
+### Demo content
 
-Since we already created sample data in `data.json` for the Featured Content and Blog Content sections in the previous two exercises, we can reuse it for the homepage. We just need to add data for the Hero component in `data.json`. Let's do that now.
-
-1. In your text editor, open `source/_data/data.json`
-2. Just before `"featured": {` add the following code and save your changes:
+1. In your text editor open `source/_data/data.json`
+2. Scroll to the end of the file and before the last curly bracket \( } \), add a comma and press **Return**
+3. Copy the code below and paste it in the empty space you just created in the previous step.  Ensure the indentation of the newly added code matches the current indentation in the file. 
 
 {% tabs %}
 {% tab title="data.json" %}
@@ -43,11 +42,11 @@ Since we already created sample data in `data.json` for the Featured Content and
 * As you can see above, we are creating an object for the Hero component called **hero\_new**.  Why hero\_new? you may ask yourself.  If you look in `data.json` you will find that there is a `hero:` key.  Rather than overriding the existing key and risking breaking patterns that may already be using it, we're starting with a new object.
 * The data structure above was copied from the Hero component we built.
 
-## Building the Twig template for homepage
+### Building the Twig template for homepage
 
 Now that we have all the data we need, let's build the Twig template that will become our new homepage. As we did with the components we built, we will be using our own naming convention by excluding the numeric prefixes found in patterns provided by Pattern Lab. This is only a personal preference and you are welcome to use Pattern Lab's naming convention if that suits you better.
 
-### Adding the Hero component
+### Create the Homepage page
 
 1. Inside `source/_patterns/04-pages/` create a new file called **homepage.twig**
 2. In _homepage.twig_ write the following code to add the Hero component to the page:
@@ -66,15 +65,15 @@ Now that we have all the data we need, let's build the Twig template that will b
 {% endtab %}
 {% endtabs %}
 
-* Notice how we are only including the **hero** component and mapping its fields to the fields/keys in `data.json`.  We are not writing any HTML.  Since we built the Hero and all other components as their own independent entities, they will look and behave the same regardless of where we use them.
+* Notice how we are only including the **hero** component and mapping its fields to the fields/keys in `data.json`.  We are not writing any HTML.  
 
-If you save your changes and you have Pattern Lab running you should see a new item under "Pages" in the main navigation called **Homepage**. Clicking Homepage should display a new page with a hero in it.
+If you save your changes and you have Pattern Lab running you should see Homepage in Pattern Lab's "Pages" dropdown \(it should be at the bottom of the list\).  Clicking Homepage should display a new page with a hero in it.
 
 If Pattern Lab was not running run `npm start` to start it.
 
 ### Adding the Featured Content List component
 
-When we built the Featured Content List component we added its data to `data.json`. This means we don't have to do anything for data anymore. All we have to do now is include that component in `homepage.twig` and map its fields accordingly.
+When we built the Featured Content List component we added its data to `data.json`. This means we don't have to do anything for data for the homepage.  We can use the same data we already created. All we have to do now is include that component in `homepage.twig` and map its fields accordingly.
 
 1. In _homepage.twig_ write the following code and save your changes:
 2. For readability, you may want to leave an empty line in between each component's include.
@@ -89,7 +88,7 @@ When we built the Featured Content List component we added its data to `data.jso
 
 This include statement above is much different and simpler. Since the data for Featured Content List was originally created in `data.json`, Pattern Lab is smart enough to automatically retrieve all the keys and values. This eliminates the need to map each field as we did with the Hero.
 
-Pattern Lab should now show in addition to Hero, the Featured Content component. Don't worry about the spacing around the components for now. We'll address that shortly.
+Pattern Lab should now show in addition to Hero, the Featured Content list. Don't worry about the spacing around the components for now. We'll address that shortly.
 
 ### Adding the Our Blog List component
 
