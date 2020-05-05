@@ -13,7 +13,7 @@ First, we will switch back to using global content for this and next components 
 #### Building the global data
 
 1. In your text editor open `source/_data/data.json`
-2. Add the code below just before the closing curly bracket \( `}` \).  Ensure the indentation matches the current indentation in the file.  For example, the block of code below should be indented 2 or 4 spaces depending on your current indentation settings.
+2. Add the code below just before the closing curly bracket \( `}` \) at the bottom of the file.  Ensure the indentation matches the current indentation in the file.  For example, the block of code below should be indented 2 or 4 spaces depending on your current indentation settings.
 
 {% tabs %}
 {% tab title="data.json" %}
@@ -136,7 +136,7 @@ First, we will switch back to using global content for this and next components 
 {% endtab %}
 {% endtabs %}
 
-* The code above is simulating all the content needed to create the **Featured Content** list.  This list is an Organism in the context of Atomic Design because it combines multiple melecules \(cards\).
+* The code above is simulating all the content needed to create the **Featured Content** list.  This list is an Organism in the context of Atomic Design because it combines multiple molecules \(cards\).
 * Just like we did with other components, we have created a data object for the list, this is called **featured**.  Doing this will make it possible to retrieve content more easily for the list.
 * Within the "featured" object, we first declare the **heading** object to print the section's heading "Our Featured Content" \(starting on line 2\).
 * Next we create an array of content called **items**
