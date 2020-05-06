@@ -4,7 +4,7 @@
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title or heading of "Our Featured Content" and a Call To Action button to see more content.
 
-![Featured content](../../.gitbook/assets/featured.png)
+![Featured Content List](../../.gitbook/assets/components-for-beginners-featured.png)
 
 ### Let's start
 

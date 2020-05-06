@@ -2,6 +2,8 @@
 
 ## Button component
 
+![Button component](../../.gitbook/assets/components-for-beginners-button.png)
+
 Buttons are some of those things that are used over and over on a website. For this reason it makes sense to create a new atom for the button.
 
 1. Inside `source/_patterns/00-atoms/` create a new directory called **button**

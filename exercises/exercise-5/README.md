@@ -2,6 +2,8 @@
 
 ## Homepage prototype
 
+![](../../.gitbook/assets/components-for-beginners.png)
+
 It is now time to put all the pieces together to build the homepage shown above. Building prototype pages in Pattern Lab is a great way to demo to stakeholders and team members the end product of a project. This is particularly useful for testing.
 
 Building the page will be relatively easy because all we need to do is include all the components we already built. Since we already created sample data in `data.json` for the Featured Content and Blog Content sections in the previous two exercises, we can reuse it for the homepage. We just need to add data for the Hero component in `data.json`. Let's do that now.
