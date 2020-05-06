@@ -1,7 +1,8 @@
 # BEM Basics
 
 ### What is BEM?
-The Block, Element, Modifier methodology (commonly referred to as BEM) is a popular naming convention for classes in HTML and CSS. Developed by the team at Yandex, its goal is to help developers better understand the relationship between the HTML and CSS in a given project.
+
+The Block, Element, Modifier methodology \(commonly referred to as BEM\) is a popular naming convention for classes in HTML and CSS. Developed by the team at Yandex, its goal is to help developers better understand the relationship between the HTML and CSS in a given project.
 
 Here's an example of typical BEM structure:
 
@@ -26,9 +27,10 @@ Here's an example of typical BEM structure:
 * Finally, modifiers can manipulate the block so that we can theme or style that particular component without inflicting changes on a completely unrelated module. This is done by appending two hyphens to the name of the block just like `btn--orange`.
 
 The HTML that uses the classes above would look like this:
+
 {% tabs %}
 {% tab title="html" %}
-```html
+```markup
 <a class="btn btn--big btn--orange" href="https://css-tricks.com">
   <span class="btn__price">$9.99</span>
   <span class="btn__text">Subscribe</span>
@@ -42,7 +44,7 @@ If another developer wrote this markup, and we weren’t familiar with the CSS, 
 ## Why should we consider BEM
 
 1. If we want to make a new style of a component, we can easily see which modifiers and children already exist. We might even realize we don’t need to write any CSS in the first place because there is a pre-existing modifier that does what we need.
-2. If we are reading the markup instead of CSS, we should be able to quickly get an idea of which element depends on another (in the previous example we can see that .btn__price depends on .btn, even if we don’t know what that does just yet.)
+2. If we are reading the markup instead of CSS, we should be able to quickly get an idea of which element depends on another \(in the previous example we can see that .btn\_\_price depends on .btn, even if we don’t know what that does just yet.\)
 3. Designers and developers can consistently name components for easier communication between team members. In other words, BEM gives everyone on a project a declarative syntax that they can share so that they’re on the same page.
 
 ## Tips when using BEM
@@ -70,3 +72,4 @@ If another developer wrote this markup, and we weren’t familiar with the CSS, 
 ```
 {% endtab %}
 {% endtabs %}
+
