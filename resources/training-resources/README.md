@@ -11,4 +11,4 @@
 * [BEM Cheat Sheet](https://9elements.com/bem-cheat-sheet/)
 * [BEM Resources](https://en.bem.info/)
 * [Learn to code HTML & CSS](https://learn.shayhowe.com/)
-* [Sass basics](https://www.freecodecamp.org/news/the-complete-guide-to-scss-sass-30053c266b23/)
+* [Sass basics](https://www.sass-lang.com/guide/)

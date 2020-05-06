@@ -2,11 +2,16 @@
 
 **Sass** (short for syntactically awesome style sheets) is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum.
 
+## Sass Pre-Processor
+
 Sass is a [preprocessor](https://en.wikipedia.org/wiki/Preprocessor) language that is interpreted or compiled into Cascading Style Sheets (CSS). Sass consists of two syntaxes. The original syntax, called "the indented syntax," uses indentation to separate code blocks and newline characters to separate rules. The newer syntax, "SCSS" (Sassy CSS), uses block formatting like that of CSS. It uses braces to denote code blocks and semicolons to separate rules within a block. The indented syntax and SCSS files are traditionally given the extensions .sass and .scss, respectively.
 
 All Sass/SCSS code compiles back to standard CSS so the browser can actually understand and render the results. Browsers currently don’t have direct support for Sass/SCSS or any other CSS pre-processor, nor does the standard CSS specification provide alternatives for similar features (yet.)
 
 Sass and SCSS will refer to roughly the same thing. Conceptually, there isn’t much difference. You will learn the difference as you learn more, but basically SCSS is the one most people use now. It’s just a more recent (and according to some, superior) version of the original Sass syntax.
+
+## New Syntax
+SCSS doesn’t really add any new features to the CSS language. Just new syntax that can in many cases shorten the amount of time spent writing CSS code.
 
 ## What can Sass do that Vanilla CSS can’t?
 1. **Nested Rules**: Nest your CSS properties within multiple sets of {} brackets. This makes your CSS code a bit more clean-looking and more intuitive.
@@ -122,8 +127,6 @@ This then gets compiled into CSS as follows:
 {% endtab %}
 {% endtabs %}
 
-## Sass Pre-Processor
-Sass is not dynamic. You won’t be able to generate or animate CSS properties and values in real-time. But you can generate them in a more efficient way and let standard properties (CSS animation for example) pick up from there.
-
-## New Syntax
-SCSS doesn’t really add any new features to the CSS language. Just new syntax that can in many cases shorten the amount of time spent writing CSS code.
+{% hint style="info" %}
+Learn more about [Sass basics](https://www.sass-lang.com/guide)
+{% endhint %}
