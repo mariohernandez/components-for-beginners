@@ -13,3 +13,7 @@
 * [Learn to code HTML & CSS](https://learn.shayhowe.com/)
 * [Sass basics](https://www.sass-lang.com/guide/)
 
+### Command Line
+
+* [10 Basic commands every web designer should grasp](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)
+
