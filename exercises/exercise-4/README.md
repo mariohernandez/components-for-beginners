@@ -197,6 +197,16 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tabs %}
 {% tab title="featured-content.scss" %}
 ```css
+@import '../../../css/scss/generic/mixins';
+
+.featured-content {
+  @include component-spacing;
+
+  .heading {
+    text-align: center;
+  }
+}
+
 .featured-content__items {
   display: flex;
   justify-content: space-around;

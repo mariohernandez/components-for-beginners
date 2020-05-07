@@ -127,7 +127,7 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 {% tabs %}
 {% tab title="card.scss" %}
 ```css
-@import '../../../css/scss/generic/mixins';
+@import '../../../css/scss/generic/variables';
 
 .card {
   display: flex;
@@ -150,10 +150,6 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
   margin-top: 0;
   font-size: 24px;
   font-weight: 600;
-}
-
-.eyebrow__text {
-  margin: 0;
 }
 
 .card__date {
@@ -190,32 +186,30 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
   }
 }
 
-/* ========== Card wide styles========= */
-.card.card--wide {
+// ========== Card wide styles========= 
+.card--wide {
   box-shadow: none;
   border: 1px solid #ddd;
   flex-direction: column;
-}
 
-.card--wide .card__body-text {
-  margin-bottom: 40px;
-}
+  .card__body-text {
+    margin-bottom: 40px;
+  }
 
-/* Changes card layout on larger screens. */
-@media screen and (min-width: 640px) {
+  // Changes card layout on larger screens.
+  @media screen and (min-width: 640px) {
 
-  .card.card--wide {
     flex-direction: row;
     max-width: 720px;
-  }
 
-  .card--wide .card__media,
-  .card--wide .card__content {
-    flex: 0 0 50%;
-  }
+    .card__media,
+    .card__content {
+      flex: 0 0 50%;
+    }
 
-  .card--wide .card__content {
-    padding: 40px 20px 20px 40px;
+    .card__content {
+      padding: 40px 20px 20px 40px;
+    }
   }
 }
 ```

@@ -65,6 +65,7 @@ Update `.button.scss`, `.heading.scss`, and `.hero.scss` as follows:
   &.heading--large {
     color: #444444;
     font-size: 100px;
+    text-align: center;
   }
 }
 ```
