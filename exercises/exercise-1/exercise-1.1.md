@@ -91,6 +91,8 @@ Let's create a CSS file to write basic CSS styles for the heading.
 
 ### Oh no! It didn't work 🙀
 
+The text color should had looked Orange, but it does not.
+
 Out of the box Pattern Lab does not have a an automated system to become aware of new CSS stylesheets that are created. This is a manual process which is not complicated at all. However, on a typical project this should be an automated process. We will implement a basic system to automate this process later on. For now follow these steps to make Pattern Lab aware of`heading.css` .
 
 #### Add the new CSS file to Pattern Lab
