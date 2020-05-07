@@ -100,7 +100,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
   "cta": {
     "text": "Read the full article",
     "url": "#",
-    "modifier": "card__cta"
+    "modifier": "button--ghost"
   },
   "modifier": "card--wide"
 }
