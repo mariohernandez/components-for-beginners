@@ -13,7 +13,7 @@ Now that we have a reusable button pattern let's put it to use in the Hero compo
   "text": "Get started",
   "url": "#",
   "modifier": "hero__cta"
-},
+}
 ```
 {% endtab %}
 {% endtabs %}

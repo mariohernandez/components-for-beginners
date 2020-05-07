@@ -129,6 +129,7 @@ Now let's write some HTML for the component.
 
 .hero__content h1 {
   color: #003954;
+  font-weight: 900;
 }
 ```
 {% endtab %}
