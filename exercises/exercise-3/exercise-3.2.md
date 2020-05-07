@@ -34,8 +34,40 @@ Creating a new pattern for these kind of elements will make it easier to handle 
 @import '../../../css/scss/generic/mixins';
 
 .eyebrow {
+  margin: 10px 0;
   text-transform: uppercase;
 }
+```
+{% endtab %}
+{% endtabs %}
+
+### Update the Card component
+
+Now that we have a new atom for the eyebrow, let's update the Card component as follows:
+
+* In your editor open `card.twig` and update the `date` and `category` fields as follows:
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+    {% if date %}
+      {% include '@atoms/eyebrow/eyebrow.twig' with {
+          "eyebrow": {
+            "modifier": "card__eyebrow",
+            "text": date
+          }
+        } only
+      %}
+    {% endif %}
+    {% if category %}
+      {% include '@atoms/eyebrow/eyebrow.twig' with {
+          "eyebrow": {
+            "modifier": "card__eyebrow",
+            "text": category
+          }
+        } only
+      %}
+    {% endif %}
 ```
 {% endtab %}
 {% endtabs %}
