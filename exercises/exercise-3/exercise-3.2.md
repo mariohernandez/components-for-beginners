@@ -31,8 +31,10 @@ Creating a new pattern for these kind of elements will make it easier to handle 
 {% tabs %}
 {% tab title="eyebrow.scss" %}
 ```css
+@import '../../../css/scss/generic/mixins';
+
 .eyebrow {
-  text-transform: uppercase;
+  ext-transform: uppercase;
 }
 ```
 {% endtab %}
