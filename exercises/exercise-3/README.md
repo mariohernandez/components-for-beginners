@@ -198,7 +198,6 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 
   // Changes card layout on larger screens.
   @media screen and (min-width: 640px) {
-
     flex-direction: row;
     max-width: 720px;
 
