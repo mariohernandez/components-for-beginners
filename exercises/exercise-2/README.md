@@ -128,7 +128,7 @@ Now let's write some HTML for the component.
 }
 
 .hero__content h1 {
-  color: #ffffff;
+  color: blue;
   margin-bottom: 40px;
 }
 ```
