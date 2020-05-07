@@ -29,7 +29,7 @@ Creating a new pattern for these kind of elements will make it easier to handle 
 4. Use the styles below to style the Eyebrow using its own stylesheet \(`eyebrow.scss`\)
 
 {% tabs %}
-{% tab title="eyebrow.css" %}
+{% tab title="eyebrow.scss" %}
 ```css
 .eyebrow {
   text-transform: uppercase;
