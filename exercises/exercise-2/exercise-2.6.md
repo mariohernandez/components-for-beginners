@@ -54,7 +54,7 @@ Update `.button.scss`, `.heading.scss`, and `.hero.scss` as follows:
 @import '../../../css/scss/generic/variables';
 
 .heading {
-  color: #ff9900;
+  color: #444444;
 
   // Removes underline when headings are links.
   a {
