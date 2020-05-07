@@ -34,7 +34,7 @@ Creating a new pattern for these kind of elements will make it easier to handle 
 @import '../../../css/scss/generic/mixins';
 
 .eyebrow {
-  ext-transform: uppercase;
+  text-transform: uppercase;
 }
 ```
 {% endtab %}
