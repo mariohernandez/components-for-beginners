@@ -2,7 +2,7 @@
 
 ## Heading Component
 
-Following the [Atomic Design ](https://atomicdesign.bradfrost.com/table-of-contents/)methodology we are going to build a simple component or pattern. The Heading pattern is an **atom** which prints a string of text as the title for a page, paragraph, or other component.
+Following the [Atomic Design ](https://atomicdesign.bradfrost.com/table-of-contents/)methodology we are going to build a simple component or pattern. The Heading pattern is an **Atom** which prints a string of text as the title for a page, paragraph, or other component.
 
 ### Component's stock content
 
@@ -11,17 +11,6 @@ Let's start by first identifying the content for the component. Since this is a 
 {% hint style="info" %}
 **NOTE:** All components will be created inside `source/_patterns/`
 {% endhint %}
-
-#### Setting Up a new project in your editor 
-
-1. Open your text editor \(VS Code\) and click **File &gt; Open...**
-2. Find the directory you created when you setup Pattern Lab \(i.e. **components\_project**\), and select it, then click the **Open** button
-3. Click **File &gt; Save Workspace As...**
-4. Under **Save As** change **"Untitled"** to **"components"**.  Leave the rest of the name unchanged \(**components**.code-workspace\)
-5. Choose a location for your workspace.  This can be anywhere in your computer.  A good place could be "Documents' or "Desktop"**.**
-6. Press the **Save** button
-
-Now every time you start VS Code you can simply click **File &gt; Open Workspace** and choose your workspace.  Or you could also select **File &gt; Open Recent** and you should be able to see your most recent projects.
 
 ### Creating the Heading component
 

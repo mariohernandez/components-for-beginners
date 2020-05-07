@@ -6,6 +6,7 @@
 
 ## Basics
 
+* [Setup VS Code \(Optional\)](basics/setup-vs-code-optional.md)
 * [JSON Basics](basics/json-basics.md)
 * [Twig Basics](basics/twig-basics.md)
 * [Component Architecture](basics/component-architecture.md)
