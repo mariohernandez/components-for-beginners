@@ -125,7 +125,6 @@ Now let's write some HTML for the component.
   text-align: center;
   top: 45%;
   width: 100%;
-
 }
 
 .hero__content h1 {
