@@ -1,6 +1,6 @@
 # Component Architecture
 
-I typically recommend to group components or patterns in individual folders. This not only provides organization as your catalog of components grows, but it also makes each component completely reusable and even portable as all the pieces of a component are encapsulated in a single folder. Here's a typical architecture of a component. Your particular workflow may vary.
+I typically recommend to group components or patterns in individual folders. This not only provides organization as your catalog of components grows, but it also makes each component completely reusable and even portable as all the pieces of a component are encapsulated in a single folder. Here's an example of a typical architecture of a component. Your particular workflow may vary.
 
 ```text
 +
