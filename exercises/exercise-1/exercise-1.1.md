@@ -2,9 +2,9 @@
 
 ### Improving the Heading component
 
-The heading component looks good and it will work great ...as long as we always want to use a `<h1>`for all titles. Since our goal for creating any component is to make them reuseable, the current state of the Heading component does not offer much flexibility. What if we wanted to use a h2 or h3? or what if the title field is a link to another page? Then the heading component would probably not work because we have no way of changing the heading level from h1 to any other level or add a URL. Let's re-work the heading component to make it more dynamic.
+The heading component looks good and it will work great ...as long as we always want to use a `<h1>`for all titles. Since our goal for creating any component is to make them reuseable, the current state of the Heading component does not offer much flexibility. What if we wanted to use a h2 or h3? or what if the title field is a link to another page? Then the heading component would probably not work because we have no way of changing the heading level from h1 to any other level or adding a URL. Let's re-work the heading component to make it more dynamic.
 
-#### Create a data file for the Heading's
+#### Create a data file for the Headings
 
 We will start by creating our own data file for this and future components. We will resume using global data from data.json when we build the content lists and homepage prototype at the end of this training.  Follow these steps:
 
@@ -112,7 +112,7 @@ _We added a link to the new CSS file we created for the Heading component.  This
 
 #### Compiling the code
 
-After saving the changes above Pattern Lab should had auto reloaded.  If not, run this command and press **Return**:`npm start`
+After saving the changes above Pattern Lab should have auto reloaded.  If not, run this command and press **Return**:`npm start`
 
 **Just for fun 💥**
 
