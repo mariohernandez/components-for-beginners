@@ -59,7 +59,7 @@ In the interest of time, our CSS styles for the card already include styles for 
 
 Our test above proves that using a CSS modifier class can help achieve some of the changes in the card variant, however, the goal is to not alter the original Card component when creating the variant. To accomplish this we need to work with Pattern Lab's Pseudo Patterns.
 
-## Pseudo Patterns in Pattern Lab
+### Pseudo Patterns in Pattern Lab
 
 Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The idea of Pseudo Patterns is that Pattern Lab will create new instances of the source component, but it will not alter the source component. This is perfect because in the example of the card, we don't want to modify or change the way the original card component looks or behaves, when we create the **Card Wide** variant. The basic syntax for pseudo patterns is:
 
@@ -108,15 +108,19 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% endtab %}
 {% endtabs %}
 
-* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in the form.  In a date-type filed, the editor entering the content will be able to select the date from a calendar or date picker.  This is why we are using different fields here.
+* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in Drupal.  In a date-type filed, the editor entering the content will be able to select the date from a calendar or date picker.  This is why we are using different fields here.
 * Next, for those fields we don't need in the card wide variant, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
 * Finally, noticed we moved the `modifier` to the bottom of the list.  This does not affect anything at all.
 
 ### Updating card.twig
 
+{% hint style="info" %}
+Always ensure you maintain the right code indentation as you update existing templates.
+{% endhint %}
+
 Now that the variant's JSON is ready with only the fields we want, it's time to update **card.twig** to ensure the right card variant is rendered. Here is what we are going to do:
 
-* Open `card.twig` and at around line 7, we need to update the `if` statement by including the new fields used in the card wide variant \(category and CTA\).  Update the conditional statement as follows:
+* Open `card.twig` and at around line 7 \(line numbers may not match your project\) , we need to update the `if` statement by including the new fields used in the card wide variant \(category and CTA\).  Update the conditional statement as follows:
 
 ```php
 {% if title or date or category or body or tags or cta %}
@@ -145,6 +149,10 @@ The above is one of the new fields found in the card wide variant.
   %}
 {% endif %}
 ```
+
+{% hint style="info" %}
+If you are wondering why are we placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card.  If we were to add the button or category fields at the top or bottom of card.twig, they would display at the top or bottom of the card in Drupal or Pattern Lab.
+{% endhint %}
 
 The full `card.twig` template should now look like this:
 
