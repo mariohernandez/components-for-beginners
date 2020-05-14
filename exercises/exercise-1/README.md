@@ -50,10 +50,12 @@ Pattern Lab will open and if you look in the **Atoms** dropdown in the main navi
 
 ### **BONUS:**
 
-* Open `source/_data/data.json` and edit the value of `title` to read "_My website's titl_e"
-* Save the file and Pattern Lab should reload your browser.  Now your Heading component's text should read "_My website's title_".
+* Open `source/_data/data.json` and edit the value of `title` to read "_I love components_"
+* Save the file and Pattern Lab should reload your browser.  Now your Heading component's text should read "_I love components_".
 
 {% hint style="info" %}
 After running `npm start` Pattern Lab compiles all code and reloads the browser to reflect the latest changes.  If errors are encountered during compilation, you will need to resolve the errors, save the changes and run `npm start` again.
 {% endhint %}
+
+
 
