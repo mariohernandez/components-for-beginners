@@ -6,9 +6,9 @@
 * A text editor.  We recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download) which works on macOS and Windows.
 * A Command Line Interface \(CLI\) tool.  On macOS use [Terminal](https://www.youtube.com/watch?v=Jm8-UFf8IMg) and on Windows use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU)
 * Basic familiarity with [running commands on a CLI ](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)is useful
-* Basic understanding of CSS is useful
+* Basic understanding of HTML and CSS is required
 
-The local computer setup for this training will allow you to follow along with the hands-on exercises.
+The setup for this training will allow you to follow along with the hands-on exercises.
 
 ### Tools needed:
 

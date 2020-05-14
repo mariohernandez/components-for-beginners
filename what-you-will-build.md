@@ -7,9 +7,9 @@ The homepage design here will allow us to build a series of components following
 Components provide all sorts of advantage over the traditional top-to-bottom web design/development approach, including:
 
 * Individual attention to each piece rather than building things depending on each other
-* Reusability of previously built components
+* Re-usability of previously built components
 * Improved project maintenance
-* Living styleguide as the single source of thruth for markup, styles, and Javascript
+* Living styleguide as the single source of truth for markup, styles, and Javascript
 * Improved team collaboration
 * ... and more
 
