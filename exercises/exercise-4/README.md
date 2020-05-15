@@ -32,7 +32,7 @@ First, we will switch back to using global content for this and next components 
       "title": {
         "heading_level": "3",
         "modifier": "featured-content__card",
-        "title": "The beauty of nature",
+        "title": "Staying healthy",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -58,7 +58,7 @@ First, we will switch back to using global content for this and next components 
       "title": {
         "heading_level": "3",
         "modifier": "featured-content__card",
-        "title": "The beauty of nature",
+        "title": "Tech gadgets",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -84,7 +84,7 @@ First, we will switch back to using global content for this and next components 
       "title": {
         "heading_level": "3",
         "modifier": "featured-content__card",
-        "title": "The beauty of nature",
+        "title": "The little things",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -106,11 +106,11 @@ First, we will switch back to using global content for this and next components 
       "modifier": "featured-content__card"
     },
     {
-      "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
+      "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Art' />",
       "title": {
         "heading_level": "3",
         "modifier": "featured-content__card",
-        "title": "The beauty of nature",
+        "title": "All the arts",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -198,10 +198,6 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tab title="featured-content.scss" %}
 ```css
 @import '../../../css/scss/generic/mixins';
-
-.featured-content {
-  @include component-spacing;
-}
 
 .featured-content__items {
   display: flex;

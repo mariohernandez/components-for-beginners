@@ -31,7 +31,7 @@ Here are the styles you can use for the blog content
   text-align: center;
 }
 
-/** This can be placed elsewhere. **/
+// This can be placed elsewhere.
 .footer {
   margin-top: 80px;
   background-color: #000000;
