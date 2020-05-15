@@ -4,7 +4,7 @@
 
 So now that we have functioning Sass in our project, let's take a moving to improve the CSS we've written thus far so that we take advantage of some of the features of Sass.
 
-#### Updated the existing CSS
+#### Update the existing CSS
 
 Update `.button.scss`, `.heading.scss`, and `.hero.scss` as follows:
 

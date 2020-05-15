@@ -13,7 +13,8 @@ So our gulp workflow is in place, but how do we know it works?  How about if we 
 
 Alright, let's run gulp for the first time and let's cross our fingers that everything works 🤞
 
-1. While in **components\_project** in your command line tool, run
+1. Delete `button.css`, `heading.css`, and `hero.css` from `public/css`.  These files will be created again with Gulp, but to ensure our new workflow is working, we're deleting them so we can ensure they get created again.
+2. While in **components\_project** in your command line tool, run
 
 ```bash
 npm run gulp
@@ -21,7 +22,7 @@ npm run gulp
 
 #### Did it work?  I don't want to look 🙉 
 
-I expect you see something like this after running gulp for the first time:
+If you see something like this after running gulp for the first time, no worries.  We can fix these issues:
 
 {% tabs %}
 {% tab title="command line" %}
@@ -75,5 +76,42 @@ Your output above may be different  No worries.  The point is that this worked a
 [11:54:07] Finished 'default' after 601 ms
 ```
 
-###  Success! 💪
+* Check in `public/css` and confirm `button.css`, `heading.css`, and `hero.css` were recreated
+* Also confirm `all.css` was created.
+
+#### Start Pattern Lab
+
+```bash
+npm start
+```
+
+* If we did everything, the Button, Heading, and Hero components should look the same way they did before setting up Gulp.
+
+#### Running Gulp
+
+Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we need to run both tasks simultaneously \(`npm start` and `npm run watch` \). Pattern Lab's task watches for any Twig or JSON changes, while our new Gulp workflow watches for any changes we make to Sass files and compiles them to CSS. Let's take a look at how we can do this in VS Code and Outside of VS Code for those not using VS Code.
+
+#### Running Gulp and Pattern Lab together from VS Code
+
+* In VS Code, open the command line tool \(**View &gt; Terminal**\).  You will most likely have Pattern Lab running, otherwise type `npm start` and press **Return**
+* With Pattern Lab running in your command line, press **Cmd + \** or click **Terminal &gt; Split Terminal** \(from VS Code's toolbar\).  You should now have  two terminal windows in which you can run different commands.
+* In the second tab, type the following command and press **Return**
+
+```text
+npm run watch
+```
+
+#### Running Gulp and Pattern Lab together from Outside VS Code
+
+If you have opted to use a command line tool that it's not in VS Code \(Terminal or PowerShell\), or, if you are not using VS Code as your editor, follow these steps:
+
+* Open your command line tool.  You will most likely have Pattern Lab running, otherwise type `npm start` from within the **components\_project** directory, and press **Return**
+* Press **Cmd + T** \(**Ctrl + T** in Windows\), or Look in the toolbar of your command line tool and find the option to open a new tab.
+* In the second tab, type the following command and press **Return**
+
+```text
+npm run watch
+```
+
+### Success! 💪
 
