@@ -93,9 +93,9 @@ Since the new Gulp workflow is separate from Pattern Lab's compiling tasks, we n
 
 #### Running Gulp and Pattern Lab together from VS Code
 
-* In VS Code, open the command line tool \(**View &gt; Terminal**\).  You will most likely have Pattern Lab running, otherwise type `npm start` and press **Return**
-* With Pattern Lab running in your command line, press **Cmd + \** or click **Terminal &gt; Split Terminal** \(from VS Code's toolbar\).  You should now have  two terminal windows in which you can run different commands.
-* In the second tab, type the following command and press **Return**
+1. In VS Code, open the command line tool \(**View &gt; Terminal**\).  You will most likely have Pattern Lab running, otherwise type `npm start` and press **Return**
+2. With Pattern Lab running in your command line, press **Cmd + \** or click **Terminal &gt; Split Terminal** \(from VS Code's toolbar\).  You should now have  two terminal windows in which you can run different commands.
+3. In the second tab, type the following command and press **Return**
 
 ```text
 npm run watch
@@ -105,9 +105,9 @@ npm run watch
 
 If you have opted to use a command line tool that it's not in VS Code \(Terminal or PowerShell\), or, if you are not using VS Code as your editor, follow these steps:
 
-* Open your command line tool.  You will most likely have Pattern Lab running, otherwise type `npm start` from within the **components\_project** directory, and press **Return**
-* Press **Cmd + T** \(**Ctrl + T** in Windows\), or Look in the toolbar of your command line tool and find the option to open a new tab.
-* In the second tab, type the following command and press **Return**
+1. Open your command line tool.  You will most likely have Pattern Lab running, otherwise type `npm start` from within the **components\_project** directory, and press **Return**
+2. Press **Cmd + T** \(**Ctrl + T** in Windows\), or Look in the toolbar of your command line tool and find the option to open a new tab.
+3. In the second tab, type the following command and press **Return**
 
 ```text
 npm run watch
