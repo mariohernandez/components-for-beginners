@@ -31,7 +31,7 @@ First, we will switch back to using global content for this and next components 
       "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
       "title": {
         "heading_level": "3",
-        "modifier": "featured-content__card",
+        "modifier": "featured-content__title",
         "title": "Staying healthy",
         "url": "#"
       },
@@ -57,7 +57,7 @@ First, we will switch back to using global content for this and next components 
       "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
       "title": {
         "heading_level": "3",
-        "modifier": "featured-content__card",
+        "modifier": "featured-content__title",
         "title": "Tech gadgets",
         "url": "#"
       },
@@ -83,7 +83,7 @@ First, we will switch back to using global content for this and next components 
       "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
       "title": {
         "heading_level": "3",
-        "modifier": "featured-content__card",
+        "modifier": "featured-content__title",
         "title": "The little things",
         "url": "#"
       },
@@ -109,7 +109,7 @@ First, we will switch back to using global content for this and next components 
       "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Art' />",
       "title": {
         "heading_level": "3",
-        "modifier": "featured-content__card",
+        "modifier": "featured-content__title",
         "title": "All the arts",
         "url": "#"
       },
@@ -132,7 +132,7 @@ First, we will switch back to using global content for this and next components 
       "modifier": "featured-content__card"
     }
   ]
-}
+},
 ```
 {% endtab %}
 {% endtabs %}

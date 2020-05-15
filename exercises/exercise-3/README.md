@@ -186,14 +186,14 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
   }
 }
 
-// ========== Card wide styles========= 
+// ========== Card wide styles=========
 .card--wide {
   box-shadow: none;
   border: 1px solid #ddd;
   flex-direction: column;
 
   .card__body-text {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   // Changes card layout on larger screens.
@@ -201,13 +201,16 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
     flex-direction: row;
     max-width: 720px;
 
-    .card__media,
-    .card__content {
-      flex: 0 0 50%;
+    .card__media {
+      flex: 0 0 30%;
     }
 
     .card__content {
-      padding: 40px 20px 20px 40px;
+      flex: 0 0 70%;
+    }
+
+    .card__content {
+      padding: 20px 20px 0 20px;
     }
   }
 }

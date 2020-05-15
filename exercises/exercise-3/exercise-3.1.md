@@ -86,7 +86,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% tab title="card~wide.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x640' alt='Women running' />",
+  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/260x360' alt='Women running' />",
   "title": {
     "heading_level": "2",
     "modifier": "",

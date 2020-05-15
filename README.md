@@ -7,7 +7,7 @@ In this live, online training workshop, you will learn the process of identifyin
 ### The training covers the following topics:
 
 * Principles of Atomic Design for designing and building flexible and scalable components
-* Building a custom Drupal 8 theme
+* Building a custom Pattern Lab project
 * Using Pattern Lab and Twig to build flexible and re-usable components
 * Nesting and reusing components
 * Styling components using Sass and [BEM](https://css-tricks.com/bem-101/) techniques
@@ -20,7 +20,7 @@ In this live, online training workshop, you will learn the process of identifyin
 
 * Have a good understanding of Atomic Design and the principles of building flexible and scalable components in Pattern Lab.
 * Have a good working knowledge of how Pattern Lab works and how to take advantage of many of its features such as global data, pseudo patterns, annotations and more.
-* Have a basic understanding of Twig syntax such as conditional statements, includes, for loops, and write basic twig logic to make components more dynamic and reusable.
+* Have a basic understanding of Twig syntax such as conditional statements, includes, for loops, and write basic logic to make components more dynamic and reusable.
 * Build responsive, reusable components and plan for building component variants to avoid code repetition
 * Understand at a basic level how Pattern Lab components get integrated with a Drupal 8 website.
 
