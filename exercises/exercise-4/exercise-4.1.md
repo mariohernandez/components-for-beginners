@@ -17,10 +17,6 @@ Here are the styles you can use for the blog content
 ```css
 @import '../../../css/scss/generic/mixins';
 
-.blog-content {
-  @include component-spacing;
-}
-
 .blog-content__items {
   display: flex;
   justify-content: space-around;
