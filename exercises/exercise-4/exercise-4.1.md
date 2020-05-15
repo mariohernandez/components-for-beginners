@@ -20,6 +20,11 @@ Now build the next list of content as shown in the image below.
     "title": "From our blog",
     "url": ""
   },
+  "cta": {
+    "modifier": "",
+    "text": "Load more articles",
+    "url": ""
+  },
   "items": [
     {
       "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/260x360' alt='Man doing yoga' />",
@@ -88,7 +93,18 @@ Now build the next list of content as shown in the image below.
       %}
     {% endfor %}
   </div>
+
+  {% if blog.cta %}
+    <div class="blog-content__cta">
+      {%
+        include '@atoms/button/button.twig' with {
+          button: blog.cta
+        } only
+      %}
+    </div>
+  {% endif %}
 </section>
+
 
 ```
 {% endtab %}
@@ -99,7 +115,7 @@ Now build the next list of content as shown in the image below.
 ```css
 @import '../../../css/scss/generic/mixins';
 
-.blog-content {
+.blog-content  {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -107,6 +123,7 @@ Now build the next list of content as shown in the image below.
 .blog-content__items {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .blog-content__card {

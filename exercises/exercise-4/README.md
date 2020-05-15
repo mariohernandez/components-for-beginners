@@ -199,6 +199,11 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 ```css
 @import '../../../css/scss/generic/mixins';
 
+.featured-content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .featured-content__items {
   display: flex;
   justify-content: space-around;
