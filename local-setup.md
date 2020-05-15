@@ -2,23 +2,24 @@
 
 ### Training requirements
 
-* macOS 10.14 or higher or Windows 10 Pro
-* A text editor.  We recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download) which works on macOS and Windows.
-* A Command Line Interface \(CLI\) tool.  On macOS use [Terminal](https://www.youtube.com/watch?v=Jm8-UFf8IMg) and on Windows use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU)
+* macOS 10.14 or higher.  Windows 10 Pro
+* A text/code editor.  We recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download) which works on macOS and Windows.
+* A Command Line Interface \(CLI\) tool.  On macOS use [Terminal](https://www.youtube.com/watch?v=Jm8-UFf8IMg), and on Windows use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU)
+* Windows users may need PHP installed.  You could use [WampServer](https://www.youtube.com/watch?v=D_Fhu_6RuMw)
 * Basic familiarity with [running commands on a CLI ](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)is useful
 * Basic understanding of HTML and CSS is required
 
 The setup for this training will allow you to follow along with the hands-on exercises.
 
-### Tools needed:
+### Build Tools needed:
 
-1. NodeJS & NPM \(Read on for instructions\)
+1. NodeJS & NPM \(Read on for instructions on installing\)
 
 ## 1. NodeJS & NPM
 
-NodeJS is a modern application-building tool that uses JavaScript to build and run application on a server.  JavaScript used to only run on a web browser \(client side\), but with NodeJS you can build JavaScript apps that can run on a server.  Pattern Lab Node Edition uses NodeJS.
+NodeJS is a modern application-building tool that uses JavaScript to build and run application on a server.  Pattern Lab Node Edition is built with NodeJS.
 
-NPM stands for Node Package Manager and it's a tools that makes it possible to interact with Node to execute tasks and manage node software dependencies.
+NPM stands for Node Package Manager, and it's a tools that makes it possible to interact with Node to execute tasks and manage node software dependencies.
 
 #### Installing Node & NPM
 
