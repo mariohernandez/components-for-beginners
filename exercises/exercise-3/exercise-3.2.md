@@ -70,3 +70,7 @@ Now that we have a new atom for the eyebrow, let's update the Card component as 
 {% endtab %}
 {% endtabs %}
 
+#### Check Pattern Lab
+
+If Pattern Lab and Gulp were running, the Card component should now have the eyebrow text styled with all CAPS.  Otherwise run `npm start` and `npm run watch` as we've done before.
+
