@@ -79,7 +79,6 @@ Update `.button.scss`, `.heading.scss`, and `.hero.scss` as follows:
 @import '../../../css/scss/generic/variables';
 
 .hero {
-  @include component-spacing;
   position: relative;
 
   // Styles heading when inside the hero.
