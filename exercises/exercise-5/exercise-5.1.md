@@ -14,8 +14,9 @@ There are several ways to address the layout and styling of the homepage. One me
 {% tabs %}
 {% tab title="\_mixin.scss" %}
 ```css
+// Mixin for adding consistent spacing on components.
 @mixin component-spacing($margin: 125px) {
-    margin-bottom: $margin;
+  margin-bottom: $margin;
 }
 ```
 {% endtab %}
@@ -26,7 +27,7 @@ There are several ways to address the layout and styling of the homepage. One me
 * **\($margin: 125px\)** are parameters the mixin accepts.  In this example we are using a variable of `$margin` which will allow us to pass a value.  If no value, is provided when use the mixin we are setting a default of 125px.
 * **margin-bottom** is the CSS property where we want to add the value of `$margin`.
 
-### Using the component-spacing mxin
+### Using the component-spacing mixin
 
 1. Edit `source/_patterns/01-molecules/hero/hero.scss`
 2. In line 1 add `@import '../../../css/scss/generic/mixins';`
@@ -39,7 +40,7 @@ There are several ways to address the layout and styling of the homepage. One me
 
 .hero {
   @include component-spacing;
-  ...
+  position: relative;
 }
 ```
 {% endtab %}
@@ -56,7 +57,7 @@ If your Sass watch task is running you should see the hero now has 100px of spac
 
 ## Add the mixin to other Homepage components
 
-Now go ahead and update the other two components used in the homepage, Featured Content and Blog Content.
+Now go ahead and update the other two components used in the homepage, **Featured Content** and **Blog Content**.
 
 * Repeat steps 2 & 3 above
 * Ensure the mixin is added the the top most wrapper of each component \(`.featured-content` and `.blog-content`\).  If those selectors don't exist, create them to add the mixin.

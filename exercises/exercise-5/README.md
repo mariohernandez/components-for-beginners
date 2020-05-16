@@ -92,11 +92,32 @@ Pattern Lab should now show in addition to Hero, the Featured Content list. Don'
 
 ### Adding the Our Blog List component
 
-Go ahead and add the last component on your own. This will be similar to the Featured Content List above.
+{% tabs %}
+{% tab title="homepage.twig" %}
+```php
+{% include '@organisms/blog-content/blog-content.twig' %}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Adding the Footer component
 
-We'll keep the footer simple.  Just add Pattern Lab's default footer shown below:
+We'll keep the footer simple.  Let's quickly build or modify a footer component.
+
+1. In your editor, open `source/_patterns/02-organisms/00-global/01-footer.twig`
+2. Update the existing code so it looks like this:
+
+{% tabs %}
+{% tab title="01-footer.twig" %}
+```php
+<footer class="footer" role="contentinfo">
+	<p>&copy; 2020 Mediacurrent. All rights reserved.</p>
+</footer>
+```
+{% endtab %}
+{% endtabs %}
+
+1. In your editor open `/source/_patterns/04-pages/homepage.twig`
 
 {% tabs %}
 {% tab title="homepage.twig" %}

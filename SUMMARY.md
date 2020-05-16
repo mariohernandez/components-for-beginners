@@ -44,3 +44,11 @@
 
 * [Site Header](bonus/building-the-navigation.md)
 
+## Advanced Sass
+
+* [Improving Styles](advanced-sass/improving-styles.md)
+
+## Responsive Design
+
+* [Mobile and beyond](responsive-design/mobile-and-beyond.md)
+
