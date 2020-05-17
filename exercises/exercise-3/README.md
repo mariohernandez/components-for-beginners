@@ -132,12 +132,59 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 .card {
   box-shadow: 0 10px 15px -3px rgba($black, 0.1), 0 4px 6px -2px rgba($black, 0.05);
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
-  max-width: 420px;
+  max-width: 320px;
   position: relative;
 
   img {
     display: block;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $bp-med) {
+    flex: 0 0 45%;
+    max-width: 325px;
+  }
+
+  // ========== Card wide styles=========
+  &.card--wide {
+    border: 1px solid $gray-lighter;
+    box-shadow: none;
+    flex-direction: column;
+
+    .card__body-text {
+      margin-bottom: 20px;
+    }
+
+    // Changes card layout on larger screens.
+    @media screen and (min-width: $bp-small-3) {
+      flex-direction: row;
+      max-width: 720px;
+
+      .card__media {
+        flex: 0 0 30%;
+      }
+
+      .card__content {
+        flex: 0 0 70%;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+    }
+  }
+
+  .button--ghost {
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (min-width: $bp-small-3) {
+      display: inline-block;
+      margin: 0;
+    }
   }
 }
 
@@ -185,46 +232,13 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
     color: $gray-dark;
   }
 }
-
-// ========== Card wide styles=========
-.card--wide {
-  border: 1px solid $gray-lighter;
-  box-shadow: none;
-  flex-direction: column;
-
-  .card__body-text {
-    margin-bottom: 20px;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  // Changes card layout on larger screens.
-  @media screen and (min-width: $bp-med) {
-    flex-direction: row;
-    max-width: 720px;
-
-    .card__media {
-      flex: 0 0 30%;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    .card__content {
-      flex: 0 0 70%;
-    }
-  }
-}
 ```
 {% endtab %}
 {% endtabs %}
 
 #### Updating color variables
 
-You may have noticed the color values in **card.scss** are using variables.  Most of the variables in **card.scc** already existed from our previous exercise or they were provided by Pattern Lab.  However, I made some adjustments to variables and also added new ones.
+You may have noticed the color values in **card.scss** are using variables.  Most of the variables in **card.scss** already existed from our previous exercise or they were provided by Pattern Lab.  However, I made some adjustments to variables and also added new ones.
 
 1. In your editor, open `source/css/scss/generic/_variables.scss`
 2. Updated the entire color section as shown below:

@@ -197,13 +197,16 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tabs %}
 {% tab title="featured-content.scss" %}
 ```css
+@import '../../../css/scss/generic/mixins';
 @import '../../../css/scss/generic/variables';
 
 .featured-content {
+  @include component-spacing(20px);
   max-width: 1440px;
   padding: 0 20px;
 
   @media screen and (min-width: $bp-xxl) {
+    @include component-spacing;
     padding: 0;
   }
 }
@@ -214,21 +217,22 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
   align-items: center;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 
   // On larger screens cards are displayed
   // horizontally as a group.
-  @media screen and (min-width: $bp-large) {
+  @media screen and (min-width: $bp-small) {
+    align-items: flex-start;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
 .featured-content__card {
-  flex: 0 0 22%;
-  max-width: 400px;
+  margin-bottom: 60px;
 
-  @media screen and (min-width: $bp-large) {
+  @media screen and (min-width: $bp-xxl) {
     margin-bottom: 0;
   }
 }
@@ -236,7 +240,10 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 // Adds spacing between cards on mobile, except
 // the last card.
 .featured-content__card:not(:last-child) {
-  margin-bottom: 60px;
+
+  @media screen and (min-width: $bp-xxl) {
+    margin-bottom: 0;
+  }
 }
 ```
 {% endtab %}

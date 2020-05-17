@@ -36,7 +36,7 @@ Now build the next list of content as shown in the image below.
       },
       "date": "",
       "category": "Fashion",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet.",
       "tags": "",
       "cta": {
         "modifier": "blog-content__cta button--ghost",
@@ -55,7 +55,7 @@ Now build the next list of content as shown in the image below.
       },
       "date": "",
       "category": "Sports",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet.",
       "tags": "",
       "cta": {
         "modifier": "blog-content__cta button--ghost",
@@ -113,9 +113,11 @@ Now build the next list of content as shown in the image below.
 {% tabs %}
 {% tab title="blog-content.scss" %}
 ```css
+@import '../../../css/scss/generic/mixins';
 @import '../../../css/scss/generic/variables';
 
 .blog-content  {
+  @include component-spacing;
   max-width: 1440px;
   padding: 0 20px;
 
@@ -130,11 +132,10 @@ Now build the next list of content as shown in the image below.
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
 
   // On larger screens cards are displayed
   // horizontally as a group.
-  @media screen and (min-width: $bp-large) {
+  @media screen and (min-width: $bp-xxl) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -142,18 +143,9 @@ Now build the next list of content as shown in the image below.
 
 .blog-content__card {
 
-  .button--ghost {
-    display: block;
-    margin: 0 auto;
-
-    @media screen and (min-width: $bp-large) {
-      display: inline-block;
-      margin: 0;
-    }
-  }
-
   @media screen and (min-width: $bp-large) {
-    flex: 0 0 48%;
+    flex: 0 0 45%;
+    margin-bottom: 0;
   }
 }
 
@@ -161,12 +153,17 @@ Now build the next list of content as shown in the image below.
 // the last card.
 .blog-content__card:not(:last-child) {
   margin-bottom: 60px;
+
+  @media screen and (min-width: $bp-xxl) {
+    margin-bottom: 0;
+  }
 }
 
 .blog-content__cta {
-  margin: 10px auto 0;
+  margin: 50px auto 0;
   text-align: center;
 }
+
 ```
 {% endtab %}
 {% endtabs %}
