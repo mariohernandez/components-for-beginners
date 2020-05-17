@@ -173,7 +173,6 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
       img {
         max-width: 100%;
       }
-
     }
   }
 

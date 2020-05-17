@@ -125,7 +125,7 @@ We'll keep the footer simple.  Let's quickly modify Pattern Lab's default footer
   }
 
   .visually-hidden {
-    position: absolute !important;
+    position: absolute;
     height: 1px;
     width: 1px;
     overflow: hidden;

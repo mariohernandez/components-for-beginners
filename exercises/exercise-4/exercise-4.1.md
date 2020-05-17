@@ -126,8 +126,8 @@ Now build the next list of content as shown in the image below.
   }
 }
 
-  // On mobile cards are displayed
-  // vertically as a group.
+// On mobile cards are displayed
+// vertically as a group.
 .blog-content__items {
   align-items: center;
   display: flex;
