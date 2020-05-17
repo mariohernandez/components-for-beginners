@@ -48,24 +48,24 @@ Now that we have a new atom for the eyebrow, let's update the Card component as 
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-    {% if date %}
-      {% include '@atoms/eyebrow/eyebrow.twig' with {
-          "eyebrow": {
-            "modifier": "card__eyebrow",
-            "text": date
-          }
-        } only
-      %}
-    {% endif %}
-    {% if category %}
-      {% include '@atoms/eyebrow/eyebrow.twig' with {
-          "eyebrow": {
-            "modifier": "card__eyebrow",
-            "text": category
-          }
-        } only
-      %}
-    {% endif %}
+{% if date %}
+  {% include '@atoms/eyebrow/eyebrow.twig' with {
+      "eyebrow": {
+        "modifier": "card__eyebrow",
+        "text": date
+      }
+    } only
+  %}
+{% endif %}
+{% if category %}
+  {% include '@atoms/eyebrow/eyebrow.twig' with {
+      "eyebrow": {
+        "modifier": "card__eyebrow",
+        "text": category
+      }
+    } only
+  %}
+{% endif %}
 ```
 {% endtab %}
 {% endtabs %}

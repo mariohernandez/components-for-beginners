@@ -1,6 +1,6 @@
 # What you will build
 
-![Homepage Design](.gitbook/assets/components-for-beginners.png)
+![Homepage](.gitbook/assets/components-for-beginners.png)
 
 The homepage design here will allow us to build a series of components following the [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/) methodology.  We will start small and build from there to achie a full page.
 

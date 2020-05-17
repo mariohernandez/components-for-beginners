@@ -130,11 +130,11 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 @import '../../../css/scss/generic/variables';
 
 .card {
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1), 0 4px 6px -2px rgba($black, 0.05);
   display: flex;
   flex-direction: column;
-  position: relative;
   max-width: 420px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  position: relative;
 
   img {
     display: block;
@@ -146,18 +146,18 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 }
 
 .card__title {
-  margin-bottom: 8px;
-  margin-top: 0;
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
 }
 
 .card__date {
-  text-transform: uppercase;
+  border-bottom: 1px solid $gray-med;
   display: block;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
 }
 
 .card__tags--items {
@@ -168,36 +168,40 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
 }
 
 .card__tag--item {
-  background-color: #edf2f7;
+  background-color: $catskill-white;
   border-radius: 99999px;
-  color: #4a5568;
+  color: $gray-dark;
   display: inline-block;
-  padding: 4px 10px;
   margin-right: 10px;
+  padding: 4px 10px;
 }
 
 .card__tag--link {
+  color: lighten($gray-dark, 25%);
   text-decoration: none;
-  color: #1a202c;
 
   &:hover,
   &:focus {
-    color: lighten(#1a202c, 25%);
+    color: $gray-dark;
   }
 }
 
 // ========== Card wide styles=========
 .card--wide {
+  border: 1px solid $gray-lighter;
   box-shadow: none;
-  border: 1px solid #ddd;
   flex-direction: column;
 
   .card__body-text {
     margin-bottom: 20px;
   }
 
+  img {
+    width: 100%;
+  }
+
   // Changes card layout on larger screens.
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: $bp-med) {
     flex-direction: row;
     max-width: 720px;
 
@@ -205,15 +209,114 @@ Alright, now it's time to put our new Gulp-driven workflow to work.
       flex: 0 0 30%;
     }
 
-    .card__content {
-      flex: 0 0 70%;
+    img {
+      max-width: 100%;
     }
 
     .card__content {
-      padding: 20px 20px 0 20px;
+      flex: 0 0 70%;
     }
   }
 }
+```
+{% endtab %}
+{% endtabs %}
+
+#### Updating color variables
+
+You may have noticed the color values in **card.scss** are using variables.  Most of the variables in **card.scc** already existed from our previous exercise or they were provided by Pattern Lab.  However, I made some adjustments to variables and also added new ones.
+
+1. In your editor, open `source/css/scss/generic/_variables.scss`
+2. Updated the entire color section as shown below:
+
+{% tabs %}
+{% tab title="\_variables.scss" %}
+```css
+//Colors
+$navy-blue : #003954;
+$gray-light : #eee;
+$gray-lighter : #ddd;
+$gray-med : #ccc;
+$gray : #808080;
+$gray-dark : #444;
+$gray-darker : #131313;
+$white : #fff;
+$catskill-white : #edf2f7;
+$black : #000;
+$dim : rgba(0,0,0,0.5);
+$error : #f00;
+$valid : #089e00;
+$warning : #fff664;
+$information : #000db5;
+```
+{% endtab %}
+{% endtabs %}
+
+#### Update the color palette in Pattern Lab
+
+1. Copy all the code below and paste it inside `source/_patterns/00-atoms/01-global/00-colors.twig`
+
+{% tabs %}
+{% tab title="00-colors.twig" %}
+```php
+<ul class="sg-colors">
+	<li>
+		<span class="sg-swatch" style="background: #003954;"></span>
+		<span class="sg-label">#003954</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #eeeeee;"></span>
+		<span class="sg-label">#eeeeee</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #dddddd;"></span>
+		<span class="sg-label">#dddddd</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #cccccc;"></span>
+		<span class="sg-label">#cccccc</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #808080;"></span>
+		<span class="sg-label">#808080</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #444444;"></span>
+		<span class="sg-label">#444444</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #131313;"></span>
+		<span class="sg-label">#131313</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #000000;"></span>
+		<span class="sg-label">#000000</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ffffff;"></span>
+		<span class="sg-label">#ffffff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #edf2f7;"></span>
+		<span class="sg-label">#edf2f7</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ff0000;"></span>
+		<span class="sg-label">#ff0000</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #00ff00;"></span>
+		<span class="sg-label">#00ff00</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ffff00;"></span>
+		<span class="sg-label">#ffff00</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #0000ff;"></span>
+		<span class="sg-label">#0000ff</span>
+	</li>
+</ul>
 ```
 {% endtab %}
 {% endtabs %}

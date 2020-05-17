@@ -1,8 +1,10 @@
 # Sass basics
 
+### **What is Sass?**
+
 **Sass** \(short for syntactically awesome style sheets\) is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum.
 
-## Sass Pre-Processor
+### Sass Pre-Processor
 
 Sass is a [preprocessor](https://en.wikipedia.org/wiki/Preprocessor) language that is interpreted or compiled into Cascading Style Sheets \(CSS\). Sass consists of two syntaxes. The original syntax, called "the indented syntax," uses indentation to separate code blocks and newline characters to separate rules. The newer syntax, "SCSS" \(Sassy CSS\), uses block formatting like that of CSS. It uses braces to denote code blocks and semicolons to separate rules within a block. The indented syntax and SCSS files are traditionally given the extensions .sass and .scss, respectively.
 
@@ -10,11 +12,11 @@ All Sass/SCSS code compiles back to standard CSS so the browser can actually und
 
 Sass and SCSS will refer to roughly the same thing. Conceptually, there isn’t much difference. You will learn the difference as you learn more, but basically SCSS is the one most people use now. It’s just a more recent \(and according to some, superior\) version of the original Sass syntax.
 
-## New Syntax
+### New Syntax
 
 SCSS doesn’t really add any new features to the CSS language. Just new syntax that can in many cases shorten the amount of time spent writing CSS code.
 
-## What can Sass do that Vanilla CSS can’t?
+### What can Sass do that Vanilla CSS can’t?
 
 1. **Nested Rules**: Nest your CSS properties within multiple sets of {} brackets. This makes your CSS code a bit more clean-looking and more intuitive.
 2. **Variables**: Standard CSS has variable definitions. So what’s the deal? You can do a lot more with Sass variables: iterate them via a for-loop and generate property values dynamically. You can embed them into CSS property names themselves. It’s useful for property-name-N { … } definitions.
@@ -105,7 +107,7 @@ body {
 {% endtab %}
 {% endtabs %}
 
-## Mixins
+### Mixins
 
 Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here's an example for transform.
 
@@ -140,4 +142,37 @@ This then gets compiled into CSS as follows:
 {% hint style="info" %}
 Learn more about [Sass basics](https://www.sass-lang.com/guide)
 {% endhint %}
+
+### REMs for font size
+
+1. In your command line tool, if you have any commands running, press **Ctrl + C** to stop the commands.  Do this for each command running.
+2. Delete `public/css/all.css` and `public/css/styles.css`
+3. In your editor, open `source/css/styles.css`
+4. Update the `html` and `body` selectors with the following code: \(around line 230\)
+
+{% tabs %}
+{% tab title="styles.css" %}
+```css
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
+  background: #fff;
+  color: #333;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  margin: 0;
+}
+```
+{% endtab %}
+{% endtabs %}
+
+* Using [REMS for font sizing](https://snook.ca/archives/html_and_css/font-size-with-rem) to improve for resize on responsive design.
 

@@ -1,6 +1,6 @@
 # Exercise 2.3
 
-## Update the Heading component by making it an object
+### Update the Heading component by making it an object
 
 So if objects work so great, why don't we do the same for the Heading?  Sure!  Let's do that now.
 

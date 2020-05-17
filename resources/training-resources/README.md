@@ -4,14 +4,20 @@
 
 * [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html)
 
-## Front End
+### CSS/Sass
 
-* [Pattern Lab](https://patternlab.io/)
+* [Font sizing with REMs](https://snook.ca/archives/html_and_css/font-size-with-rem)
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [BEM Cheat Sheet](https://9elements.com/bem-cheat-sheet/)
 * [BEM Resources](https://en.bem.info/)
-* [Learn to code HTML & CSS](https://learn.shayhowe.com/)
 * [Sass basics](https://www.sass-lang.com/guide/)
+* [Using Sass Partials](https://dev.to/sarah_chima/using-sass-partials-7mh)
+* [Name that color](http://chir.ag/projects/name-that-color/#6195ED) \(color naming tool\)
+
+### Front End
+
+* [Pattern Lab](https://patternlab.io/)
+* [Learn to code HTML & CSS](https://learn.shayhowe.com/)
 
 ### Command Line
 

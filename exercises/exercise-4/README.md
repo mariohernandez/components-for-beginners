@@ -198,15 +198,19 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tab title="featured-content.scss" %}
 ```css
 @import '../../../css/scss/generic/mixins';
+@import '../../../css/scss/generic/variables';
 
 .featured-content {
+  @include component-spacing;
   max-width: 1440px;
-  margin: 0 auto;
 }
 
 .featured-content__items {
-  display: flex;
-  justify-content: space-around;
+
+  @media screen and (min-width: $bp-large) {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .featured-content__card {

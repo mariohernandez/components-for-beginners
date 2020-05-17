@@ -1,6 +1,6 @@
 # Exercise 2.4 \(Optional\)
 
-## Implement Sass workflow
+### Implement Sass workflow
 
 Pattern Lab out of the box provides a basic workflow for compiling CSS for components. Unfortunately this is not an optimal way to manage CSS assets in a project. It requires repetitive manual steps every time a new CSS file is created for a component. We are going to implement a simple automated workflow to achieve two goals:
 

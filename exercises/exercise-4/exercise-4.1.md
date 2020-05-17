@@ -114,20 +114,42 @@ Now build the next list of content as shown in the image below.
 {% tab title="blog-content.scss" %}
 ```css
 @import '../../../css/scss/generic/mixins';
+@import '../../../css/scss/generic/variables';
 
 .blog-content  {
+  @include component-spacing;
   max-width: 1440px;
-  margin: 0 auto;
 }
 
 .blog-content__items {
+  align-items: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 40px;
+
+  @media screen and (min-width: $bp-large) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .blog-content__card {
-  flex: 0 0 48%;
+  margin-bottom: 30px;
+
+  .button--ghost {
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (min-width: $bp-large) {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: $bp-large) {
+    flex: 0 0 48%;
+    margin-bottom: 0;
+  }
 }
 
 .blog-content__cta {
@@ -137,9 +159,15 @@ Now build the next list of content as shown in the image below.
 
 // This can be placed elsewhere.
 .footer {
-  margin-top: 80px;
-  background-color: #000000;
+  background-color: $navy-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
+
+  p {
+    margin: 0;
+  }
 }
 ```
 {% endtab %}

@@ -212,5 +212,5 @@ The full `card.twig` template should now look like this:
 
 Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field. In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
 
-If you don't have Pattern Lab running, run this command: `npm start`.
+If you don't have Pattern Lab and Gulp running, run this command: `npm start`and `npm run watch`
 
