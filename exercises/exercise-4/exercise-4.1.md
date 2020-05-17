@@ -27,7 +27,7 @@ Now build the next list of content as shown in the image below.
   },
   "items": [
     {
-      "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/260x360' alt='Man doing yoga' />",
+      "image": "<img src='https://source.unsplash.com/m6OZNfmo2Dk' alt='Man doing yoga' />",
       "title": {
         "heading_level": "3",
         "modifier": "blog-content__title",
@@ -163,7 +163,6 @@ Now build the next list of content as shown in the image below.
   margin: 50px auto 0;
   text-align: center;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
