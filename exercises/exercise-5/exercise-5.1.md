@@ -31,8 +31,8 @@ There are several ways to address the layout and styling of the homepage. One me
 
 ### Using the component-spacing mixin
 
-1. Edit `source/_patterns/01-molecules/hero/hero.scss`
-2. Add the new **component-spacing** mixin as the first CSS property to the `.hero` selector.  \(line 5\):
+1. In your editor, edit `hero.scss`, `featured-content.scss`, and `blog-content.scss` 
+2. Add the new **component-spacing** mixin to each component as shown below.  Be sure the `@include` directives are added to the first selector on each component \(`.hero`, `.featured-content`, and `.blog-content`\) 
 
 {% tabs %}
 {% tab title="hero.scss" %}
@@ -42,14 +42,13 @@ There are several ways to address the layout and styling of the homepage. One me
 
 .hero {
   @include component-spacing;
-  @include image-crop (300px);
   ...
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-* In line 1 & 2 we are importing the **mixins** and **variables** Sass partials.  This means any mixins and variables in those partials will be available for us to use in **hero.scss**. 
+* In line 1 & 2 we are importing the **mixins** and **variables** Sass partials.  This means any mixins and variables in those partials will be available for us to use in each of the 3 components. 
 
 {% hint style="info" %}
 As best practice, mixins should always be added before any other CSS properties as shown above. This makes it possible to override any mixin properties if needed.

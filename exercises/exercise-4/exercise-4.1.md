@@ -16,7 +16,7 @@ Now build the next list of content as shown in the image below.
 "blog": {
   "heading": {
     "heading_level": "2",
-    "modifier": "heading--large",
+    "modifier": "heading--large center section-header",
     "title": "From our blog",
     "url": ""
   },
@@ -113,11 +113,9 @@ Now build the next list of content as shown in the image below.
 {% tabs %}
 {% tab title="blog-content.scss" %}
 ```css
-@import '../../../css/scss/generic/mixins';
 @import '../../../css/scss/generic/variables';
 
 .blog-content  {
-  @include component-spacing;
   max-width: 1440px;
   padding: 0 20px;
 

@@ -22,7 +22,7 @@ First, we will switch back to using global content for this and next components 
 "featured": {
   "heading": {
     "heading_level": "2",
-    "modifier": "heading--large",
+    "modifier": "heading--large center section-header",
     "title": "Our Featured Content",
     "url": ""
   },
@@ -197,11 +197,9 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tabs %}
 {% tab title="featured-content.scss" %}
 ```css
-@import '../../../css/scss/generic/mixins';
 @import '../../../css/scss/generic/variables';
 
 .featured-content {
-  @include component-spacing;
   max-width: 1440px;
   padding: 0 20px;
 
