@@ -192,7 +192,19 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
 @import '../../../css/scss/generic/variables';
 
 .heading {
-  color: $gray-dark;
+  color: $gray;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.section-header {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $bp-large) {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 // Removes underline when headings are links.
@@ -202,22 +214,19 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
 
 // Styles for extra large headings.
 .heading.heading--large {
-  color: $gray-dark;
-  font-size: 4rem;
+  color: $gray;
+  font-size: 3rem;
   text-align: center;
 
   @media screen and (min-width: $bp-small) {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   @media screen and (min-width: $bp-med) {
-    font-size: 8rem;
-  }
-
-  @media screen and (min-width: $bp-xxl) {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -229,6 +238,7 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
 @import '../../../css/scss/generic/variables';
 
 .hero {
+  @include component-spacing;
   @include image-crop (300px);
 
   @media screen and (min-width: $bp-med) {
@@ -251,28 +261,26 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
     text-transform: uppercase;
 
     @media screen and (min-width: $bp-med) {
+      font-size: 5rem;
+      margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: $bp-large) {
+      font-size: 10rem;
       margin-bottom: 25px;
     }
 
     @media screen and (min-width: $bp-xl) {
       margin-bottom: 50px;
+      font-size: 12rem;
     }
   }
 }
 
 .hero__content {
-  position: absolute;
+  @include center-align(absolute);
   text-align: center;
-  top: 20%;
   width: 100%;
-
-  @media screen and (min-width: $bp-med) {
-    top: 22%;
-  }
-
-  @media screen and (min-width: $bp-xl) {
-    top: 35%;
-  }
 }
 ```
 {% endtab %}

@@ -203,19 +203,42 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 .featured-content {
   @include component-spacing;
   max-width: 1440px;
+  padding: 0 20px;
+
+  @media screen and (min-width: $bp-xxl) {
+    padding: 0;
+  }
 }
 
+// On mobile cards are displayed vertically
+// as a group.
 .featured-content__items {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
 
+  // On larger screens cards are displayed
+  // horizontally as a group.
   @media screen and (min-width: $bp-large) {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .featured-content__card {
   flex: 0 0 22%;
   max-width: 400px;
+
+  @media screen and (min-width: $bp-large) {
+    margin-bottom: 0;
+  }
+}
+
+// Adds spacing between cards on mobile, except
+// the last card.
+.featured-content__card:not(:last-child) {
+  margin-bottom: 60px;
 }
 ```
 {% endtab %}

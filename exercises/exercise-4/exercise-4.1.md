@@ -119,14 +119,23 @@ Now build the next list of content as shown in the image below.
 .blog-content  {
   @include component-spacing;
   max-width: 1440px;
+  padding: 0 20px;
+
+  @media screen and (min-width: $bp-xxl) {
+    padding: 0;
+  }
 }
 
+  // On mobile cards are displayed
+  // vertically as a group.
 .blog-content__items {
   align-items: center;
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
 
+  // On larger screens cards are displayed
+  // horizontally as a group.
   @media screen and (min-width: $bp-large) {
     flex-direction: row;
     justify-content: space-between;
@@ -134,7 +143,6 @@ Now build the next list of content as shown in the image below.
 }
 
 .blog-content__card {
-  margin-bottom: 30px;
 
   .button--ghost {
     display: block;
@@ -148,28 +156,24 @@ Now build the next list of content as shown in the image below.
 
   @media screen and (min-width: $bp-large) {
     flex: 0 0 48%;
-    margin-bottom: 0;
   }
+}
+
+// Adds spacing between cards on mobile, except
+// the last card.
+.blog-content__card:not(:last-child) {
+  margin-bottom: 60px;
 }
 
 .blog-content__cta {
   margin: 10px auto 0;
   text-align: center;
 }
-
-// This can be placed elsewhere.
-.footer {
-  background-color: $navy-blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-
-  p {
-    margin: 0;
-  }
-}
 ```
 {% endtab %}
 {% endtabs %}
+
+### Challenge:  Find ways to improve the styles
+
+Since Featured Content and Blog Content use similar styles, find ways in which you can improve the code to avoid repetition.
 
