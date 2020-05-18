@@ -146,8 +146,8 @@ Learn more about [Sass basics](https://www.sass-lang.com/guide)
 ### REMs for font size
 
 1. In your command line tool, if you have any commands running, press **Ctrl + C** to stop the commands.  Do this for each command running.
-2. Delete `public/css/all.css` and `public/css/styles.css`
-3. In your editor, open `source/css/styles.css`
+2. Delete `public/css/all.css` and `public/css/style.css`
+3. In your editor, open `source/css/style.css`
 4. Update the `html` and `body` selectors with the following code: \(around line 230\)
 
 {% tabs %}
