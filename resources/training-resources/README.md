@@ -1,5 +1,9 @@
 # Training resources
 
+### Assets
+
+[Slide deck and other training material](https://drive.google.com/drive/folders/1-gIa-bYV1LXhK6t51CWarrX-h1DUvzbO?usp=sharing)
+
 ## Twig
 
 * [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html)
