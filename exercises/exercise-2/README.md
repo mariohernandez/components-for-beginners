@@ -43,7 +43,8 @@ We will build the Hero by combining previously built components. This makes the 
   },
   "cta": {
     "text": "Get started",
-    "url": "#"
+    "url": "#",
+    "modifier": ""
   }
 }
 ```
