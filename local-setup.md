@@ -1,5 +1,7 @@
 # Local setup
 
+The setup for this training will allow you to follow along with the hands-on exercises.
+
 ### Training requirements
 
 * macOS 10.14 or higher.  Windows 10 Pro
@@ -8,8 +10,6 @@
 * Windows users may need PHP installed.  You could use [WampServer](https://www.youtube.com/watch?v=D_Fhu_6RuMw)
 * Basic familiarity with [running commands on a CLI ](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)is useful
 * Basic understanding of HTML and CSS is required
-
-The setup for this training will allow you to follow along with the hands-on exercises.
 
 ### Build Tools needed:
 
