@@ -29,7 +29,7 @@ We created an object called `button` and added several properties or attributes 
 If you are wondering why we are nesting all the button properties inside a **button** object instead of writing everything on its own as we did with **heading.json** in the previous exercise.  This sometimes is a personal preference or it could also be a hard data requirement.  I personally like to use objects as we've done above as this helps in two ways:
 
 1. It simplifies the component nesting process by not having to map or associate each individual property when we use includes.  You'll see what I mean shortly,
-2. If we are creating components or pages where we are reusing several other components, we may run into the issue of components using the same property names.  If this is the case we would need to change property names as JSON will not allow us to use the same key name more than once.  Using objects to nest the properties solves this issue.  
+2. If we are creating components or pages where we are reusing several other components, we may run into the issue of components using the same property names.  If this is the case we would need to change property names as JSON will not allow us to use the same key name more than once.  Using objects to nest the properties solves this issue.
 
 ### Writing the button's logic
 
@@ -112,7 +112,7 @@ _We added a link to the new CSS file we created for the Button component.  This 
 
 ### Compiling the code
 
-Now that the Button component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Hero component under the Molecules dropdown. Otherwise, run the following command in your command line and press **Return**
+Now that the Button component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Button component under the Molecules dropdown. Otherwise, run the following command in your command line and press **Return**
 
 ```bash
 npm start
@@ -121,4 +121,3 @@ npm start
 If you look under Atoms in Pattern Lab's main navigation, you should see the Button component at the bottom of the atoms list.
 
 ### Next:  Update the Hero to make use of the new button atom
-
