@@ -58,10 +58,47 @@ If your Sass watch task is running you should see the hero now has 100px of spac
 
 ### Add the mixin to other Homepage components
 
-Now go ahead and update the other two components used in the homepage, **Featured Content** and **Blog Content**.
+* Update only the top portion of `featured-content.scss` and `blog-content.scss` as shown below.  Leave all other code in those files as is.
+* Basically we are importing the mixins Sass partial and adding the `components-spacing` mixin to each of them.
 
-* Repeat steps 2 & 3 above
-* Ensure the mixin is added the the top most wrapper of each component \(`.featured-content` and `.blog-content`\).  If those selectors don't exist, create them to add the mixin.
+{% tabs %}
+{% tab title="featured-content.scss" %}
+```css
+@import '../../../css/scss/generic/mixins';
+@import '../../../css/scss/generic/variables';
+
+.featured-content {
+  @include component-spacing(20px);
+  max-width: 1440px;
+  padding: 0 20px;
+
+  @media screen and (min-width: $bp-xxl) {
+    @include component-spacing;
+    padding: 0;
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="blog-content.scss" %}
+```css
+@import '../../../css/scss/generic/mixins';
+@import '../../../css/scss/generic/variables';
+
+.blog-content  {
+  @include component-spacing;
+  max-width: 1440px;
+  padding: 0 20px;
+
+  @media screen and (min-width: $bp-xxl) {
+    padding: 0;
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### YOU DID IT!! 🏆 🎉 🙌
 

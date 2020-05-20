@@ -197,16 +197,13 @@ Now the final step is to style the list. You can only imagine how much CSS we wo
 {% tabs %}
 {% tab title="featured-content.scss" %}
 ```css
-@import '../../../css/scss/generic/mixins';
 @import '../../../css/scss/generic/variables';
 
 .featured-content {
-  @include component-spacing(20px);
   max-width: 1440px;
   padding: 0 20px;
 
   @media screen and (min-width: $bp-xxl) {
-    @include component-spacing;
     padding: 0;
   }
 }
