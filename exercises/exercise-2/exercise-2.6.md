@@ -52,7 +52,7 @@ Pattern Lab out of the box provides a basic system for managing Sass variables. 
 
 1. In your editor, open `source/css/scss/generic/_variables.scss`
 2. First, see if any of the colors' hex codes shown above, exist in **\_variables.scss** colors section
-3. If you find a matching hex code, copy the variable name from **\_variables.scss** \(variable names start with a dollar sign \( `$` \), and paste it into **button.scss** by replacing the corresponding hex code with the variable name.   **Example:** The hex code `#ffffff` in **button.scss** exists in **variables.scss** and its variable name is `$white`.  This means in **button.scss** any instance of this color will look like this: `color: $white;`
+3. If you find a matching hex code, copy the variable name from **\_variables.scss** \(variable names start with a dollar sign \( `$` \), and paste it into **button.scss** by replacing the corresponding hex code with the variable name.   **Example:** The hex code `#ffffff` in **button.scss** exists in **\_variables.scss** and its variable name is `$white`.  This means in **button.scss** any instance of this color will look like this: `color: $white;`
 4. Repeat this process with any other hex codes that exist in both files.
 
 #### Creating or updating color variables
@@ -74,8 +74,8 @@ $navy-blue : #003954;
 
 #### Updating existing color variables
 
-1. The dark gray color in **button.scss**, hex code `#444444`  although is does ot exist in **variables.scss**, can be used to replace the existing `$gray-dark` variable's value.  
-2. Replace the hex code for `$gray-dark` in **variables.scss** with `#444444` 
+1. The dark gray color in **button.scss**, hex code `#444444`  although is does ot exist in **\_variables.scss**, can be used to replace the existing `$gray-dark` variable's value.
+2. Replace the hex code for `$gray-dark` in **\_variables.scss** with `#444444`
 3. Now in **button.scss** replace `#444444` with `$gray-dark`
 
 Since our desings already have pretty well-defined colors, it makes sense that the **$gray-dark** variable uses our color.  Otherwise we would need to create a new variable while $gray-dark may go without eing used since that particular color is not part of our designs.
@@ -84,7 +84,7 @@ Since our desings already have pretty well-defined colors, it makes sense that t
 
 ![](../../.gitbook/assets/error.png)
 
-If you had `npm run watch` running when you saved all your changes to **button.scss** and **variables.scss**, you probably see some errors similar to to the one above.  No worries, you haven't done anything wrong.  We just need to do one more thing for our new color variables to work properly.
+If you had `npm run watch` running when you saved all your changes to **button.scss** and **\_variables.scss**, you probably see some errors similar to to the one above.  No worries, you haven't done anything wrong.  We just need to do one more thing for our new color variables to work properly.
 
 #### Importing the variables
 
@@ -102,7 +102,7 @@ In Sass, we can create all the variables we want, but before we can use them we 
 {% endtabs %}
 
 * Your gulp task should have recompiled the Sass code again and the error above should no longer appear.
-* The import directive above is basically making **button.scss** aware of the **variables.scss** [Sass partial](https://dev.to/sarah_chima/using-sass-partials-7mh).
+* The import directive above is basically making **button.scss** aware of the **\_variables.scss** [Sass partial](https://dev.to/sarah_chima/using-sass-partials-7mh).
 
 {% hint style="info" %}
 **IMPORTANT**: the `@include` directive above is not in anyway related to Twig's include statements
@@ -157,7 +157,7 @@ In Sass, we can create all the variables we want, but before we can use them we 
 
 Pattern Lab provides a nice color palette component which is great to set a project's branding colors.  You can find the color palette under **Atoms &gt; Global**, in Pattern Lab.
 
-Since we added and updated colors in **variables.scss**, we should update the color palette component so the colors in it reflect our actual colors.
+Since we added and updated colors in **\_variables.scss**, we should update the color palette component so the colors in it reflect our actual colors.
 
 1. In your editor, open `source/_patterns/00-atoms/01-global/00-colors.twig`
 2. Add the following list item as its first item
@@ -376,7 +376,7 @@ While we are at it, let's create another mixin to perfectly center-align the Her
 {% endtab %}
 {% endtabs %}
 
-* These are technically 3 mixins.  One to align things horizontally, vertically, and the other one to align things both vertically and horizontally.  
+* These are technically 3 mixins.  One to align things horizontally, vertically, and the other one to align things both vertically and horizontally.
 * These are great to easily center align any element.  We will use this with the Hero text.
 
 ### Align the Hero text with new mixins
@@ -409,4 +409,3 @@ npm run watch
 
 * Look at the hero in Pattern Lab and using the response breakpoints toggles, view the Hero in mobile, tablet, laptop and desktop view.
 * You should see the hero image height changing while the title and button always remain perfectly centered.
-

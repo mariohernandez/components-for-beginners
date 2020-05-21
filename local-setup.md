@@ -1,6 +1,6 @@
 # Local setup
 
-The setup for this training will allow you to follow along with the hands-on exercises.
+The setup for this training will allow you to follow along with the hands-on exercises during and after the training.
 
 ### Training requirements
 
@@ -73,4 +73,3 @@ If everything ran successfully Pattern Lab should had open on your browser.  Oth
 {% endhint %}
 
 This completes the local computer setup. If you received errors and they don't appear in our troubleshooting guide [please fill out this quick form](https://forms.gle/Xt4aYbCWCrK1zH65A) to submit your error**\(s\)** so we can provide you with possible steps to correct.  You could also try searching for the error message on Google or your preferred search engine by copying the error from the command line and pasting into the search engine.
-
