@@ -166,8 +166,8 @@ Since we added and updated colors in **\_variables.scss**, we should update the 
 {% tab title="00-colors.twig" %}
 ```php
 <li>
-    <span class="sg-swatch" style="background: #003954;"></span>
-    <span class="sg-label">#003954</span>
+  <span class="sg-swatch" style="background: #003954;"></span>
+  <span class="sg-label">#003954</span>
 </li>
 ```
 {% endtab %}
