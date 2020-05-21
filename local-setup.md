@@ -17,7 +17,7 @@ The setup for this training will allow you to follow along with the hands-on exe
 
 ## 1. NodeJS & NPM
 
-NodeJS is a modern application-building tool that uses JavaScript to build and run application on a server.  Pattern Lab Node Edition is built with NodeJS.
+NodeJS is a modern application-building tool that uses JavaScript to build and run application on a server. Pattern Lab Node Edition is built with NodeJS.
 
 NPM stands for Node Package Manager, and it's a tools that makes it possible to interact with Node to execute tasks and manage node software dependencies.
 
@@ -66,10 +66,11 @@ Respond to the on-screen prompts as follows:
    npm start
   ```
 
-If everything ran successfully Pattern Lab should had open on your browser.  Otherwise see our Troubleshooting guide below.
+If everything ran successfully Pattern Lab should had open on your browser. Otherwise see our Troubleshooting guide below.
 
 {% hint style="danger" %}
-**DID YOU GET ERRORS?**  See our [troubleshooting guide](https://docs.google.com/document/d/1BU5C4jFcUKo2r-YCwT0UH-s4Rfb95KvEnHxCzfnMVF8/edit#).
+**DID YOU GET ERRORS?** See our [troubleshooting guide](https://docs.google.com/document/d/1BU5C4jFcUKo2r-YCwT0UH-s4Rfb95KvEnHxCzfnMVF8/edit#).
 {% endhint %}
 
-This completes the local computer setup. If you received errors and they don't appear in our troubleshooting guide [please fill out this quick form](https://forms.gle/Xt4aYbCWCrK1zH65A) to submit your error**\(s\)** so we can provide you with possible steps to correct.  You could also try searching for the error message on Google or your preferred search engine by copying the error from the command line and pasting into the search engine.
+This completes the local computer setup. If you received errors and they don't appear in our troubleshooting guide [please fill out this quick form](https://forms.gle/Xt4aYbCWCrK1zH65A) to submit your error**\(s\)** so we can provide you with possible steps to correct. You could also try searching for the error message on Google or your preferred search engine by copying the error from the command line and pasting into the search engine.
+

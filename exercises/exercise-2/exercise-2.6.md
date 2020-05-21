@@ -1,10 +1,10 @@
 # Exercise 2.6
 
-### Improving our CSS
+## Improving our CSS
 
 So now that we have functioning Sass in our project, let's improve the CSS we've written thus far so that we take advantage of some of the features of Sass.
 
-#### Button Styles
+### Button Styles
 
 {% tabs %}
 {% tab title="button.scss" %}
@@ -40,24 +40,24 @@ So now that we have functioning Sass in our project, let's improve the CSS we've
 {% endtab %}
 {% endtabs %}
 
-Looking at the current button's styles above, we can see that we're using several colors.  The interesting thing is that most colors are repeated multiple times.  This means, if for some reason our project's colors changed, the button alone will require several updates.  This is a problem that could lead to inconsistencies across elements or components, and it is also a concern for styles regressions.
+Looking at the current button's styles above, we can see that we're using several colors. The interesting thing is that most colors are repeated multiple times. This means, if for some reason our project's colors changed, the button alone will require several updates. This is a problem that could lead to inconsistencies across elements or components, and it is also a concern for styles regressions.
 
 As we saw earlier, wit Sass we can use variables which not only will address the concerns above, but it will also simplify maintenance of colors. Rather than updating multiple elements, components or pages, we will be able to update our colors in one place, and those changes will reflect anywhere where the variables are used.
 
-### Color variables
+## Color variables
 
-#### Using existing color variables
+### Using existing color variables
 
-Pattern Lab out of the box provides a basic system for managing Sass variables.  We will take advantage of this system to add, update, or use  with our own colors.
+Pattern Lab out of the box provides a basic system for managing Sass variables. We will take advantage of this system to add, update, or use with our own colors.
 
 1. In your editor, open `source/css/scss/generic/_variables.scss`
 2. First, see if any of the colors' hex codes shown above, exist in **\_variables.scss** colors section
 3. If you find a matching hex code, copy the variable name from **\_variables.scss** \(variable names start with a dollar sign \( `$` \), and paste it into **button.scss** by replacing the corresponding hex code with the variable name.   **Example:** The hex code `#ffffff` in **button.scss** exists in **\_variables.scss** and its variable name is `$white`.  This means in **button.scss** any instance of this color will look like this: `color: $white;`
 4. Repeat this process with any other hex codes that exist in both files.
 
-#### Creating or updating color variables
+### Creating or updating color variables
 
-After you updated any hex codes in **button.scss** with variables from **\_variables.scss**, let's now work on creating new color variables for those hex codes that do not exist in __**\_variables.scss**.
+After you updated any hex codes in **button.scss** with variables from **\_variables.scss**, let's now work on creating new color variables for those hex codes that do not exist in \_**variables.scss**.
 
 1. Let's start with the navy blue color used as the button's background color \(hex code `#003954`\).  This color is used twice in **button.scss**.
 2. Add the following code as the first item in the colors section in **\_variables.scss**
@@ -72,23 +72,23 @@ $navy-blue : #003954;
 
 1. Now in **button.scss**,  replace `#003954` with `$navy-blue`
 
-#### Updating existing color variables
+### Updating existing color variables
 
 1. The dark gray color in **button.scss**, hex code `#444444`  although is does ot exist in **\_variables.scss**, can be used to replace the existing `$gray-dark` variable's value.
 2. Replace the hex code for `$gray-dark` in **\_variables.scss** with `#444444`
 3. Now in **button.scss** replace `#444444` with `$gray-dark`
 
-Since our desings already have pretty well-defined colors, it makes sense that the **$gray-dark** variable uses our color.  Otherwise we would need to create a new variable while $gray-dark may go without eing used since that particular color is not part of our designs.
+Since our desings already have pretty well-defined colors, it makes sense that the **$gray-dark** variable uses our color. Otherwise we would need to create a new variable while $gray-dark may go without eing used since that particular color is not part of our designs.
 
-#### ERRORS!!!! 😱
+### ERRORS!!!! 😱
 
 ![](../../.gitbook/assets/error.png)
 
-If you had `npm run watch` running when you saved all your changes to **button.scss** and **\_variables.scss**, you probably see some errors similar to to the one above.  No worries, you haven't done anything wrong.  We just need to do one more thing for our new color variables to work properly.
+If you had `npm run watch` running when you saved all your changes to **button.scss** and **\_variables.scss**, you probably see some errors similar to to the one above. No worries, you haven't done anything wrong. We just need to do one more thing for our new color variables to work properly.
 
-#### Importing the variables
+### Importing the variables
 
-In Sass, we can create all the variables we want, but before we can use them we need to make them available in the files where we want to use them.  This is done by using a Sass `@import` directive.
+In Sass, we can create all the variables we want, but before we can use them we need to make them available in the files where we want to use them. This is done by using a Sass `@import` directive.
 
 1. In **button.scss**, add the following code at the very top of the file, then save your changes
 
@@ -108,7 +108,7 @@ In Sass, we can create all the variables we want, but before we can use them we 
 **IMPORTANT**: the `@include` directive above is not in anyway related to Twig's include statements
 {% endhint %}
 
-#### Final Button Styles
+### Final Button Styles
 
 * After all the changes, **button.scss** should now look like this:
 
@@ -153,9 +153,9 @@ In Sass, we can create all the variables we want, but before we can use them we 
 {% endtab %}
 {% endtabs %}
 
-#### Updating Pattern Lab's Color Palette Atom
+### Updating Pattern Lab's Color Palette Atom
 
-Pattern Lab provides a nice color palette component which is great to set a project's branding colors.  You can find the color palette under **Atoms &gt; Global**, in Pattern Lab.
+Pattern Lab provides a nice color palette component which is great to set a project's branding colors. You can find the color palette under **Atoms &gt; Global**, in Pattern Lab.
 
 Since we added and updated colors in **\_variables.scss**, we should update the color palette component so the colors in it reflect our actual colors.
 
@@ -166,8 +166,8 @@ Since we added and updated colors in **\_variables.scss**, we should update the 
 {% tab title="00-colors.twig" %}
 ```php
 <li>
-	<span class="sg-swatch" style="background: #003954;"></span>
-	<span class="sg-label">#003954</span>
+    <span class="sg-swatch" style="background: #003954;"></span>
+    <span class="sg-label">#003954</span>
 </li>
 ```
 {% endtab %}
@@ -176,15 +176,15 @@ Since we added and updated colors in **\_variables.scss**, we should update the 
 1. Now find the original value for `$gray-dark` in `00-colors.twig`, and replace it with `#444444`.  Keep in mind there are two places within the list item where the changes need to be made.  See code above for example.
 2. As we update our color variables further, we will repeat all the steps on this page to ensure our changes are being captured everywhere in Pattern Lab.  This is a recommended practice to ensure the fidelity of our styleguide in Pattern Lab.  If we don't make an effort to properly maintain our preferences, the styleguide will be out of sync and this could lead to issues in our projects.
 
-### Sass Partials
+## Sass Partials
 
 A [Sass partial ](https://dev.to/sarah_chima/using-sass-partials-7mh)is simply a Sass file preceded by an underscore. An example is `_variables.scss`. The underscore tells Sass that the file is a partial and that it should not be compiled to CSS. This partial can then be imported into another file that will be compiled to CSS. Depending on the way you want to structure your Sass project, a partial can contain all variables used in your project, functions or mixins or it might be for specific pages or components of your pages.
 
-Throughout this training we will create or work with other Sass partials.  For example, we will use the `_mixins.scss` partial later on.
+Throughout this training we will create or work with other Sass partials. For example, we will use the `_mixins.scss` partial later on.
 
-### Repeat with heading.scss and hero.scss
+## Repeat with heading.scss and hero.scss
 
-In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy the updated code below into each of the respective files in your project.
+In the interest of time, I have updated `heading.scss` and `hero.scss` . Copy the updated code below into each of the respective files in your project.
 
 {% tabs %}
 {% tab title="heading.scss" %}
@@ -226,7 +226,6 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
     font-size: 6rem;
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -288,7 +287,7 @@ In the interest of time, I have updated `heading.scss` and `hero.scss` .  Copy t
 
 WHAT'S ALL THIS? 😳
 
-The Hero styles have changed big time.  What's going on?
+The Hero styles have changed big time. What's going on?
 
 * We have two `@import` directives at the very top of hero.scss.  This means that in addition to importing variables, we are also importing the mixins partial.  Why?
 * If you notice on line 5, we are using a mixin \(`@include image-crop(300px)`\).  We briefly discussed mixins earlier.  Mixins allow us to write code we can reuse anywhere and also provide an option to pass parameters or values to the code.  So in this case we are using the **image-crop** mixin \(we will create it shortly\), which allow us to crop an image and assign a fixed height.  We are doing this so the hero image on mobile devices does not look super tiny if we simply let it scale down naturally.
@@ -311,7 +310,7 @@ The Hero styles have changed big time.  What's going on?
 * There are tools that let you convert EMs to Pixels, and vice versa.  Here's [an example of one](https://www.w3schools.com/css/css_rwd_mediaqueries.asp).
 * Wow, that's a lot of information to make sense of.
 
-#### Create the image crop mixin
+### Create the image crop mixin
 
 1. In your text editor, open `source/css/scss/generic/_mixins.scss`
 2. Add the following code at the bottom of the file:
@@ -379,7 +378,7 @@ While we are at it, let's create another mixin to perfectly center-align the Her
 * These are technically 3 mixins.  One to align things horizontally, vertically, and the other one to align things both vertically and horizontally.
 * These are great to easily center align any element.  We will use this with the Hero text.
 
-### Align the Hero text with new mixins
+## Align the Hero text with new mixins
 
 1. In your editor, open `source/_patterns/01-molecules/hero/hero.scss`
 2. Update the styles for the `.hero__content` selector only, as shown below:
@@ -396,7 +395,7 @@ While we are at it, let's create another mixin to perfectly center-align the Her
 {% endtab %}
 {% endtabs %}
 
-### Pattern Lab's responsive breakpoints
+## Pattern Lab's responsive breakpoints
 
 1. In your command line tool, if you have any commands running, press **Ctrl + C** to stop the commands
 2. Start Pattern Lab and Gulp again by running each command below in separate terminal windows
@@ -409,3 +408,4 @@ npm run watch
 
 * Look at the hero in Pattern Lab and using the response breakpoints toggles, view the Hero in mobile, tablet, laptop and desktop view.
 * You should see the hero image height changing while the title and button always remain perfectly centered.
+
