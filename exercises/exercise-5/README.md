@@ -18,7 +18,8 @@ Building the page will be relatively easy because all we need to do is include a
 {% tab title="data.json" %}
 ```yaml
 "hero_new": {
-  "image": "<img src='https://source.unsplash.com/M6XC789HLe8/1900x700' alt='Yosemite' />",
+  "image": "<img src='https://source.unsplash.com/DOoYFgTQWfs/1900x700' alt='Books on computer' />",
+  "heading": {
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title heading--large",
