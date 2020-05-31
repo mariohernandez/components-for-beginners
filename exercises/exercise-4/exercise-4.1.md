@@ -13,7 +13,7 @@ Now build the next list of content as shown in the image below.
 {% tabs %}
 {% tab title="data.json" %}
 ```yaml
-"blog": {
+{
   "heading": {
     "heading_level": "2",
     "modifier": "heading--large center section-header",
@@ -22,47 +22,113 @@ Now build the next list of content as shown in the image below.
   },
   "cta": {
     "modifier": "",
-    "text": "Load more articles",
-    "url": ""
+    "text": "See more articles",
+    "url": "#"
   },
   "items": [
     {
-      "image": "<img src='https://source.unsplash.com/m6OZNfmo2Dk' alt='Man doing yoga' />",
+      "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
       "title": {
         "heading_level": "3",
-        "modifier": "blog-content__title",
-        "title": "Staying healthy",
-        "url": ""
-      },
-      "date": "",
-      "category": "Fashion",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet.",
-      "tags": "",
-      "cta": {
-        "modifier": "blog-content__cta button--ghost",
-        "text": "Read the full article",
+        "modifier": "card__title",
+        "title": "The beauty of nature",
         "url": "#"
       },
-      "modifier": "blog-content__card card--wide"
+      "date": "March 16 2020",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "tags": [
+        {
+          "name": "Phtography",
+          "url": "#"
+        },
+        {
+          "name": "Nature",
+          "url": "#"
+        },
+        {
+          "name": "Outdors",
+          "url": "#"
+        }
+      ],
+      "modifier": "from-our-blog__card"
     },
     {
-      "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/260x360' alt='Tech gadgets' />",
+      "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
       "title": {
         "heading_level": "3",
-        "modifier": "blog-content__title",
-        "title": "Tech gadgets",
-        "url": ""
-      },
-      "date": "",
-      "category": "Sports",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet.",
-      "tags": "",
-      "cta": {
-        "modifier": "blog-content__cta button--ghost",
-        "text": "Read the full article",
+        "modifier": "card__title",
+        "title": "The beauty of nature",
         "url": "#"
       },
-      "modifier": "blog-content__card card--wide"
+      "date": "March 16 2020",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "tags": [
+        {
+          "name": "Phtography",
+          "url": "#"
+        },
+        {
+          "name": "Nature",
+          "url": "#"
+        },
+        {
+          "name": "Outdors",
+          "url": "#"
+        }
+      ],
+      "modifier": "from-our-blog__card"
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
+      "title": {
+        "heading_level": "3",
+        "modifier": "card__title",
+        "title": "The beauty of nature",
+        "url": "#"
+      },
+      "date": "March 16 2020",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "tags": [
+        {
+          "name": "Phtography",
+          "url": "#"
+        },
+        {
+          "name": "Nature",
+          "url": "#"
+        },
+        {
+          "name": "Outdors",
+          "url": "#"
+        }
+      ],
+      "modifier": "from-our-blog__card"
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
+      "title": {
+        "heading_level": "3",
+        "modifier": "card__title",
+        "title": "The beauty of nature",
+        "url": "#"
+      },
+      "date": "March 16 2020",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "tags": [
+        {
+          "name": "Phtography",
+          "url": "#"
+        },
+        {
+          "name": "Nature",
+          "url": "#"
+        },
+        {
+          "name": "Outdors",
+          "url": "#"
+        }
+      ],
+      "modifier": "from-our-blog__card"
     }
   ]
 }
@@ -73,39 +139,46 @@ Now build the next list of content as shown in the image below.
 {% tabs %}
 {% tab title="blog-content.twig" %}
 ```php
-<section class="blog-content">
-  {% include '@atoms/heading/heading.twig' with {
-      heading: blog.heading
+{{ attach_library('training_theme/from-our-blog') }}
+
+<section class="from-our-blog{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {%
+    include '@training_theme/heading/heading.twig' with {
+      "heading": heading
     } only
   %}
 
-  <div class="blog-content__items">
-    {% for item in blog.items %}
-      {%
-        include '@molecules/card/card.twig' with {
-          "image": item.image,
-          "title": item.title,
-          "category": item.category,
-          "body_text": item.body_text,
-          "cta": item.cta,
-          "modifier": item.modifier
-        } only
-      %}
-    {% endfor %}
+  <div class="from-our-blog__items">
+    {% block blog_items %}
+      {% for item in items %}
+        {% embed '@training_theme/card/card.twig' with
+          {
+            "image": item.image,
+            "title": item.title,
+            "date": item.date,
+            "body_text": item.body_text,
+            "tags": item.tags,
+            "modifier": item.modifier
+          } only
+        %}
+          {% block featured_date %}
+          {# Purposely leaving empty. #}
+          {% endblock featured_date %}
+        {% endembed %}
+      {% endfor %}
+    {% endblock blog_items %}
   </div>
-
-  {% if blog.cta %}
-    <div class="blog-content__cta">
-      {%
-        include '@atoms/button/button.twig' with {
-          button: blog.cta
-        } only
-      %}
-    </div>
-  {% endif %}
+  <div class="from-our-blog__cta">
+    {%
+      include '@training_theme/button/button.twig' with {
+        button: cta
+      } only
+    %}
+  </div>
 </section>
-
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -113,51 +186,48 @@ Now build the next list of content as shown in the image below.
 {% tabs %}
 {% tab title="blog-content.scss" %}
 ```css
-@import '../../../css/scss/generic/variables';
+// Import site utilities
+@import '../../global/utils/init';
 
-.blog-content  {
+.from-our-blog  {
   max-width: 1440px;
   padding: 0 20px;
 
-  @media screen and (min-width: $bp-xxl) {
+  @media screen and (min-width: $bp-xl) {
     padding: 0;
   }
 }
 
-// On mobile cards are displayed
+// On mobile the cards are displayed
 // vertically as a group.
-.blog-content__items {
+.from-our-blog__items {
   align-items: center;
   display: flex;
   flex-direction: column;
 
   // On larger screens cards are displayed
   // horizontally as a group.
-  @media screen and (min-width: $bp-xxl) {
+  @media screen and (min-width: $bp-sm) {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
-.blog-content__card {
-
-  @media screen and (min-width: $bp-large) {
-    flex: 0 0 45%;
-    margin-bottom: 0;
-  }
-}
-
-// Adds spacing between cards on mobile, except
-// the last card.
-.blog-content__card:not(:last-child) {
+.from-our-blog__card {
   margin-bottom: 60px;
 
-  @media screen and (min-width: $bp-xxl) {
+  @media screen and (min-width: $bp-sm) {
+    flex: 0 0 45%;
+  }
+
+  @media screen and (min-width: $bp-lg) {
+    flex: 0 0 22%;
     margin-bottom: 0;
   }
 }
 
-.blog-content__cta {
+.from-our-blog__cta {
   margin: 50px auto 0;
   text-align: center;
 }
