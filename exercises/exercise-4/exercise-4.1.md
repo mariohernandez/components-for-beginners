@@ -104,8 +104,6 @@ Now build the next list of content as shown in the image below.
     </div>
   {% endif %}
 </section>
-
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -168,3 +166,4 @@ Now build the next list of content as shown in the image below.
 ### Challenge:  Find ways to improve the styles
 
 Since Featured Content and Blog Content use similar styles, find ways in which you can improve the code to avoid repetition.
+

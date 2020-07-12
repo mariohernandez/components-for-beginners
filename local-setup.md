@@ -11,6 +11,8 @@ The setup for this training will allow you to follow along with the hands-on exe
 * Basic familiarity with [running commands on a CLI ](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)is useful
 * Basic understanding of HTML and CSS is required
 
+[Learn command line basics](https://tutorial.djangogirls.org/en/intro_to_command_line/)
+
 ### Build Tools needed:
 
 1. NodeJS & NPM \(Read on for instructions on installing\)

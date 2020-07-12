@@ -25,6 +25,7 @@
 
 ### Command Line
 
+* [Command line basics](https://tutorial.djangogirls.org/en/intro_to_command_line/)
 * [10 Basic commands every web designer should grasp](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)
 
 ### Coding
